@@ -42,7 +42,7 @@ export function ThreadsSidebar() {
       <div className="flex flex-col m-5 space-y-4">
         <div className=" w-48 cursor-pointer">
           <button
-            className="border border-theme-silver-chalice flex items-center justify-center py-1 px-2 rounded-2xl min-w-[9rem] border-[#A9D4F8] text-[#A9D4F8]
+            className="border border-theme-silver-chalice flex items-center justify-center py-1 px-2 rounded-2xl min-w-[10rem] border-[#A9D4F8] text-[#A9D4F8] font-family-mulish-2
           "
           >
             <span className="mr-2">
@@ -68,7 +68,10 @@ export function ThreadsSidebar() {
             </span>
             Trang chủ
           </button>
-          <button className="border border-theme-silver-chalice flex items-center justify-center py-1 px-2 rounded-2xl min-w-[9rem] border-[#A9D4F8] mt-2 text-[#F8BBD9]">
+          <button
+            className="border border-theme-silver-chalice flex items-center justify-center py-1 px-2 rounded-2xl min-w-[10rem] border-[#A9D4F8] mt-2 text-[#F8BBD9] font-family-mulish-2
+          "
+          >
             Chủ đề quan tâm
           </button>
         </div>
@@ -120,7 +123,7 @@ export function ThreadsSidebar() {
                   </defs>
                 </svg>
               </span>
-              <h2 className="">Cộng đồng mẹ & bé</h2>
+              <h2 className="font-family-nunito">Cộng đồng mẹ & bé</h2>
             </div>
             <SideBarComponent threadList={categories[0].subcategories} />
           </div>
@@ -150,13 +153,13 @@ export function ThreadsSidebar() {
               </defs>
             </svg>
           </span>
-          <h2 className="">Kiến thức</h2>
+          <h2 className="font-family-nunito">Kiến thức</h2>
         </div>
         <SideBarComponent threadList={categories[1].subcategories} />
       </div>
       <span className="mx-5 border border-theme-silver-chalice"></span>
       <div className="flex flex-col m-5 space-y-4">
-        <div className=" w-48 cursor-pointer">
+        <div className=" w-48 cursor-pointer font-family-mulish">
           <div className="flex justify-start  items-center w-48  cursor-pointer">
             <span className="mr-2">
               <svg
@@ -184,7 +187,7 @@ export function ThreadsSidebar() {
               </svg>
             </span>
 
-            <h2 className="">Thông báo</h2>
+            <h2 className="font-family-nunito">Thông báo</h2>
           </div>
           <div className="flex justify-start items-center w-48  cursor-pointer mt-2">
             <span className="mr-2">
@@ -208,22 +211,22 @@ export function ThreadsSidebar() {
                 </defs>
               </svg>
             </span>
-            <h2 className="">Khu vực</h2>
+            <h2 className="font-family-nunito">Khu vực</h2>
           </div>
         </div>
         <SideBarComponent threadList={data?.popular} />
       </div>
       <span className="mx-5 border border-theme-silver-chalice"></span>
-      <div className="flex flex-col m-5 space-y-4">
+      <div className="flex flex-col m-5 space-y-4 font-family-mulish">
         <div className=" w-48 cursor-pointer">
           <div className="flex justify-start  items-center w-48  cursor-pointer">
-            <h2 className="">Giới thiệu</h2>
+            <h2 className="font-family-nunito">Giới thiệu</h2>
           </div>
           <div className="flex justify-start items-center w-48  cursor-pointer mt-2">
-            <h2 className="">Chính sách</h2>
+            <h2 className="font-family-nunito">Chính sách</h2>
           </div>
           <div className="flex justify-start items-center w-48  cursor-pointer mt-2">
-            <h2 className="">Hỗ trợ</h2>
+            <h2 className="font-family-nunito">Hỗ trợ</h2>
           </div>
         </div>
         <SideBarComponent threadList={data?.popular} />
@@ -238,11 +241,11 @@ SideBarComponent.propTypes = {
 function SideBarComponent({ threadList }) {
   console.log("threadList", threadList);
   return (
-    <div className="flex flex-col space-y-4 w-48 list-none">
+    <div className="flex flex-col space-y-4 w-48 list-none font-family-mulish">
       {threadList?.slice(0, 10).map((thread) => (
         <Link
           to={`/${thread.name}`}
-          className="flex justify-between w-48 cursor-pointer"
+          className="flex justify-between w-48 cursor-pointer font-family-mulish text-[#7AC0F8]"
           key={thread.name}
         >
           <div

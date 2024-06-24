@@ -194,7 +194,7 @@ export default function InfinitePostsLayout({
                 Post mới nhất
               </div>
 
-              <div>
+              <div className="flex flex-col space-y-4 font-family-mulish">
                 {posts.map((post) => (
                   <div
                     key={post.id}
@@ -208,8 +208,20 @@ export default function InfinitePostsLayout({
                           className="w-8 h-8 rounded-full"
                         />
 
-                        <p className="font-semibold">{post.name}</p>
-                        <p className="text-xs text-gray-400">{post.time}</p>
+                        <div>
+                          <div>
+                            {" "}
+                            <p className="font-semibold text-[#7AC0F8]">
+                              {post.name}{" "}
+                              <span className="text-xs text-gray-400">
+                                {post.time}
+                              </span>
+                            </p>
+                            <span className="text-xs text-gray-400">
+                              TP. Hồ Chí Minh
+                            </span>
+                          </div>
+                        </div>
                       </div>
                       <div className="flex items-center space-x-2">
                         <button className="flex flex-end space-x-2 bg-[#A9D4F8] px-6 py-1 rounded-3xl text-white">
@@ -398,11 +410,11 @@ SideBarComponentOne.propTypes = {
 function SideBarComponentOne({ threadList }) {
   return (
     <div className="flex flex-col space-y-2 list-none  p-4 rounded-lg bg-[#F8F8F8]">
-      <h2 className="">Cộng đồng phổ biến</h2>
+      <h2 className="font-family-nunito ">Cộng đồng phổ biến</h2>
       {threadList?.slice(0, 10).map((thread) => (
         <Link
           to={`/${thread.name}`}
-          className="flex justify-between w-48 cursor-pointer"
+          className="flex justify-between w-48 cursor-pointer text-[#7AC0F8]"
           key={thread.name}
         >
           <div
@@ -438,7 +450,7 @@ function SideBarComponentOne({ threadList }) {
           </span> */}
         </Link>
       ))}
-      <div className="flex justify-end items-center cursor-pointer text-theme-blue-500">
+      <div className="flex justify-end items-center cursor-pointer text-theme-blue-500 font-family-mulish text-[#949494]">
         Xem thêm
         <span className="ml-1">
           <svg
@@ -482,11 +494,11 @@ SideBarComponentTwo.propTypes = {
 function SideBarComponentTwo({ threadList }) {
   return (
     <div className="flex flex-col space-y-2 list-none  p-4 rounded-lg bg-[#F8F8F8] mt-5">
-      <h2 className="">Cộng đồng phổ biến</h2>
+      <h2 className="font-family-nunito ">Cộng đồng phổ biến</h2>
       {threadList?.slice(0, 10).map((thread) => (
         <Link
           to={`/${thread.name}`}
-          className="flex justify-between w-48 cursor-pointer"
+          className="flex justify-between w-48 cursor-pointer text-[#7AC0F8]"
           key={thread.name}
         >
           <div
@@ -522,7 +534,7 @@ function SideBarComponentTwo({ threadList }) {
           </span> */}
         </Link>
       ))}
-      <div className="flex justify-end items-center cursor-pointer text-theme-blue-500">
+      <div className="flex justify-end items-center cursor-pointer text-theme-blue-500 font-family-mulish text-[#949494]">
         Xem thêm
         <span className="ml-1">
           <svg

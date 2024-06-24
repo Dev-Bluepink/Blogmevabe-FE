@@ -38,7 +38,7 @@ export function ThreadsSidebar() {
 
   console.log("categories[0].subcategories", categories[0].subcategories);
   return (
-    <aside className="hidden flex-col w-56 bg-white md:flex">
+    <aside className="hidden flex-col w-56 bg-white border-r border-theme-silver-chalice md:flex">
       <div className="flex flex-col m-5 space-y-4">
         <div className=" w-48 cursor-pointer">
           <button className="border border-theme-silver-chalice flex items-center justify-center py-1 px-2 rounded-2xl min-w-[9rem]">

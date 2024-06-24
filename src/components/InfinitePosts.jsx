@@ -6,6 +6,7 @@ import PropTypes from "prop-types";
 import Loader from "./Loader";
 import * as PropType from "prop-types";
 
+
 InfinitePostsLayout.propTypes = {
   linkUrl: PropTypes.string,
   apiQueryKey: PropTypes.string,
@@ -117,7 +118,8 @@ export default function InfinitePostsLayout({
       time: "1 giờ trước",
       title:
         "Mẹ không tiêm vắc xin trước khi mang thai, sinh con có sao không?",
-      banner: "https://picsum.photos/748/544",
+      banner:
+        "https://firebasestorage.googleapis.com/v0/b/weloveschool-212d8.appspot.com/o/post1.png?alt=media&token=5b330a42-e221-4f2b-9868-9e491ff59a08",
       content:
         "Việc lên kế hoạch tiêm chủng trước khi mang thai là rất cần thiết và quan trọng đối với mẹ bầu và thai nhi. Tuy nhiên, không tránh được trường hợp một số mẹ đã mang bầu trước khi tiêm chủng...",
       like: 100,
@@ -130,7 +132,8 @@ export default function InfinitePostsLayout({
       name: "Hà Phan",
       time: "2 giờ trước",
       title: "Tác hại của việc cho trẻ học tiếng Hàn sớm",
-      banner: "https://picsum.photos/748/545",
+      banner:
+        "https://firebasestorage.googleapis.com/v0/b/weloveschool-212d8.appspot.com/o/post2.png?alt=media&token=a12f6549-4e78-4ef3-8a5d-a884c4a76653",
       content:
         "Việc học tiếng Hàn sớm cho trẻ có thể gây ra những tác hại không mong muốn cho sự phát triển của trẻ. Bài viết dưới đây sẽ giúp bạn hiểu rõ hơn về vấn đề này...",
       like: 100,
@@ -232,7 +235,7 @@ export default function InfinitePostsLayout({
                       <img
                         src={post.banner}
                         alt=""
-                        className="w-full h-64 object-cover rounded-lg"
+                        className="w-full  object-cover rounded-lg"
                       />
                       <p className="text-gray-600">{post.content}</p>
                     </div>

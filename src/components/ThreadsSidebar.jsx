@@ -41,7 +41,10 @@ export function ThreadsSidebar() {
     <aside className="hidden flex-col w-56 bg-white border-r border-theme-silver-chalice md:flex">
       <div className="flex flex-col m-5 space-y-4">
         <div className=" w-48 cursor-pointer">
-          <button className="border border-theme-silver-chalice flex items-center justify-center py-1 px-2 rounded-2xl min-w-[9rem]">
+          <button
+            className="border border-theme-silver-chalice flex items-center justify-center py-1 px-2 rounded-2xl min-w-[9rem] border-[#A9D4F8] text-[#A9D4F8]
+          "
+          >
             <span className="mr-2">
               <svg
                 width="22"
@@ -65,7 +68,7 @@ export function ThreadsSidebar() {
             </span>
             Trang chủ
           </button>
-          <button className="border border-theme-silver-chalice flex items-center justify-center py-1 px-2 rounded-2xl min-w-[9rem] mt-2">
+          <button className="border border-theme-silver-chalice flex items-center justify-center py-1 px-2 rounded-2xl min-w-[9rem] border-[#A9D4F8] mt-2 text-[#F8BBD9]">
             Chủ đề quan tâm
           </button>
         </div>

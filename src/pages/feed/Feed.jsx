@@ -11,7 +11,7 @@ export function Feed() {
     return navigate("/login");
   }
   useEffect(() => {
-    document.title = `Threaddit | ${feedName}`
+    document.title = `Mebe | ${feedName}`;
   }, [feedName])
   return <InfinitePostsLayout linkUrl={`posts/${feedName || "all"}`} apiQueryKey={feedName} />;
 }

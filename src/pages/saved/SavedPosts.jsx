@@ -4,9 +4,9 @@ import InfinitePostsLayout from "../../components/InfinitePosts";
 
 export default function SavedPosts() {
   useEffect(() => {
-    document.title = "Threaddit | saved";
+    document.title = "Mebe | saved";
     return () => {
-      document.title = "Threaddit";
+      document.title = "Mebe";
     };
   })
   return (

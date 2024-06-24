@@ -38,7 +38,10 @@ export function Profile() {
     }
   }, [action, data, username, logout]);
 
-  useEffect(() => { document.title = "u/" + username; return () => document.title = "Threaddit" }, [username]);
+  useEffect(() => {
+    document.title = "u/" + username;
+    return () => (document.title = "Mebe");
+  }, [username]);
   return (
     <div className="flex flex-col flex-1 items-center w-full bg-theme-cultured">
       {userIsFetching ? (

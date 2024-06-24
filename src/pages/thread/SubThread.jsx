@@ -23,7 +23,12 @@ export function SubThread() {
       return await axios.get(`/api/threads/${params.threadName}`).then((res) => res.data);
     },
   });
-  useEffect(() => { document.title = "t/" + params.threadName; return () => { document.title = "Threaddit" } }, [params.threadName]);
+  useEffect(() => {
+    document.title = "t/" + params.threadName;
+    return () => {
+      document.title = "Mebe";
+    };
+  }, [params.threadName]);
   const threadData = data?.threadData;
   const { mutate } = useMutation({
     mutationFn: async (has_subscribed) => {

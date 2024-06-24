@@ -21,12 +21,11 @@ export function Inbox() {
   useEffect(() => {
     if (curChat) {
       document.title = `Inbox | ${curChat.username}`;
-    }
-    else {
-      document.title = "Threaddit | Inbox";
+    } else {
+      document.title = "Mebe | Inbox";
     }
     return () => {
-      document.title = "Threaddit";
+      document.title = "Mebe";
     };
   })
   return (

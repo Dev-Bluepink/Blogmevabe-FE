@@ -29,7 +29,7 @@ const router = createBrowserRouter([
         children: [
           {
             path: "/",
-            element: <Navigate to="/all" />,
+            element: <Feed />,
           },
           {
             path: "/:feedName",

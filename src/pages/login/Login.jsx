@@ -1,44 +1,68 @@
+import React, { useEffect, useState } from "react";
+import { GoogleOAuthProvider, GoogleLogin } from "@react-oauth/google";
+import FacebookLogin from "react-facebook-login-lite";
 import { useMutation } from "@tanstack/react-query";
 import axios from "axios";
-import { useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import AuthConsumer from "../../components/AuthContext.jsx";
 import Loader from "../../components/Loader.jsx";
-import { AppLogo } from "../../components/Navbar.jsx";
 import Svg from "../../components/Svg.jsx";
 
 export function Login() {
   const [showPass, setShowPass] = useState(false);
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [rememberMe, setRememberMe] = useState(false);
   const { isAuthenticated, login } = AuthConsumer();
   const navigate = useNavigate();
   const { mutate, status, error, reset } = useMutation({
     mutationFn: async () => {
-      return await axios.post("/api/user/login", { email, password }).then((res) => login(res.data));
+      return await axios
+        .post("/api/user/login", { email, password, rememberMe })
+        .then((res) => login(res.data));
     },
     onSuccess: () => navigate("/home"),
   });
+
   useEffect(() => {
     document.title = "Mebe | Login";
     return () => {
       document.title = "Mebe";
     };
-  });
+  }, []);
+
   if (isAuthenticated) {
     return navigate("/home");
   }
+
+  const responseFacebook = (response) => {
+    console.log(response);
+    axios
+      .post("/api/user/login/facebook", { accessToken: response.accessToken })
+      .then((res) => login(res.data))
+      .then(() => navigate("/home"))
+      .catch((err) => console.error(err));
+  };
+
+  const responseGoogle = (response) => {
+    console.log(response);
+    axios
+      .post("/api/user/login/google", { tokenId: response.credential })
+      .then((res) => login(res.data))
+      .then(() => navigate("/home"))
+      .catch((err) => console.error(err));
+  };
+
   return (
     <div className="flex justify-center items-center min-h-screen md:space-x-10 bg-theme-cultured">
-      <AppLogo forBanner={true} />
-      <div className="flex flex-col p-5 py-10 space-y-10 bg-white rounded-md shadow-xl md:p-5">
-        <div className="flex justify-center md:hidden">
-          <AppLogo>
-            <h1 className="font-mono text-3xl font-bold tracking-tight md:block">
-              Mebe
-            </h1>
-          </AppLogo>
-        </div>
+      <div
+        className="flex flex-col px-6 p-5 py-5 space-y-10 
+       bg-white rounded-md shadow-2xl md:px-20"
+        style={{
+          paddingBottom: "3rem",
+        }}
+      >
+        <div className="flex justify-center md:hidden"></div>
         <h1
           className={`font-semibold ${
             status !== "loading" && "text-2xl "
@@ -49,91 +73,114 @@ export function Login() {
           ) : status === "loading" ? (
             <Loader forPosts={true} />
           ) : (
-            "Welcome Back!"
+            <>
+              <div className="flex flex-col items-center">
+                <div className="text-[#F8ADD2]">
+                  Đăng nhập tài khoản của bạn
+                </div>
+                <p className="text-sm text-center text-gray-500 py-2">
+                  Chào mừng bạn trở lại! Chọn cách đăng nhập
+                </p>
+              </div>
+            </>
           )}
         </h1>
+        <div className="flex justify-center space-x-5 items-center w-full">
+          <div className="flex flex-row justify-center items-center space-x-2 cursor-pointer bg-[#EEF9FF] min-w-[150px] py-2 px-2 mr-5 rounded-md">
+            <span className="w-8 h-8">
+              <img
+                src="https://img.icons8.com/color/48/000000/facebook-new.png"
+                alt="Facebook"
+              />
+            </span>
+            Facebook
+          </div>
+          <div className="flex flex-row justify-center items-center space-x-2 cursor-pointer bg-[#EEF9FF] min-w-[150px] py-2 px-2 rounded-md">
+            <span className="w-8 h-8">
+              <img
+                src="https://img.icons8.com/color/48/000000/google-logo.png"
+                alt="Google"
+              />
+            </span>
+            Google
+          </div>
+        </div>
+        <p className="flex items-center text-[#949494]">
+          <span className="flex-grow border-t border-gray-500 mx-2 bg-[#949494] "></span>
+          hoặc tiếp tục với email của bạn
+          <span className="flex-grow border-t border-gray-500 mx-2 bg-[#949494]"></span>
+        </p>
         <form
           className="flex flex-col items-center space-y-5 bg-white"
           onSubmit={(e) => {
-            e?.preventDefault();
+            e.preventDefault();
             mutate();
           }}
         >
-          <label htmlFor="email" className="flex flex-col space-y-1">
-            <span className="pl-2 text-sm font-light">Email</span>
+          <input
+            type="username"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+            placeholder="Tên tài khoản"
+            className="w-full px-4 py-3 rounded-md bg-[#F4F4F4]"
+          />
+          <div className="relative w-full">
             <input
-              type="email"
-              name="email"
-              id="email"
-              required
-              value={email}
-              onChange={(event) => {
-                setEmail(event.target.value);
-                reset();
-              }}
-              className="px-2 py-2 pr-24 border-b focus:outline-none focus:border-black"
+              type={showPass ? "text" : "password"}
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+              placeholder="Password"
+              className="w-full px-4 py-3 rounded-md bg-[#F4F4F4]"
             />
-          </label>
-          <label htmlFor="password" className="flex flex-col space-y-1">
-            <span className="pl-2 text-sm font-light">Password</span>
-            <div className="flex items-center border-b">
-              <input
-                type={`${showPass ? "text" : "password"}`}
-                name="password"
-                id="password"
-                className="px-2 py-2 pr-20 focus:outline-none"
-                required
-                minLength={8}
-                value={password}
-                onChange={(event) => {
-                  setPassword(event.target.value);
-                  reset();
-                }}
-              />
+            <button
+              type="button"
+              onClick={() => setShowPass(!showPass)}
+              className="absolute inset-y-0 right-0 px-3 flex items-center text-sm leading-5"
+            >
               {showPass ? (
-                <Svg
-                  type="eye-open"
-                  className="w-6 h-6"
-                  onClick={() => setShowPass(!showPass)}
+                <img
+                  src="https://img.icons8.com/ios-glyphs/30/000000/visible.png"
+                  alt="hide"
+                  className="w-5 h-5"
                 />
               ) : (
-                <Svg
-                  type="eye-close"
-                  className="w-6 h-6"
-                  onClick={() => setShowPass(!showPass)}
+                <img
+                  src="https://img.icons8.com/ios-glyphs/30/000000/invisible.png"
+                  alt="show"
+                  className="w-5 h-5"
                 />
               )}
+            </button>
+          </div>
+          <div className="flex items-center justify-between w-full">
+            <div className="flex items-center">
+              <input
+                type="checkbox"
+                checked={rememberMe}
+                onChange={() => setRememberMe(!rememberMe)}
+                className="mr-2 bg-[#7AC0F8] "
+              />
+              <label className="text-[#7AC0F8]">Lưu mật khẩu</label>
             </div>
-          </label>
+            <Link
+              to="/forgot-password"
+              className="flex  cursor-pointer group text-[#7AC0F8] "
+            >
+              Quên mật khẩu ?
+            </Link>
+          </div>
           <button
             type="submit"
             disabled={status === "loading"}
-            className="py-2 w-full font-semibold text-white rounded-md bg-theme-orange active:scale-95"
+            className="py-2 w-full font-semibold text-white rounded-md bg-[#7AC0F8] active:scale-95"
           >
-            {status === "loading" ? "Logging in..." : "Log in"}
+            {status === "loading" ? "Logging in..." : "Đăng nhập"}
           </button>
         </form>
-        <div className="flex justify-between">
-          {/* TODO: Implement forgot password */}
-          <Link
-            to="/login"
-            className="flex font-semibold cursor-pointer group hover:text-theme-orange"
-          >
-            Forgot Password
-            <Svg
-              type="arrow-right"
-              className="invisible w-6 h-6 duration-200 group-hover:visible text-theme-orange group-hover:translate-x-1"
-            ></Svg>
-          </Link>
-          <Link
-            to="/register"
-            className="flex font-semibold cursor-pointer hover:text-theme-orange group"
-          >
-            Signup
-            <Svg
-              type="arrow-right"
-              className="invisible w-6 h-6 duration-200 group-hover:visible text-theme-orange group-hover:translate-x-1"
-            ></Svg>
+        <div className="flex justify-between w-full mt-4 mb-10">
+          <span> Bạn chưa có tài khoản?</span>
+          <Link to="/register" className="flex  cursor-pointer text-[#7AC0F8]">
+            Đăng ký
           </Link>
         </div>
       </div>

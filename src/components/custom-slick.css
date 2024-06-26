@@ -1,0 +1,26 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.slick-dots {
+  @apply flex justify-center mt-4;
+}
+
+.slick-dots li {
+  @apply mx-1;
+}
+
+.slick-dots li button {
+  @apply p-0 border-none;
+}
+
+.slick-dots li button:before {
+    
+
+}
+
+.slick-dots li.slick-active button:before {
+  /* #F8BBD9 */
+ 
+
+}

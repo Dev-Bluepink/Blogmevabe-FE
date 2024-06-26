@@ -5,7 +5,8 @@ import { Link, useSearchParams } from "react-router-dom";
 import PropTypes from "prop-types";
 import Loader from "./Loader";
 import * as PropType from "prop-types";
-
+import MultiCarousel from "./MultiCarousel";
+import "./custom-slick.css";
 
 InfinitePostsLayout.propTypes = {
   linkUrl: PropTypes.string,
@@ -185,6 +186,7 @@ export default function InfinitePostsLayout({
                   ))}
                 </div>
               </div> */}
+              <MultiCarousel />
               <div
                 className="text-white mt-4 border-b-[1px] border-[#A7A7A7] pb-2 mb-2"
                 style={{

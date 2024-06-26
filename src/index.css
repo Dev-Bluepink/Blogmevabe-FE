@@ -31,3 +31,25 @@ font-weight: 900;
 line-height: 25.18px;
 text-align: left;
 }
+
+
+.slick-dots {
+  @apply flex justify-center mt-4;
+}
+
+.slick-dots li {
+  @apply mx-1;
+}
+
+.slick-dots li button {
+  @apply p-0 border-none;
+}
+
+.slick-dots li button:before {
+  content: '•';
+  @apply text-gray-400 text-lg opacity-75 transition-opacity duration-300;
+}
+
+.slick-dots li.slick-active button:before {
+  @apply text-indigo-600 opacity-100;
+}

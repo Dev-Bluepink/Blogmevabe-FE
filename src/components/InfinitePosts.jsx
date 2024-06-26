@@ -145,7 +145,9 @@ export default function InfinitePostsLayout({
   return (
     <div
       id="main-content"
-      className="flex w-full flex-col flex-1 p-2 space-y-3 rounded-lg p-0.5 bg-theme-cultured md:bg-white md:p-3"
+      className="
+       md:ml-56
+      flex w-full flex-col flex-1 p-2 space-y-3 rounded-lg p-0.5 bg-theme-cultured md:bg-white md:p-3"
     >
       <div className="flex flex-col mx-0 space-y-2 md:space-y-3 flex-1 mt-2 md:mt-0 md:mx-48">
         <div className="">
@@ -224,9 +226,15 @@ export default function InfinitePostsLayout({
                         </div>
                       </div>
                       <div className="flex items-center space-x-2">
-                        <button className="flex flex-end space-x-2 bg-[#A9D4F8] px-6 py-1 rounded-3xl text-white">
-                          Tham gia
-                        </button>
+                        <Link to={"/bai-dang"}>
+                          <button
+                            className="flex flex-end space-x-2 bg-[#A9D4F8] px-6 py-1 rounded-3xl text-white
+                        hover:bg-[#F8BBD9] hover:text-white
+                        "
+                          >
+                            Tham gia
+                          </button>
+                        </Link>
                         <button>
                           <svg
                             width="18"

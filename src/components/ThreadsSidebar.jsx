@@ -38,11 +38,14 @@ export function ThreadsSidebar() {
 
   console.log("categories[0].subcategories", categories[0].subcategories);
   return (
-    <aside className="hidden flex-col w-56 bg-white border-r border-theme-silver-chalice md:flex">
+    <aside
+      className="fixed
+     hidden flex-col w-56 bg-white border-r border-theme-silver-chalice md:flex"
+    >
       <div className="flex flex-col m-5 space-y-4">
         <div className=" w-48 cursor-pointer">
           <button
-            className="border border-theme-silver-chalice flex items-center justify-center py-1 px-2 rounded-2xl min-w-[10rem] border-[#A9D4F8] text-[#A9D4F8] font-family-mulish-2
+            className="border border-theme-silver-chalice flex items-center justify-center py-1 px-2 rounded-2xl min-w-[10rem] border-[#A9D4F8] text-[#A9D4F8] font-family-mulish-2 hover:bg-[#d6e0e9] hover:text-white
           "
           >
             <span className="mr-2">
@@ -69,7 +72,7 @@ export function ThreadsSidebar() {
             Trang chủ
           </button>
           <button
-            className="border border-theme-silver-chalice flex items-center justify-center py-1 px-2 rounded-2xl min-w-[10rem] border-[#A9D4F8] mt-2 text-[#F8BBD9] font-family-mulish-2
+            className="border border-theme-silver-chalice flex items-center justify-center py-1 px-2 rounded-2xl min-w-[10rem] border-[#A9D4F8] mt-2 text-[#F8BBD9] font-family-mulish-2 hover:bg-[#d6e0e9] hover:text-white
           "
           >
             Chủ đề quan tâm

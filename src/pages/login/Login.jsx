@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { GoogleOAuthProvider, GoogleLogin } from "@react-oauth/google";
-import FacebookLogin from "react-facebook-login-lite";
+
 import { useMutation } from "@tanstack/react-query";
 import axios from "axios";
 import { Link, useNavigate } from "react-router-dom";

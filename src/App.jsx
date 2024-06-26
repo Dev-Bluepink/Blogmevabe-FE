@@ -32,8 +32,9 @@ const router = createBrowserRouter([
             element: <Feed />,
           },
           {
-            path: "/:feedName",
-            element: <Feed />,
+            // path: "/:feedName",
+            path: "/bai-dang",
+            element: <FullPost />,
           },
           {
             path: "/post/:postId",

@@ -17,7 +17,10 @@ export function Navbar() {
   const navigate = useNavigate();
 
   return (
-    <nav className="flex justify-between items-center mx-1 h-16 md:p-5 border-b border-neutral-200">
+    <nav
+      className="sticky top-0 z-50 flex justify-between items-center mx-1 h-16 md:p-5 border-b border-neutral-200
+    bg-white shadow-md"
+    >
       <AppLogo />
       <div className="flex items-center md:space-x-6">
         <ThreadSearch callBackFunc={(threadUrl) => navigate(threadUrl)} />

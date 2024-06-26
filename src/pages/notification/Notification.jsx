@@ -96,6 +96,15 @@ export default function Notification() {
       <div className="flex flex-col mx-0 space-y-2 md:space-y-3 flex-1 mt-2 md:mt-0 md:mx-48">
         <div className="flex flex-col md:flex-row">
           <div className="w-full md:w-2/3  p-2 md:p-2">
+            <div
+              className="text-white mt-4 border-b-[1px] border-[#A7A7A7] pb-2 mb-2"
+              style={{
+                color: "#A7A7A7",
+                fontSize: "0.725rem",
+              }}
+            >
+              Thông báo
+            </div>
             {notificationItems.map((item) => (
               <div
                 key={item.id}
@@ -129,7 +138,7 @@ export default function Notification() {
             ))}
           </div>
           <div className="w-full md:w-1/3 px-4 hidden md:block">
-            <div className="flex flex-col space-y-2 list-none  p-4 rounded-lg bg-[#F8F8F8]">
+            <div className="flex flex-col space-y-2 list-none  p-4 rounded-lg bg-[#F8F8F8] mt-10">
               <h2 className="font-family-nunito text-[#7AC0F8]">
                 Đề xuất chủ đề
               </h2>

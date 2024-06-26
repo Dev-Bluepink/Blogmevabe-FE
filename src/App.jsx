@@ -16,6 +16,8 @@ const FullPost = lazy(() => import("./pages/fullPost/FullPost.jsx"));
 const Inbox = lazy(() => import("./pages/inbox/Inbox.jsx"));
 const SavedPosts = lazy(() => import("./pages/saved/SavedPosts.jsx"));
 const SubThread = lazy(() => import("./pages/thread/SubThread.jsx"));
+// Notification
+const Notification = lazy(() => import("./pages/notification/Notification.jsx"));
 
 const router = createBrowserRouter([
   {
@@ -39,6 +41,10 @@ const router = createBrowserRouter([
           {
             path: "/post/:postId",
             element: <FullPost />,
+          },
+          {
+            path: "/notification",
+            element: <Notification />,
           },
         ],
       },
@@ -68,6 +74,7 @@ const router = createBrowserRouter([
       },
     ],
   },
+
   {
     path: "/login",
     element: <Login />,

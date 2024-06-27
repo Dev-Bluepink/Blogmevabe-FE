@@ -12,8 +12,26 @@ const mockData = {
     { id: 2, title: "Bài đăng 2", content: "Nội dung bài đăng 2" },
   ],
   binhLuan: [
-    { id: 1, content: "Bình luận 1" },
-    { id: 2, content: "Bình luận 2" },
+    {
+      id: 1,
+      avatar: "https://i.pravatar.cc/300",
+      time: "7 giờ trước",
+      address: "Đồng Nai",
+      content:
+        "Cho con đi học tiếng Hàn sớm để sau này con có thể xem phim Hàn mà không cần phụ đề, cứu bố mẹ khỏi việc phải đọc nhanh như siêu nhân!",
+      like: 40,
+      reply: 11,
+    },
+    {
+      id: 2,
+      avatar: "https://i.pravatar.cc/300",
+      time: "2 giờ trước",
+      address: "Hồ Chí Minh",
+      content:
+        "Cho con đi học tiếng Hàn sớm để sau này con có thể xem phim Hàn mà không cần phụ đề, cứu bố mẹ khỏi việc phải đọc nhanh như siêu nhân!",
+      like: 40,
+      reply: 11,
+    },
   ],
   luuTru: [
     { id: 1, title: "Lưu trữ 1" },
@@ -75,7 +93,7 @@ export default function Profile2() {
               <Section
                 key={sec.id}
                 id={sec.id}
-                title={sec.title}
+                // title={sec.title}
                 isVisible={section === sec.id || !section}
               >
                 {getContent(sec.id)}
@@ -222,9 +240,45 @@ const getContent = (id) => {
       ));
     case "binh-luan":
       return mockData.binhLuan.map((comment) => (
-        <div key={comment.id} className="mb-2">
-          <p>{comment.content}</p>
-        </div>
+        <>
+          <div className="flex flex-col">
+            <div key={comment.id} className=" mb-2 border p-2 rounded-lg px-8">
+              <div className="flex flex-row justify-between">
+                <div className="flex flex-row items-center space-x-4 mb-2">
+                  <img
+                    src="https://firebasestorage.googleapis.com/v0/b/weloveschool-212d8.appspot.com/o/asd1.png?alt=media&token=5229bcab-5620-4393-aabb-b52eb3ba7369"
+                    alt=""
+                    className="w-10 h-10 rounded-full "
+                  />
+                  <div className="flex flex-col">
+                    <div className="flex flex-row justify-center  space-x-4">
+                      <h3 className="text-lg font-semibold text-center text-[#7AC0F8]">
+                        Hà Phạm
+                      </h3>
+                      <span>7 giờ trước</span>
+                    </div>
+                    <div className="flex flex-row items-center space-x-4 ">
+                      <span>Đồng Nai</span>
+                    </div>
+                  </div>
+                </div>
+                <div>Mang thai / 3 tháng đầu thai kì</div>
+              </div>
+              <div className="flex flex-row items-center space-x-4 mb-2">
+                {comment.content}
+              </div>
+              <div className="flex justify-between">
+                <div>
+                  <button className="text-[#7AC0F8]">Thích</button>
+                  <button className="text-[#7AC0F8]">Trả lời</button>
+                </div>
+                <div>
+                  <button className="text-[#7AC0F8]">Xóa</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </>
       ));
     case "luu-tru":
       return mockData.luuTru.map((archive) => (

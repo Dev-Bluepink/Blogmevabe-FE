@@ -417,6 +417,7 @@ function SaveNew({ saved }) {
 SideBarComponentOne.propTypes = {
   threadList: PropType.array,
 };
+
 function SideBarComponentOne({ threadList }) {
   return (
     <div className="flex flex-col space-y-2 list-none  p-4 rounded-lg bg-[#F8F8F8]">

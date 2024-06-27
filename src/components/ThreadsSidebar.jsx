@@ -86,29 +86,33 @@ export function ThreadsSidebar() {
       {data?.subscribed.length !== 0 && (
         <>
           <div className="flex flex-col m-5 space-y-4">
-            <div className="flex justify-start items-center w-48  cursor-pointer">
-              <span className="mr-2">
-                <svg
-                  width="14"
-                  height="19"
-                  viewBox="0 0 14 19"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <g clipPath="url(#clip0_2_107)">
-                    <path
-                      d="M7.10003 0C7.29003 0.02 7.47003 0.04 7.66003 0.07C10.15 0.47 11.93 1.83 12.95 4.13C13.6 5.59 13.64 7.12 13.2 8.66C12.82 10 12.22 11.24 11.53 12.44C10.32 14.54 8.87003 16.48 7.29003 18.31C6.92003 18.74 6.55003 18.74 6.18003 18.31C4.39003 16.22 2.75003 14.02 1.47003 11.58C0.880028 10.46 0.370028 9.31 0.140028 8.06C-0.319972 5.6 0.380028 3.51 2.18003 1.79C3.25003 0.78 4.54003 0.22 5.99003 0.04C6.12003 0.03 6.25003 0.01 6.37003 0C6.61003 0 6.86003 0 7.10003 0ZM6.71003 10.14C8.55003 10.17 10.09 8.66 10.12 6.79C10.15 4.92 8.65003 3.38 6.76003 3.35C4.92003 3.32 3.39003 4.82 3.35003 6.69C3.31003 8.57 4.81003 10.11 6.71003 10.14Z"
-                      fill="#494949"
-                    />
-                  </g>
-                  <defs>
-                    <clipPath id="clip0_2_107">
-                      <rect width="13.48" height="18.64" fill="white" />
-                    </clipPath>
-                  </defs>
-                </svg>
-              </span>
-              <h2 className="font-family-nunito">Khu vực</h2>
+            <div className="flex justify-between">
+              <div className="flex justify-start items-center w-48  cursor-pointer">
+                <span className="mr-2">
+                  <svg
+                    width="14"
+                    height="19"
+                    viewBox="0 0 14 19"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <g clipPath="url(#clip0_2_107)">
+                      <path
+                        d="M7.10003 0C7.29003 0.02 7.47003 0.04 7.66003 0.07C10.15 0.47 11.93 1.83 12.95 4.13C13.6 5.59 13.64 7.12 13.2 8.66C12.82 10 12.22 11.24 11.53 12.44C10.32 14.54 8.87003 16.48 7.29003 18.31C6.92003 18.74 6.55003 18.74 6.18003 18.31C4.39003 16.22 2.75003 14.02 1.47003 11.58C0.880028 10.46 0.370028 9.31 0.140028 8.06C-0.319972 5.6 0.380028 3.51 2.18003 1.79C3.25003 0.78 4.54003 0.22 5.99003 0.04C6.12003 0.03 6.25003 0.01 6.37003 0C6.61003 0 6.86003 0 7.10003 0ZM6.71003 10.14C8.55003 10.17 10.09 8.66 10.12 6.79C10.15 4.92 8.65003 3.38 6.76003 3.35C4.92003 3.32 3.39003 4.82 3.35003 6.69C3.31003 8.57 4.81003 10.11 6.71003 10.14Z"
+                        fill="#494949"
+                      />
+                    </g>
+                    <defs>
+                      <clipPath id="clip0_2_107">
+                        <rect width="13.48" height="18.64" fill="white" />
+                      </clipPath>
+                    </defs>
+                  </svg>
+                </span>
+                <h2 className="font-family-nunito">Khu vực</h2>
+              </div>
+
+              <button className="text-xs text-[#7AC0F8]">All</button>
             </div>
             <SideBarComponent threadList={categories[0].subcategories} />
           </div>

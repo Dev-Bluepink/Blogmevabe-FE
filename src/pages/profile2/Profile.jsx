@@ -8,8 +8,35 @@ const mockData = {
     phone: "0123456789",
   },
   baiDang: [
-    { id: 1, title: "Bài đăng 1", content: "Nội dung bài đăng 1" },
-    { id: 2, title: "Bài đăng 2", content: "Nội dung bài đăng 2" },
+    {
+      id: 1,
+      avatar: "https://picsum.photos/200/300",
+      name: "Hồ Lê",
+      time: "1 giờ trước",
+      title:
+        "Mẹ không tiêm vắc xin trước khi mang thai, sinh con có sao không?",
+      banner:
+        "https://firebasestorage.googleapis.com/v0/b/weloveschool-212d8.appspot.com/o/post1.png?alt=media&token=5b330a42-e221-4f2b-9868-9e491ff59a08",
+      content:
+        "Việc lên kế hoạch tiêm chủng trước khi mang thai là rất cần thiết và quan trọng đối với mẹ bầu và thai nhi. Tuy nhiên, không tránh được trường hợp một số mẹ đã mang bầu trước khi tiêm chủng...",
+      like: 100,
+      dislike: 10,
+      comment: 20,
+    },
+    {
+      id: 2,
+      avatar: "https://picsum.photos/200/301",
+      name: "Hà Phan",
+      time: "2 giờ trước",
+      title: "Tác hại của việc cho trẻ học tiếng Hàn sớm",
+      banner:
+        "https://firebasestorage.googleapis.com/v0/b/weloveschool-212d8.appspot.com/o/post2.png?alt=media&token=a12f6549-4e78-4ef3-8a5d-a884c4a76653",
+      content:
+        "Việc học tiếng Hàn sớm cho trẻ có thể gây ra những tác hại không mong muốn cho sự phát triển của trẻ. Bài viết dưới đây sẽ giúp bạn hiểu rõ hơn về vấn đề này...",
+      like: 100,
+      dislike: 10,
+      comment: 20,
+    },
   ],
   binhLuan: [
     {
@@ -84,16 +111,87 @@ const mockData = {
     },
   ],
   luuTru: [
-    { id: 1, title: "Lưu trữ 1" },
-    { id: 2, title: "Lưu trữ 2" },
+    {
+      id: 1,
+      avatar: "https://picsum.photos/200/300",
+      name: "Hồ Lê",
+      time: "1 giờ trước",
+      title:
+        "Mẹ không tiêm vắc xin trước khi mang thai, sinh con có sao không?",
+      banner:
+        "https://firebasestorage.googleapis.com/v0/b/weloveschool-212d8.appspot.com/o/post1.png?alt=media&token=5b330a42-e221-4f2b-9868-9e491ff59a08",
+      content:
+        "Việc lên kế hoạch tiêm chủng trước khi mang thai là rất cần thiết và quan trọng đối với mẹ bầu và thai nhi. Tuy nhiên, không tránh được trường hợp một số mẹ đã mang bầu trước khi tiêm chủng...",
+      like: 100,
+      dislike: 10,
+      comment: 20,
+      status: "Đã lưu",
+    },
+    {
+      id: 2,
+      avatar: "https://picsum.photos/200/301",
+      name: "Hà Phan",
+      time: "2 giờ trước",
+      title: "Tác hại của việc cho trẻ học tiếng Hàn sớm",
+      banner:
+        "https://firebasestorage.googleapis.com/v0/b/weloveschool-212d8.appspot.com/o/post2.png?alt=media&token=a12f6549-4e78-4ef3-8a5d-a884c4a76653",
+      content:
+        "Việc học tiếng Hàn sớm cho trẻ có thể gây ra những tác hại không mong muốn cho sự phát triển của trẻ. Bài viết dưới đây sẽ giúp bạn hiểu rõ hơn về vấn đề này...",
+      like: 100,
+      dislike: 10,
+      comment: 20,
+      status: "Đã lưu",
+    },
   ],
   ungHo: [
-    { id: 1, title: "Ủng hộ 1" },
-    { id: 2, title: "Ủng hộ 2" },
+    {
+      id: 1,
+      avatar: "https://picsum.photos/200/300",
+      name: "Hồ Lê",
+      time: "1 giờ trước",
+      title:
+        "Mẹ không tiêm vắc xin trước khi mang thai, sinh con có sao không?",
+      banner:
+        "https://firebasestorage.googleapis.com/v0/b/weloveschool-212d8.appspot.com/o/post1.png?alt=media&token=5b330a42-e221-4f2b-9868-9e491ff59a08",
+      content:
+        "Việc lên kế hoạch tiêm chủng trước khi mang thai là rất cần thiết và quan trọng đối với mẹ bầu và thai nhi. Tuy nhiên, không tránh được trường hợp một số mẹ đã mang bầu trước khi tiêm chủng...",
+      like: 100,
+      dislike: 10,
+      comment: 20,
+      status: "Đã lưu",
+    },
+    {
+      id: 2,
+      avatar: "https://picsum.photos/200/301",
+      name: "Hà Phan",
+      time: "2 giờ trước",
+      title: "Tác hại của việc cho trẻ học tiếng Hàn sớm",
+      banner:
+        "https://firebasestorage.googleapis.com/v0/b/weloveschool-212d8.appspot.com/o/post2.png?alt=media&token=a12f6549-4e78-4ef3-8a5d-a884c4a76653",
+      content:
+        "Việc học tiếng Hàn sớm cho trẻ có thể gây ra những tác hại không mong muốn cho sự phát triển của trẻ. Bài viết dưới đây sẽ giúp bạn hiểu rõ hơn về vấn đề này...",
+      like: 100,
+      dislike: 10,
+      comment: 20,
+      status: "Đã lưu",
+    },
   ],
   khongUngHo: [
-    { id: 1, title: "Không ủng hộ 1" },
-    { id: 2, title: "Không ủng hộ 2" },
+    {
+      id: 2,
+      avatar: "https://picsum.photos/200/301",
+      name: "Hà Phan",
+      time: "2 giờ trước",
+      title: "Tác hại của việc cho trẻ học tiếng Hàn sớm",
+      banner:
+        "https://firebasestorage.googleapis.com/v0/b/weloveschool-212d8.appspot.com/o/post2.png?alt=media&token=a12f6549-4e78-4ef3-8a5d-a884c4a76653",
+      content:
+        "Việc học tiếng Hàn sớm cho trẻ có thể gây ra những tác hại không mong muốn cho sự phát triển của trẻ. Bài viết dưới đây sẽ giúp bạn hiểu rõ hơn về vấn đề này...",
+      like: 100,
+      dislike: 10,
+      comment: 20,
+      status: "Đã lưu",
+    },
   ],
 };
 
@@ -283,9 +381,78 @@ const getContent = (id) => {
       );
     case "bai-dang":
       return mockData.baiDang.map((post) => (
-        <div key={post.id} className="mb-4">
-          <h3 className="text-lg font-semibold">{post.title}</h3>
-          <p>{post.content}</p>
+        <div
+          key={post.id}
+          className="flex flex-col bg-white p-4 space-y-2 border-[1px] border-[#A7A7A7] pb-2 mb-2 rounded-lg"
+        >
+          <div className="flex justify-between">
+            <div className="flex items-center space-x-2">
+              <img src={post.avatar} alt="" className="w-8 h-8 rounded-full" />
+
+              <div>
+                <div>
+                  {" "}
+                  <p className="font-semibold text-[#7AC0F8]">
+                    {post.name}{" "}
+                    <span className="text-xs text-gray-400">{post.time}</span>
+                  </p>
+                  <span className="text-xs text-gray-400">TP. Hồ Chí Minh</span>
+                </div>
+              </div>
+            </div>
+            <div className="flex items-center space-x-2">
+              <button>
+                <svg
+                  width="18"
+                  height="4"
+                  viewBox="0 0 18 4"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <circle cx="2" cy="2" r="2" fill="#D9D9D9" />
+                  <circle cx="9" cy="2" r="2" fill="#D9D9D9" />
+                  <circle cx="16" cy="2" r="2" fill="#D9D9D9" />
+                </svg>
+              </button>
+            </div>
+          </div>
+          <div className="flex flex-col space-y-2">
+            <h1 className="text-xl font-semibold">{post.title}</h1>
+            <img
+              src={post.banner}
+              alt=""
+              className="w-full h-72
+                  object-cover rounded-lg"
+            />
+            <p className="text-gray-600">{post.content}</p>
+          </div>
+          <div className="flex justify-between">
+            <div className="flex items-center space-x-4">
+              <Counter />
+              <Comments comment={11} />
+            </div>
+            <div className="flex items-center space-x-4">
+              <button className="flex items-center space-x-2 text-[#A7A7A7]">
+                Xóa bình luận
+                <span className="ml-2">
+                  <svg
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      fillRule="evenodd"
+                      clipRule="evenodd"
+                      d="M16.5 4.478V4.705C17.799 4.82379 19.0927 4.99459 20.378 5.217C20.4751 5.23381 20.5678 5.26957 20.6511 5.32224C20.7343 5.3749 20.8063 5.44345 20.8631 5.52396C20.9198 5.60447 20.9601 5.69536 20.9817 5.79145C21.0033 5.88755 21.0058 5.98695 20.989 6.084C20.9722 6.18105 20.9364 6.27383 20.8838 6.35706C20.8311 6.44029 20.7626 6.51232 20.682 6.56906C20.6015 6.6258 20.5106 6.66612 20.4146 6.68773C20.3185 6.70934 20.2191 6.71181 20.122 6.695L19.913 6.66L18.908 19.73C18.8501 20.4836 18.5098 21.1875 17.9553 21.7011C17.4008 22.2146 16.6728 22.5 15.917 22.5H8.08401C7.3282 22.5 6.60026 22.2146 6.04573 21.7011C5.4912 21.1875 5.15095 20.4836 5.09301 19.73L4.08701 6.66L3.87801 6.695C3.78096 6.71181 3.68155 6.70934 3.58546 6.68773C3.48937 6.66612 3.39847 6.6258 3.31796 6.56906C3.15537 6.45448 3.04495 6.27999 3.01101 6.084C2.97706 5.888 3.02236 5.68655 3.13694 5.52396C3.25153 5.36136 3.42601 5.25095 3.62201 5.217C4.90727 4.99432 6.20099 4.82352 7.50001 4.705V4.478C7.50001 2.914 8.71301 1.578 10.316 1.527C11.4387 1.49107 12.5623 1.49107 13.685 1.527C15.288 1.578 16.5 2.914 16.5 4.478ZM10.364 3.026C11.4547 2.99112 12.5463 2.99112 13.637 3.026C14.39 3.05 15 3.684 15 4.478V4.591C13.0018 4.46965 10.9982 4.46965 9.00001 4.591V4.478C9.00001 3.684 9.60901 3.05 10.364 3.026ZM10.009 8.971C10.0052 8.87251 9.98203 8.77573 9.94082 8.68619C9.89961 8.59666 9.84117 8.51611 9.76883 8.44916C9.69649 8.38221 9.61168 8.33016 9.51923 8.29599C9.42678 8.26182 9.3285 8.24619 9.23001 8.25C9.13152 8.25381 9.03474 8.27698 8.9452 8.31819C8.85567 8.3594 8.77512 8.41784 8.70817 8.49018C8.64122 8.56251 8.58917 8.64733 8.555 8.73978C8.52083 8.83223 8.5052 8.93051 8.50901 9.029L8.85601 18.029C8.8637 18.2278 8.95004 18.4154 9.09604 18.5505C9.16833 18.6174 9.25309 18.6694 9.34548 18.7035C9.43787 18.7377 9.53608 18.7533 9.63451 18.7495C9.73293 18.7457 9.82964 18.7225 9.91912 18.6814C10.0086 18.6402 10.0891 18.5818 10.156 18.5095C10.2229 18.4372 10.2749 18.3524 10.3091 18.26C10.3432 18.1676 10.3588 18.0694 10.355 17.971L10.009 8.971ZM15.489 9.029C15.4963 8.92862 15.4834 8.82778 15.4509 8.73251C15.4185 8.63724 15.3672 8.54947 15.3001 8.47444C15.233 8.39941 15.1515 8.33865 15.0604 8.29579C14.9694 8.25292 14.8706 8.22882 14.77 8.22493C14.6694 8.22103 14.5691 8.23742 14.475 8.27312C14.3809 8.30882 14.2949 8.36309 14.2222 8.43271C14.1496 8.50233 14.0916 8.58586 14.0519 8.67834C14.0122 8.77082 13.9915 8.87035 13.991 8.971L13.644 17.971C13.6363 18.1699 13.708 18.3637 13.8432 18.5098C13.9784 18.6559 14.1661 18.7423 14.365 18.75C14.5639 18.7577 14.7577 18.6861 14.9038 18.5508C15.0499 18.4156 15.1363 18.2279 15.144 18.029L15.489 9.029Z"
+                      fill="#A8A8A8"
+                    />
+                  </svg>
+                </span>
+              </button>
+            </div>
+          </div>
         </div>
       ));
     case "binh-luan":
@@ -352,21 +519,254 @@ const getContent = (id) => {
       ));
     case "luu-tru":
       return mockData.luuTru.map((archive) => (
-        <div key={archive.id} className="mb-2">
-          <p>{archive.title}</p>
-        </div>
+        <>
+          <div className="flex flex-col">
+            <div
+              key={archive.id}
+              className="flex flex-col bg-white p-4 space-y-2 border-[1px] border-[#A7A7A7] pb-2 mb-2 rounded-lg"
+            >
+              <div className="flex justify-between">
+                <div className="flex items-center space-x-2">
+                  <img
+                    src={archive.avatar}
+                    alt=""
+                    className="w-8 h-8 rounded-full"
+                  />
+
+                  <div>
+                    <div>
+                      {" "}
+                      <p className="font-semibold text-[#7AC0F8]">
+                        {archive.name}{" "}
+                        <span className="text-xs text-gray-400">
+                          {archive.time}
+                        </span>
+                      </p>
+                      <span className="text-xs text-gray-400">
+                        TP. Hồ Chí Minh
+                      </span>
+                    </div>
+                  </div>
+                </div>
+                <div className="flex items-center space-x-2">
+                  <button>
+                    <svg
+                      width="18"
+                      height="4"
+                      viewBox="0 0 18 4"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <circle cx="2" cy="2" r="2" fill="#D9D9D9" />
+                      <circle cx="9" cy="2" r="2" fill="#D9D9D9" />
+                      <circle cx="16" cy="2" r="2" fill="#D9D9D9" />
+                    </svg>
+                  </button>
+                </div>
+              </div>
+              <div className="flex flex-col space-y-2">
+                <h1 className="text-xl font-semibold">{archive.title}</h1>
+                <img
+                  src={archive.banner}
+                  alt=""
+                  className="w-full h-72
+                  object-cover rounded-lg"
+                />
+                <p className="text-gray-600">{archive.content}</p>
+              </div>
+              <div className="flex justify-between">
+                <div className="flex items-center space-x-4">
+                  <Counter />
+                  <Comments comment={11} />
+                </div>
+                <div className="flex items-center space-x-4">
+                  <svg
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      fillRule="evenodd"
+                      clipRule="evenodd"
+                      d="M6.32 2.57701C10.094 2.13888 13.906 2.13888 17.68 2.57701C19.177 2.75101 20.25 4.03701 20.25 5.50701V21C20.2498 21.1277 20.217 21.2533 20.1547 21.3648C20.0925 21.4763 20.0027 21.57 19.8941 21.6371C19.7854 21.7042 19.6614 21.7425 19.5338 21.7482C19.4062 21.754 19.2793 21.7271 19.165 21.67L12 18.089L4.835 21.672C4.72058 21.7291 4.59345 21.7561 4.4657 21.7502C4.33795 21.7444 4.21381 21.7059 4.10509 21.6386C3.99637 21.5713 3.90667 21.4772 3.84452 21.3655C3.78237 21.2537 3.74983 21.1279 3.75 21V5.50701C3.75 4.03701 4.823 2.75101 6.32 2.57701Z"
+                      fill="#A8A8A8"
+                    />
+                  </svg>
+                </div>
+              </div>
+            </div>
+          </div>
+        </>
       ));
     case "ung-ho":
       return mockData.ungHo.map((support) => (
-        <div key={support.id} className="mb-2">
-          <p>{support.title}</p>
-        </div>
+        <>
+          <div className="flex flex-col">
+            <div
+              key={support.id}
+              className="flex flex-col bg-white p-4 space-y-2 border-[1px] border-[#A7A7A7] pb-2 mb-2 rounded-lg"
+            >
+              <div className="flex justify-between">
+                <div className="flex items-center space-x-2">
+                  <img
+                    src={support.avatar}
+                    alt=""
+                    className="w-8 h-8 rounded-full"
+                  />
+
+                  <div>
+                    <div>
+                      {" "}
+                      <p className="font-semibold text-[#7AC0F8]">
+                        {support.name}{" "}
+                        <span className="text-xs text-gray-400">
+                          {support.time}
+                        </span>
+                      </p>
+                      <span className="text-xs text-gray-400">
+                        TP. Hồ Chí Minh
+                      </span>
+                    </div>
+                  </div>
+                </div>
+                <div className="flex items-center space-x-2">
+                  <button>
+                    <svg
+                      width="18"
+                      height="4"
+                      viewBox="0 0 18 4"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <circle cx="2" cy="2" r="2" fill="#D9D9D9" />
+                      <circle cx="9" cy="2" r="2" fill="#D9D9D9" />
+                      <circle cx="16" cy="2" r="2" fill="#D9D9D9" />
+                    </svg>
+                  </button>
+                </div>
+              </div>
+              <div className="flex flex-col space-y-2">
+                <h1 className="text-xl font-semibold">{support.title}</h1>
+                <img
+                  src={support.banner}
+                  alt=""
+                  className="w-full h-72
+                  object-cover rounded-lg"
+                />
+                <p className="text-gray-600">{support.content}</p>
+              </div>
+              <div className="flex justify-between">
+                <div className="flex items-center space-x-4">
+                  <Counter />
+                  <Comments comment={11} />
+                </div>
+                <div className="flex items-center space-x-4">
+                  <span className="text-[#A8A8A8] cursor-pointer">Bỏ lưu</span>
+                  <svg
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      fillRule="evenodd"
+                      clipRule="evenodd"
+                      d="M6.32 2.57701C10.094 2.13888 13.906 2.13888 17.68 2.57701C19.177 2.75101 20.25 4.03701 20.25 5.50701V21C20.2498 21.1277 20.217 21.2533 20.1547 21.3648C20.0925 21.4763 20.0027 21.57 19.8941 21.6371C19.7854 21.7042 19.6614 21.7425 19.5338 21.7482C19.4062 21.754 19.2793 21.7271 19.165 21.67L12 18.089L4.835 21.672C4.72058 21.7291 4.59345 21.7561 4.4657 21.7502C4.33795 21.7444 4.21381 21.7059 4.10509 21.6386C3.99637 21.5713 3.90667 21.4772 3.84452 21.3655C3.78237 21.2537 3.74983 21.1279 3.75 21V5.50701C3.75 4.03701 4.823 2.75101 6.32 2.57701Z"
+                      fill="#A8A8A8"
+                    />
+                  </svg>
+                </div>
+              </div>
+            </div>
+          </div>
+        </>
       ));
     case "khong-ung-ho":
       return mockData.khongUngHo.map((oppose) => (
-        <div key={oppose.id} className="mb-2">
-          <p>{oppose.title}</p>
-        </div>
+        <>
+          <div className="flex flex-col">
+            <div
+              key={oppose.id}
+              className="flex flex-col bg-white p-4 space-y-2 border-[1px] border-[#A7A7A7] pb-2 mb-2 rounded-lg"
+            >
+              <div className="flex justify-between">
+                <div className="flex items-center space-x-2">
+                  <img
+                    src={oppose.avatar}
+                    alt=""
+                    className="w-8 h-8 rounded-full"
+                  />
+
+                  <div>
+                    <div>
+                      {" "}
+                      <p className="font-semibold text-[#7AC0F8]">
+                        {oppose.name}{" "}
+                        <span className="text-xs text-gray-400">
+                          {oppose.time}
+                        </span>
+                      </p>
+                      <span className="text-xs text-gray-400">
+                        TP. Hồ Chí Minh
+                      </span>
+                    </div>
+                  </div>
+                </div>
+                <div className="flex items-center space-x-2">
+                  <button>
+                    <svg
+                      width="18"
+                      height="4"
+                      viewBox="0 0 18 4"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <circle cx="2" cy="2" r="2" fill="#D9D9D9" />
+                      <circle cx="9" cy="2" r="2" fill="#D9D9D9" />
+                      <circle cx="16" cy="2" r="2" fill="#D9D9D9" />
+                    </svg>
+                  </button>
+                </div>
+              </div>
+              <div className="flex flex-col space-y-2">
+                <h1 className="text-xl font-semibold">{oppose.title}</h1>
+                <img
+                  src={oppose.banner}
+                  alt=""
+                  className="w-full h-72
+                  object-cover rounded-lg"
+                />
+                <p className="text-gray-600">{oppose.content}</p>
+              </div>
+              <div className="flex justify-between">
+                <div className="flex items-center space-x-4">
+                  <Counter />
+                  <Comments comment={11} />
+                </div>
+                <div className="flex items-center space-x-4">
+                  <span className="text-[#A8A8A8] cursor-pointer">Bỏ lưu</span>
+                  <svg
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      fillRule="evenodd"
+                      clipRule="evenodd"
+                      d="M6.32 2.57701C10.094 2.13888 13.906 2.13888 17.68 2.57701C19.177 2.75101 20.25 4.03701 20.25 5.50701V21C20.2498 21.1277 20.217 21.2533 20.1547 21.3648C20.0925 21.4763 20.0027 21.57 19.8941 21.6371C19.7854 21.7042 19.6614 21.7425 19.5338 21.7482C19.4062 21.754 19.2793 21.7271 19.165 21.67L12 18.089L4.835 21.672C4.72058 21.7291 4.59345 21.7561 4.4657 21.7502C4.33795 21.7444 4.21381 21.7059 4.10509 21.6386C3.99637 21.5713 3.90667 21.4772 3.84452 21.3655C3.78237 21.2537 3.74983 21.1279 3.75 21V5.50701C3.75 4.03701 4.823 2.75101 6.32 2.57701Z"
+                      fill="#A8A8A8"
+                    />
+                  </svg>
+                </div>
+              </div>
+            </div>
+          </div>
+        </>
       ));
     default:
       return null;

@@ -14,6 +14,7 @@ import RequireAuth from "./components/PrivateRoute.jsx";
 import Login from "./pages/login/Login.jsx";
 import Register from "./pages/register/Register.jsx";
 import Profile2 from "./pages/profile2/Profile.jsx";
+import Knowledge from "./pages/knowledge/Knowledge.jsx";
 
 const Feed = lazy(() => import("./pages/feed/Feed.jsx"));
 const Profile = lazy(() => import("./pages/profile/Profile.jsx"));
@@ -54,6 +55,10 @@ const router = createBrowserRouter([
           {
             path: "/u/profile/:section?",
             element: <Profile2 />, // Cập nhật để sử dụng Profile2 với các section
+          },
+          {
+            path: "/u/knowledge",
+            element: <Knowledge />,
           },
         ],
       },

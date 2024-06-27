@@ -15,6 +15,7 @@ import Login from "./pages/login/Login.jsx";
 import Register from "./pages/register/Register.jsx";
 import Profile2 from "./pages/profile2/Profile.jsx";
 import Knowledge from "./pages/knowledge/Knowledge.jsx";
+import Area from "./pages/area/Area.jsx";
 
 const Feed = lazy(() => import("./pages/feed/Feed.jsx"));
 const Profile = lazy(() => import("./pages/profile/Profile.jsx"));
@@ -59,6 +60,10 @@ const router = createBrowserRouter([
           {
             path: "/u/knowledge",
             element: <Knowledge />,
+          },
+          {
+            path: "/u/area",
+            element: <Area />,
           },
         ],
       },

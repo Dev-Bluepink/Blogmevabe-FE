@@ -3,7 +3,6 @@ import axios from "axios";
 import * as PropType from "prop-types";
 import { useState } from "react";
 import { Link } from "react-router-dom";
-import { L } from "../../dist/assets/index-Be8K0jJq";
 
 export function ThreadsSidebar() {
   const { data } = useQuery({
@@ -110,7 +109,9 @@ export function ThreadsSidebar() {
                     </defs>
                   </svg>
                 </span>
-                <h2 className="font-family-nunito">Khu vực</h2>
+                <Link to="/u/area">
+                  <h2 className="font-family-nunito">Khu vực</h2>
+                </Link>
               </div>
 
               <button className="text-xs text-[#7AC0F8]">All</button>

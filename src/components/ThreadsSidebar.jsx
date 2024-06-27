@@ -3,6 +3,7 @@ import axios from "axios";
 import * as PropType from "prop-types";
 import { useState } from "react";
 import { Link } from "react-router-dom";
+import { L } from "../../dist/assets/index-Be8K0jJq";
 
 export function ThreadsSidebar() {
   const { data } = useQuery({
@@ -142,7 +143,10 @@ export function ThreadsSidebar() {
               </defs>
             </svg>
           </span>
-          <h2 className="font-family-nunito">Kiến thức</h2>
+          <Link to="/u/knowledge">
+            {" "}
+            <h2 className="font-family-nunito">Kiến thức</h2>
+          </Link>
         </div>
         <SideBarComponent threadList={categories[1].subcategories} />
       </div>

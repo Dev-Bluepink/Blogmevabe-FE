@@ -270,8 +270,8 @@ const Navbar = ({ currentSection }) => {
           to={`/u/profile/${sec.id}`}
           className={
             sec.id === currentSection
-              ? "text-white hover:text-white bg-[#7AC0F8] py-2 min-w-[8rem] text-center rounded-2xl mb-2 md:mb-0"
-              : "text-black hover:text-blue-700 bg-[#F8F8F8] py-2 min-w-[8rem] text-center rounded-2xl mb-2 md:mb-0"
+              ? " text-[0.875rem] text-white hover:text-white bg-[#7AC0F8] py-1 min-w-[5rem] text-center rounded-2xl mb-2 md:mb-0"
+              : "text-[0.875rem] text-black hover:text-blue-700 bg-[#F8F8F8] py-1 min-w-[5rem] text-center rounded-2xl mb-2 md:mb-0"
           }
         >
           {sec.title}

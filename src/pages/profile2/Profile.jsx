@@ -212,7 +212,7 @@ export default function Profile2() {
       id="main-content"
       className="md:ml-56 flex w-full flex-col flex-1 p-2 space-y-3 rounded-lg p-0.5 bg-theme-cultured md:bg-white md:p-3"
     >
-      <div className="flex flex-col mx-0 space-y-2 md:space-y-3 flex-1 mt-2 md:mt-0 md:mx-48">
+      <div className="flex flex-col mx-0 space-y-2 md:space-y-3 flex-1 mt-2 md:mt-0 md:mx-2">
         <div className="flex flex-col md:flex-row">
           <div className="w-full md:w-2/3 p-2 md:p-2">
             <div

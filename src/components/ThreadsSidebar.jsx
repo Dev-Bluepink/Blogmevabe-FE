@@ -42,7 +42,10 @@ export function ThreadsSidebar() {
   return (
     <aside
       className="fixed
-     hidden flex-col w-56 bg-white border-r border-theme-silver-chalice md:flex"
+     hidden flex-col w-56 bg-[#F8F8F8]  m-3 
+      h-screen rounded-2xl
+     md:flex
+     "
     >
       <div className="flex flex-col m-5 space-y-4">
         <div className=" w-48 cursor-pointer">

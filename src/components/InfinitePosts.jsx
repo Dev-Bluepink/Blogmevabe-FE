@@ -150,7 +150,7 @@ export default function InfinitePostsLayout({
        md:ml-56
       flex w-full flex-col flex-1 p-2 space-y-3 rounded-lg p-0.5 bg-theme-cultured md:bg-white md:p-3"
     >
-      <div className="flex flex-col mx-0 space-y-2 md:space-y-3 flex-1 mt-2 md:mt-0 md:mx-48">
+      <div className="flex flex-col mx-0 space-y-2 md:space-y-3 flex-1 mt-2 md:mt-0 ">
         <div className="">
           <div className="flex flex-col md:flex-row">
             {/* Phần bên trái */}

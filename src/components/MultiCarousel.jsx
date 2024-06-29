@@ -73,7 +73,7 @@ const MultiCarousel = () => {
   }, [currentIndex]);
 
   return (
-    <div className="relative mx-auto p-4">
+    <div className="relative mx-auto ">
       <div className="relative w-full overflow-hidden">
         <div
           className="flex transition-transform duration-500"

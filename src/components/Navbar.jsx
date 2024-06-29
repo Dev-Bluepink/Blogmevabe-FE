@@ -147,6 +147,17 @@ export function Navbar() {
             </div>
           </Link>
 
+          {/* link user  */}
+          <Link
+            to="/u/profile/thong-tin"
+            className="hidden font-semibold cursor-pointer md:flex group bg-[#7AC0F8]
+          px-4 p-2 rounded-2xl hover:bg-[#F8BBD9]  hover:text-white font-family-mulish
+          "
+          >
+            {/* svg user */}
+            <span className="font-family-mulish text-white">Users</span>
+          </Link>
+
           <Link
             to="/login"
             className=" hidden font-semibold cursor-pointer md:flex group bg-[#7AC0F8]

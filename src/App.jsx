@@ -17,6 +17,7 @@ import Profile2 from "./pages/profile2/Profile.jsx";
 import Knowledge from "./pages/knowledge/Knowledge.jsx";
 import Area from "./pages/area/Area.jsx";
 import Community from "./pages/community/Community.jsx";
+// import ListPost from "./pages/listPost/ListPost.jsx";
 
 const Feed = lazy(() => import("./pages/feed/Feed.jsx"));
 const Profile = lazy(() => import("./pages/profile/Profile.jsx"));
@@ -25,6 +26,7 @@ const Inbox = lazy(() => import("./pages/inbox/Inbox.jsx"));
 const SavedPosts = lazy(() => import("./pages/saved/SavedPosts.jsx"));
 const SubThread = lazy(() => import("./pages/thread/SubThread.jsx"));
 const Location = lazy(() => import("./pages/location/Location.jsx"));
+const ListPost = lazy(() => import("./pages/listPost/ListPost.jsx"));
 const Notification = lazy(() =>
   import("./pages/notification/Notification.jsx")
 );
@@ -74,6 +76,10 @@ const router = createBrowserRouter([
           {
             path: "/community",
             element: <Community />,
+          },
+          {
+            path: "/list-post",
+            element: <ListPost />,
           },
         ],
       },

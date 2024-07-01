@@ -204,14 +204,14 @@ export function AppLogo({ forBanner = false, children }) {
         className="object-cover w-10 h-10"
         alt="threadit-logo"
       />
-      <span
+      {/* <span
         className="hidden md:block absolute w-2 h-2 bg-theme-orange rounded-full
                     right-[1.4rem] top-[0.2rem] z-20 group-hover:animate-bounce"
       ></span>
       <span className="hidden md:block absolute w-2 h-2 bg-white rounded-full right-[1.4rem] top-[0.2rem] z-10"></span>
       <h1 className="hidden font-mono text-3xl font-bold tracking-tight md:block">
         Mebe
-      </h1>
+      </h1> */}
       {children}
     </Link>
   );

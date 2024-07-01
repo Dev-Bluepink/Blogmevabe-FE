@@ -117,7 +117,9 @@ export function ThreadsSidebar() {
                 </Link>
               </div>
 
-              <button className="text-xs text-[#7AC0F8]">All</button>
+              <Link to="/location">
+                <button className="text-xs text-[#7AC0F8]">All</button>
+              </Link>
             </div>
             <SideBarComponent threadList={categories[0].subcategories} />
           </div>

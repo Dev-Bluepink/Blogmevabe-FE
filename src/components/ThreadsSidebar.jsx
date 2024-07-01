@@ -40,13 +40,7 @@ export function ThreadsSidebar() {
 
   console.log("categories[0].subcategories", categories[0].subcategories);
   return (
-    <aside
-      className="fixed
-     hidden flex-col w-56 bg-[#F8F8F8]  m-3 
-      h-screen rounded-2xl
-     md:flex
-     "
-    >
+    <aside className="fixed hidden flex-col w-56 m-3 border border-theme-silver-chalice bg-white h-screen rounded-2xl md:flex overflow-y-auto">
       <div className="flex flex-col m-5 space-y-4">
         <div className=" w-48 cursor-pointer">
           <button
@@ -156,11 +150,8 @@ export function ThreadsSidebar() {
         </div>
         <SideBarComponent threadList={categories[1].subcategories} />
       </div>
-      <span className="mx-5 border border-theme-silver-chalice"></span>
-      <div className="flex flex-col m-5 space-y-4">
-        <div className=" w-48 cursor-pointer font-family-mulish"></div>
-        <SideBarComponent threadList={data?.popular} />
-      </div>
+      {/* <span className="mx-5 border border-theme-silver-chalice"></span> */}
+
       <span className="mx-5 border border-theme-silver-chalice"></span>
       <div className="flex flex-col m-5 space-y-4 font-family-mulish">
         <div className=" w-48 cursor-pointer">

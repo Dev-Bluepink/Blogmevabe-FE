@@ -157,37 +157,6 @@ export default function InfinitePostsLayout({
             <div className="flex flex-col md:flex-row">
               {/* Phần bên trái */}
               <div className="w-full md:w-2/3  p-2 md:p-2">
-                {/* <div className="overflow-x-auto">
-                <div className="flex space-x-4">
-                  {news.map((item, index) => (
-                    <div key={index} className="w-40 flex-shrink-0">
-                      <div
-                        className="h-64 bg-cover bg-center rounded-lg"
-                        style={{
-                          backgroundImage: `url(${item.banner})`,
-                          width: "150px",
-                          height: "150px",
-                        }}
-                      >
-                        <div className="p-2">
-                          <h1 className="text-xl font-bold text-white">
-                            {item.title}
-                          </h1>
-
-                          <div className="flex items-center mt-4">
-                            <img
-                              src={item.avatar}
-                              alt=""
-                              className="w-8 h-8 rounded-full"
-                            />
-                            <p className="ml-2 text-white">{item.name}</p>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  ))}
-                </div>
-              </div> */}
                 <MultiCarousel />
                 <div
                   className="text-white mt-4 border-b-[1px] border-[#A7A7A7] pb-2 mb-2"
@@ -199,7 +168,6 @@ export default function InfinitePostsLayout({
                   {" "}
                   Post mới nhất
                 </div>
-
                 <div className="flex flex-col space-y-4 font-family-mulish">
                   {posts.map((post) => (
                     <div
@@ -213,29 +181,21 @@ export default function InfinitePostsLayout({
                             alt=""
                             className="w-8 h-8 rounded-full"
                           />
-
                           <div>
-                            <div>
-                              {" "}
-                              <p className="font-semibold text-[#7AC0F8]">
-                                {post.name}{" "}
-                                <span className="text-xs text-gray-400">
-                                  {post.time}
-                                </span>
-                              </p>
+                            <p className="font-semibold text-[#7AC0F8]">
+                              {post.name}{" "}
                               <span className="text-xs text-gray-400">
-                                TP. Hồ Chí Minh
+                                {post.time}
                               </span>
-                            </div>
+                            </p>
+                            <span className="text-xs text-gray-400">
+                              TP. Hồ Chí Minh
+                            </span>
                           </div>
                         </div>
                         <div className="flex items-center space-x-2">
                           <Link to={"/bai-dang"}>
-                            <button
-                              className="flex flex-end space-x-2 bg-[#A9D4F8] px-6 py-1 rounded-3xl text-white
-                        hover:bg-[#F8BBD9] hover:text-white
-                        "
-                            >
+                            <button className="flex flex-end space-x-2 bg-[#A9D4F8] px-6 py-1 rounded-3xl text-white hover:bg-[#F8BBD9] hover:text-white">
                               Tham gia
                             </button>
                           </Link>
@@ -266,8 +226,6 @@ export default function InfinitePostsLayout({
                                 <div className="relative shadow-lg">
                                   <div className="absolute -top-2 left-1/2 transform -translate-x-1/2 w-0 h-0 border-l-8 border-r-8 border-b-8 border-transparent shadow-lg border-b-white z-10"></div>
                                   <div className="p-2 bg-white border rounded ">
-                                    {/* Báo cáo , chia sẻ
-                                     */}
                                     <div className="flex flex-col space-y-2 w-14">
                                       <button className="text-left w-full">
                                         Báo cáo
@@ -288,7 +246,7 @@ export default function InfinitePostsLayout({
                         <img
                           src={post.banner}
                           alt=""
-                          className="w-full  object-cover rounded-lg"
+                          className="w-full object-cover rounded-lg"
                         />
                         <p className="text-gray-600">{post.content}</p>
                       </div>
@@ -305,12 +263,9 @@ export default function InfinitePostsLayout({
                   ))}
                 </div>
               </div>
-
               {/* Phần bên phải */}
               <div className="w-full md:w-1/3 px-4 hidden md:block">
-                {/* <SideBarComponentOne threadList={categories[1].subcategories} />
-              <SideBarComponentTwo threadList={categories[1].subcategories} /> */}
-                <div className="flex flex-col space-y-2 list-none  p-4 rounded-lg ">
+                <div className="flex flex-col space-y-2 list-none p-4 rounded-lg">
                   <img
                     src="https://firebasestorage.googleapis.com/v0/b/weloveschool-212d8.appspot.com/o/image%2012.png?alt=media&token=13f610b2-28c8-451e-95bf-e5a08ea3a00f"
                     alt=""

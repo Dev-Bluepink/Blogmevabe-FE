@@ -1,9 +1,9 @@
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { Suspense, lazy } from "react";
 import {
-  Navigate,
   RouterProvider,
   createBrowserRouter,
+  BrowserRouter,
 } from "react-router-dom";
 import AppLayout from "./components/AppLayout.jsx";
 import { AuthProvider } from "./components/AuthContext.jsx";
@@ -18,7 +18,6 @@ import Knowledge from "./pages/knowledge/Knowledge.jsx";
 import Area from "./pages/area/Area.jsx";
 import Community from "./pages/community/Community.jsx";
 import BottomMenu from "./components/BottomMenu.jsx";
-// import ListPost from "./pages/listPost/ListPost.jsx";
 
 const Feed = lazy(() => import("./pages/feed/Feed.jsx"));
 const Profile = lazy(() => import("./pages/profile/Profile.jsx"));
@@ -129,9 +128,12 @@ export function App() {
     <QueryClientProvider client={queryClient}>
       <AuthProvider>
         <Suspense fallback={<Loader />}>
-          <RouterProvider router={router} fallbackElement={<Loader />} />
-          {/* bottom  chỉ hiển thị khi ở màn hình điện thoại */}
-          <BottomMenu className="fixed bottom-0 left-0 right-0 bg-gray-800 text-white"></BottomMenu>
+          <RouterProvider router={router} fallbackElement={<Loader />}>
+            <BrowserRouter>
+              {/* bottom  chỉ hiển thị khi ở màn hình điện thoại */}
+              <BottomMenu className="fixed bottom-0 left-0 right-0 bg-gray-800 text-white"></BottomMenu>
+            </BrowserRouter>
+          </RouterProvider>
         </Suspense>
       </AuthProvider>
     </QueryClientProvider>

@@ -106,9 +106,8 @@ export function ThreadsSidebar() {
                     </defs>
                   </svg>
                 </span>
-                <Link to="/u/area">
-                  <h2 className="font-family-nunito">Khu vực</h2>
-                </Link>
+
+                <h2 className="font-family-nunito">Khu vực</h2>
               </div>
 
               <Link to="/location">

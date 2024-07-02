@@ -245,12 +245,12 @@ export default function Location() {
                 type="text"
                 value={searchTerm}
                 onChange={handleSearchChange}
-                placeholder="Tìm kiếm..."
+                placeholder="Tỉnh thành"
                 className="flex items-center py-1.5 pl-2 md:p-1.5 space-x-14  rounded-3xl bg-neutral-100 relative md:w-96 md:ml-10 md:mr-5 md:pl-5 md:pr-5 "
               />
               <button
                 onClick={handleSearch}
-                className="px-7 py-1 bg-[#F8BBD9] text-white rounded-3xl "
+                className="px-7 py-1 bg-[#F8BBD9] text-white rounded-3xl hover:bg-[#F48FB1]"
               >
                 Tìm kiếm
               </button>

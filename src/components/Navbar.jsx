@@ -4,6 +4,7 @@ import { useRef, useState } from "react";
 import { Link, NavLink, useLocation, useNavigate } from "react-router-dom";
 import avatar from "../assets/avatar.png";
 import axios from "axios";
+import donghanhmevabe from "../assets/logodonghanhmevabe.png";
 import threads from "../assets/threads.png";
 import AuthConsumer from "../components/AuthContext.jsx";
 import Svg from "../components/Svg.jsx";
@@ -21,7 +22,15 @@ export function Navbar() {
       className="sticky top-0 z-50 flex justify-between items-center mx-1 h-16 md:p-5 border-b border-neutral-200
     bg-white shadow-md"
     >
-      <AppLogo />
+      {/* <AppLogo /> */}
+      <div className="hidden relative flex-col justify-center items-center space-y-5 rounded-md cursor-pointer md:flex group">
+        <img
+          src={donghanhmevabe}
+          alt="threadit-logo"
+          className="object-cover w-30 h-10"
+        />
+      </div>
+
       <div className="flex items-center md:space-x-6">
         <ThreadSearch callBackFunc={(threadUrl) => navigate(threadUrl)} />
       </div>
@@ -150,22 +159,22 @@ export function Navbar() {
           {/* link user  */}
           <Link
             to="/u/profile/thong-tin"
-            className="hidden font-semibold cursor-pointer md:flex group bg-[#7AC0F8]
-          px-4 p-2 rounded-2xl hover:bg-[#F8BBD9]  hover:text-white font-family-mulish
-          "
+            //   className="hidden font-semibold cursor-pointer md:flex group bg-[#7AC0F8]
+            // px-4 p-2 rounded-2xl hover:bg-[#F8BBD9]  hover:text-white font-family-mulish
+            // "
           >
             {/* svg user */}
-            <span className="font-family-mulish text-white">Users</span>
+            <img src={avatar} alt="avatar" className="w-8 h-8" />
           </Link>
 
-          <Link
+          {/* <Link
             to="/login"
             className=" hidden font-semibold cursor-pointer md:flex group bg-[#7AC0F8]
           px-4 p-2 rounded-2xl hover:bg-[#F8BBD9]  hover:text-white font-family-mulish 
           "
           >
             <span className="font-family-mulish text-white"> Đăng Nhập</span>
-          </Link>
+          </Link> */}
         </div>
       )}
     </nav>
@@ -180,16 +189,12 @@ export function AppLogo({ forBanner = false, children }) {
   if (forBanner) {
     return (
       <div className="hidden relative flex-col justify-center items-center space-y-5 rounded-md cursor-pointer md:flex group">
-        <img src={threads} alt="threadit-logo" className="object-cover" />
-        <span
-          className="hidden md:block absolute w-4 h-4
-                    bg-theme-orange rounded-full bottom-[5.9rem] z-20 right-[8rem] group-hover:animate-bounce"
-        ></span>
-        <span className="hidden md:block absolute w-4 h-4 bg-theme-cultured rounded-full bottom-[5.9rem] z-10 right-[8rem]"></span>
-        <h1 className="font-mono text-6xl font-bold tracking-tight">Mebe</h1>
-        <p className="text-lg font-semibold">
-          The Internet Home Place, where many communities reside
-        </p>
+        <img
+          src={donghanhmevabe}
+          alt="threadit-logo"
+          className="object-cover"
+        />
+
         {children}
       </div>
     );
@@ -249,7 +254,7 @@ export function ThreadSearch({ callBackFunc, forPost = false }) {
     : [];
   return (
     <div
-      className="flex items-center py-1.5 pl-2 md:p-1.5 space-x-14  rounded-2xl bg-neutral-100 relative md:w-96 md:ml-10 md:mr-5 md:pl-5 md:pr-5  "
+      className="flex items-center ml-11 py-1.5 pl-2 md:p-1.5 space-x-14  rounded-2xl bg-neutral-100 relative md:w-[50rem]"
       ref={searchRef}
     >
       <input
@@ -258,7 +263,7 @@ export function ThreadSearch({ callBackFunc, forPost = false }) {
         type="search"
         name="search"
         id="search"
-        className="py-0.5 w-48 md:w-full bg-neutral-100 focus:outline-none md:pr-20"
+        className="py-0.5 w-72  md:w-full bg-neutral-100 focus:outline-none "
         placeholder="Tìm thông tin"
       />
       <Svg type="search" className="w-6 h-6" />

@@ -1,0 +1,1 @@
+import{A as a,u as o,a as r,r as n,j as i}from"./index-DA42Z36Y.js";import{I as u}from"./InfinitePosts-DlwE0JDL.js";function c(){const{isAuthenticated:t}=a(),s=o(),{feedName:e}=r();return e=="home"&&!t?s("/login"):(n.useEffect(()=>{document.title=`Mebe | ${e}`},[e]),i.jsx(u,{linkUrl:`posts/${e||"all"}`,apiQueryKey:e}))}export{c as Feed,c as default};

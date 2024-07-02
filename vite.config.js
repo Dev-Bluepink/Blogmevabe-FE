@@ -17,6 +17,5 @@ export default defineConfig({
         ws: true,
       },
     },
-    historyApiFallback: true, // Thêm cấu hình này để xử lý các yêu cầu phía máy khách
   },
 });

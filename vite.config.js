@@ -1,11 +1,15 @@
 import { defineConfig } from "vite";
 import react from "@vitejs/plugin-react-swc";
 
-// https://vitejs.dev/config/
 export default defineConfig({
   plugins: [react()],
   build: {
     outDir: "dist",
+    rollupOptions: {
+      output: {
+        manualChunks: undefined,
+      },
+    },
   },
   server: {
     host: true,
@@ -17,5 +21,6 @@ export default defineConfig({
         ws: true,
       },
     },
+    historyApiFallback: true, // Thêm dòng này để xử lý các yêu cầu trang không tồn tại
   },
 });

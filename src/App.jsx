@@ -1,10 +1,6 @@
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { Suspense, lazy } from "react";
-import {
-  RouterProvider,
-  createBrowserRouter,
-  BrowserRouter,
-} from "react-router-dom";
+import { RouterProvider, createBrowserRouter } from "react-router-dom";
 import AppLayout from "./components/AppLayout.jsx";
 import { AuthProvider } from "./components/AuthContext.jsx";
 import Error from "./components/Error.jsx";
@@ -129,10 +125,8 @@ export function App() {
       <AuthProvider>
         <Suspense fallback={<Loader />}>
           <RouterProvider router={router} fallbackElement={<Loader />}>
-            <BrowserRouter>
-              {/* bottom  chỉ hiển thị khi ở màn hình điện thoại */}
-              <BottomMenu className="fixed bottom-0 left-0 right-0 bg-gray-800 text-white"></BottomMenu>
-            </BrowserRouter>
+            {/* bottom chỉ hiển thị khi ở màn hình điện thoại */}
+            <BottomMenu className="fixed bottom-0 left-0 right-0 bg-gray-800 text-white md:hidden"></BottomMenu>
           </RouterProvider>
         </Suspense>
       </AuthProvider>

@@ -38,7 +38,7 @@ const mockData = {
       comment: 20,
     },
   ],
-  binhLuan: [
+  chuDe: [
     {
       id: 1,
       avatar: "https://i.pravatar.cc/300",
@@ -198,7 +198,7 @@ const mockData = {
 const sections = [
   { id: "thong-tin", title: "Thông tin" },
   { id: "bai-dang", title: "Bài đăng" },
-  { id: "binh-luan", title: "Bình luận" },
+  { id: "chu-de", title: "Chủ đề" },
   { id: "luu-tru", title: "Lưu trữ" },
   { id: "ung-ho", title: "Ủng hộ" },
   { id: "khong-ung-ho", title: "Không ủng hộ" },
@@ -455,49 +455,39 @@ const getContent = (id) => {
           </div>
         </div>
       ));
-    case "binh-luan":
-      return mockData.binhLuan.map((comment) => (
+    case "chu-de":
+      return mockData.chuDe.map((comment) => (
         <>
           <div className="flex flex-col">
-            <div key={comment.id} className=" mb-2 border p-2 rounded-lg px-8">
+            <div
+              key={comment.id}
+              className=" mb-2 border p-2 rounded-lg px-8 py-4"
+            >
               <div className="flex flex-row justify-between">
-                <div className="flex flex-row items-center justify-center space-x-4 mb-2">
-                  <img
-                    src="https://firebasestorage.googleapis.com/v0/b/weloveschool-212d8.appspot.com/o/asd1.png?alt=media&token=5229bcab-5620-4393-aabb-b52eb3ba7369"
-                    alt=""
-                    className="w-10 h-10 rounded-full "
-                  />
-                  <div className="flex flex-col">
-                    <div className="flex flex-row justify-center items-center space-x-4">
-                      <h3 className="text-lg font-semibold text-center text-[#7AC0F8]">
-                        Hà Phạm
-                      </h3>
-                      <span className=" text-[#A7A7A7]">7 giờ trước</span>
-                    </div>
-                    <div className="flex flex-row items-center space-x-4 ">
-                      <span className="text-[#A7A7A7]">Đồng Nai</span>
-                    </div>
+                <span className="text-[#A7A7A7] cursor-pointer">
+                  TP. Hồ Chí Minh / Mang thai
+                </span>
+                <div className="flex items-center space-x-4">
+                  <div className="flex items-center space-x-2 text-[#A7A7A7]">
+                    Tham gia: <span>56</span>
+                  </div>
+                  <div className="flex items-center space-x-2 text-[#A7A7A7]">
+                    Số bài đăng: <span> 10</span>
                   </div>
                 </div>
-                <span className="text-[#A7A7A7] cursor-pointer">
-                  Mang thai / 3 tháng đầu thai kì
-                </span>
               </div>
-              <div className="flex flex-row items-center space-x-4 mb-2">
-                {comment.content}
-              </div>
+
               <div className="flex justify-between">
-                <div className="flex items-center space-x-4">
-                  <Counter />
-                  <Comments comment={11} />
+                <div className="flex items-center space-x-2 text-xl font-semibold">
+                  3 tháng đầu thai kì
                 </div>
                 <div className="flex items-center space-x-4">
-                  <button className="flex items-center space-x-2 text-[#A7A7A7]">
-                    Xóa bình luận
+                  <button className="flex items-center space-x-2 text-[#000000] border border-[#A7A7A7] px-4 py-1 rounded-2xl">
+                    Xóa chủ đề
                     <span className="ml-2">
                       <svg
-                        width="24"
-                        height="24"
+                        width="20"
+                        height="20"
                         viewBox="0 0 24 24"
                         fill="none"
                         xmlns="http://www.w3.org/2000/svg"
@@ -506,7 +496,7 @@ const getContent = (id) => {
                           fillRule="evenodd"
                           clipRule="evenodd"
                           d="M16.5 4.478V4.705C17.799 4.82379 19.0927 4.99459 20.378 5.217C20.4751 5.23381 20.5678 5.26957 20.6511 5.32224C20.7343 5.3749 20.8063 5.44345 20.8631 5.52396C20.9198 5.60447 20.9601 5.69536 20.9817 5.79145C21.0033 5.88755 21.0058 5.98695 20.989 6.084C20.9722 6.18105 20.9364 6.27383 20.8838 6.35706C20.8311 6.44029 20.7626 6.51232 20.682 6.56906C20.6015 6.6258 20.5106 6.66612 20.4146 6.68773C20.3185 6.70934 20.2191 6.71181 20.122 6.695L19.913 6.66L18.908 19.73C18.8501 20.4836 18.5098 21.1875 17.9553 21.7011C17.4008 22.2146 16.6728 22.5 15.917 22.5H8.08401C7.3282 22.5 6.60026 22.2146 6.04573 21.7011C5.4912 21.1875 5.15095 20.4836 5.09301 19.73L4.08701 6.66L3.87801 6.695C3.78096 6.71181 3.68155 6.70934 3.58546 6.68773C3.48937 6.66612 3.39847 6.6258 3.31796 6.56906C3.15537 6.45448 3.04495 6.27999 3.01101 6.084C2.97706 5.888 3.02236 5.68655 3.13694 5.52396C3.25153 5.36136 3.42601 5.25095 3.62201 5.217C4.90727 4.99432 6.20099 4.82352 7.50001 4.705V4.478C7.50001 2.914 8.71301 1.578 10.316 1.527C11.4387 1.49107 12.5623 1.49107 13.685 1.527C15.288 1.578 16.5 2.914 16.5 4.478ZM10.364 3.026C11.4547 2.99112 12.5463 2.99112 13.637 3.026C14.39 3.05 15 3.684 15 4.478V4.591C13.0018 4.46965 10.9982 4.46965 9.00001 4.591V4.478C9.00001 3.684 9.60901 3.05 10.364 3.026ZM10.009 8.971C10.0052 8.87251 9.98203 8.77573 9.94082 8.68619C9.89961 8.59666 9.84117 8.51611 9.76883 8.44916C9.69649 8.38221 9.61168 8.33016 9.51923 8.29599C9.42678 8.26182 9.3285 8.24619 9.23001 8.25C9.13152 8.25381 9.03474 8.27698 8.9452 8.31819C8.85567 8.3594 8.77512 8.41784 8.70817 8.49018C8.64122 8.56251 8.58917 8.64733 8.555 8.73978C8.52083 8.83223 8.5052 8.93051 8.50901 9.029L8.85601 18.029C8.8637 18.2278 8.95004 18.4154 9.09604 18.5505C9.16833 18.6174 9.25309 18.6694 9.34548 18.7035C9.43787 18.7377 9.53608 18.7533 9.63451 18.7495C9.73293 18.7457 9.82964 18.7225 9.91912 18.6814C10.0086 18.6402 10.0891 18.5818 10.156 18.5095C10.2229 18.4372 10.2749 18.3524 10.3091 18.26C10.3432 18.1676 10.3588 18.0694 10.355 17.971L10.009 8.971ZM15.489 9.029C15.4963 8.92862 15.4834 8.82778 15.4509 8.73251C15.4185 8.63724 15.3672 8.54947 15.3001 8.47444C15.233 8.39941 15.1515 8.33865 15.0604 8.29579C14.9694 8.25292 14.8706 8.22882 14.77 8.22493C14.6694 8.22103 14.5691 8.23742 14.475 8.27312C14.3809 8.30882 14.2949 8.36309 14.2222 8.43271C14.1496 8.50233 14.0916 8.58586 14.0519 8.67834C14.0122 8.77082 13.9915 8.87035 13.991 8.971L13.644 17.971C13.6363 18.1699 13.708 18.3637 13.8432 18.5098C13.9784 18.6559 14.1661 18.7423 14.365 18.75C14.5639 18.7577 14.7577 18.6861 14.9038 18.5508C15.0499 18.4156 15.1363 18.2279 15.144 18.029L15.489 9.029Z"
-                          fill="#A8A8A8"
+                          fill="#000000"
                         />
                       </svg>
                     </span>

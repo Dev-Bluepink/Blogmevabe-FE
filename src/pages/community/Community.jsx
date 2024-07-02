@@ -96,7 +96,7 @@ export default function Community() {
                     type="text"
                     name="category"
                     id="category"
-                    className="p-2 rounded-lg border border-gray-300 w-full"
+                    className="p-2 rounded-3xl border border-gray-300 bg-[#EBEBEB]"
                     placeholder="Tìm chủ đề"
                   />
                 </div>
@@ -109,7 +109,7 @@ export default function Community() {
                   </label>
                   <input
                     type="text"
-                    className="p-2 rounded-lg border border-gray-300 w-full"
+                    className="p-2 rounded-3xl border border-gray-300 bg-[#EBEBEB]"
                     placeholder="Tìm chủ đề"
                   />
                 </div>

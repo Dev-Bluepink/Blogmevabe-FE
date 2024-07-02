@@ -140,7 +140,7 @@ export default function Knowledge() {
                     name="category"
                     id="category"
                     className="p-2 rounded-3xl border border-gray-300 bg-[#EBEBEB]"
-                    placeholder="Tìm chủ đề"
+                    placeholder="Category"
                   />
                 </div>
                 <div className="flex flex-row items-center space-x-2">
@@ -152,8 +152,10 @@ export default function Knowledge() {
                   </label>
                   <input
                     type="text"
-                    className="p-2 rounded-lg border border-gray-300 w-full"
-                    placeholder="Tìm chủ đề"
+                    name="category"
+                    id="category"
+                    className="p-2 rounded-3xl border border-gray-300 bg-[#EBEBEB]"
+                    placeholder="Thread"
                   />
                 </div>
                 <div className="flex flex-row items-center space-x-2 justify-end w-full">

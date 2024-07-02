@@ -254,7 +254,10 @@ export function ThreadSearch({ callBackFunc, forPost = false }) {
     : [];
   return (
     <div
-      className="flex flex-row items-center md:flex-row md:items-center ml-4 md:py-1.5 pl-2 md:p-1.5 space-y-4 md:space-y-0 md:space-x-14 rounded-2xl bg-neutral-100 relative md:w-[50rem]"
+      className="flex flex-row 
+      hidden
+      md:flex
+       items-center md:flex-row md:items-center ml-4 py-1.5 pl-2 md:p-1.5 space-y-4 md:space-y-0 md:space-x-14 rounded-2xl bg-neutral-100 relative md:w-[50rem]"
       ref={searchRef}
     >
       <input
@@ -263,7 +266,7 @@ export function ThreadSearch({ callBackFunc, forPost = false }) {
         type="search"
         name="search"
         id="search"
-        className="py-0.5 hidden md:w-full bg-neutral-100 focus:outline-none "
+        className="py-0.5 w-72 md:w-full bg-neutral-100 focus:outline-none "
         placeholder="Tìm thông tin"
       />
       <Svg type="search" className="w-6 h-6" />

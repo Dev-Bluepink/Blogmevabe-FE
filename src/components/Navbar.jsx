@@ -119,7 +119,7 @@ export function Navbar() {
         {/* logo */}
         <Link
           to="/"
-          className="flex relative items-center space-x-3 cursor-pointer group"
+          className="flex relative items-center space-x-3 cursor-pointer group  md:hidden"
         >
           <img
             src={donghanhmevabe}

@@ -298,17 +298,27 @@ export default function InfinitePostsLayout({
 
 function Counter() {
   const [number, setNumber] = useState(0);
+  const [isLiked, setIsLiked] = useState(null);
 
-  const increaseNumber = () => setNumber((prevNumber) => prevNumber + 1);
-  const decreaseNumber = () => setNumber((prevNumber) => prevNumber - 1);
+  const increaseNumber = () => {
+    setNumber((prevNumber) => prevNumber + 1);
+    setIsLiked(true);
+  };
 
-  const activeLike = number == 0 ? "#7AC0F8" : "#A8A8A8";
-  const activeDislike = number == 0 ? "#F8ADD2" : "#A8A8A8";
+  const decreaseNumber = () => {
+    setNumber((prevNumber) => prevNumber - 1);
+    setIsLiked(false);
+  };
+
+  const activeLike =
+    isLiked === null ? "#A8A8A8" : isLiked ? "#7AC0F8" : "#A8A8A8";
+  const activeDislike =
+    isLiked === null ? "#A8A8A8" : !isLiked ? "#F8ADD2" : "#A8A8A8";
+
   return (
     <div className="flex justify-between bg-[#F5F5F5] rounded-2xl px-2">
       <button
-        className="flex  items-center bg-[#CCEDFF]
-         rounded-2xl px-2  active:bg-[#CCEDFF] active:text-white"
+        className="flex items-center bg-[#E3E3E3] rounded-2xl px-2 active:bg-[#CCEDFF] active:text-white"
         onClick={increaseNumber}
       >
         <svg
@@ -326,7 +336,7 @@ function Counter() {
       </button>
       <span className="flex justify-center items-center mx-2">{number}</span>
       <button
-        className="flex justify-center items-center  bg-[#FFDAEC] rounded-2xl px-2"
+        className="flex justify-center items-center bg-[#E3E3E3] rounded-2xl px-2"
         onClick={decreaseNumber}
       >
         <svg

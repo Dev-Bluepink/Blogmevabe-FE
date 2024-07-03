@@ -467,8 +467,8 @@ const getContent = (id) => {
                 <span className="text-[#A7A7A7] cursor-pointer">
                   TP. Hồ Chí Minh / Mang thai
                 </span>
-                <div className="flex items-center space-x-4">
-                  <div className="flex items-center space-x-2 text-[#A7A7A7]">
+                <div className="flex items-center space-x-4 hidden md:flex">
+                  <div className="flex items-center space-x-2 text-[#A7A7A7] ">
                     Tham gia: <span>56</span>
                   </div>
                   <div className="flex items-center space-x-2 text-[#A7A7A7]">
@@ -483,7 +483,7 @@ const getContent = (id) => {
                 </div>
                 <div className="flex items-center space-x-4">
                   <button className="flex items-center space-x-2 text-[#000000] border border-[#A7A7A7] px-4 py-1 rounded-2xl">
-                    Xóa chủ đề
+                    <span className=" hidden md:flex">Xóa chủ đề</span>
                     <span className="ml-2">
                       <svg
                         width="20"

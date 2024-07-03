@@ -226,7 +226,7 @@ export function AppLogo({ forBanner = false, children }) {
       ></span>
       <span className="hidden md:block absolute w-2 h-2 bg-white rounded-full right-[1.4rem] top-[0.2rem] z-10"></span>
       <h1 className="hidden font-mono text-3xl font-bold tracking-tight md:block">
-        Mebe
+        Donghanhcungcon
       </h1> */}
       {children}
     </Link>

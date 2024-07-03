@@ -22,10 +22,10 @@ export function Inbox() {
     if (curChat) {
       document.title = `Inbox | ${curChat.username}`;
     } else {
-      document.title = "Mebe | Inbox";
+      document.title = "Donghanhcungcon | Inbox";
     }
     return () => {
-      document.title = "Mebe";
+      document.title = "Donghanhcungcon";
     };
   })
   return (

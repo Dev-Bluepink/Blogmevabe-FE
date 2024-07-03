@@ -1,0 +1,1 @@
+import{r as t,j as e}from"./index-CTnDyMBX.js";import{I as s}from"./InfinitePosts-CZbIipec.js";function o(){return t.useEffect(()=>(document.title="Mebe | saved",()=>{document.title="Mebe"})),e.jsx("div",{className:"flex items-center p-2 w-full",children:e.jsx(s,{apiQueryKey:"saved",linkUrl:"posts/saved",forSaved:!0})})}export{o as default};

@@ -26,7 +26,7 @@ export function SubThread() {
   useEffect(() => {
     document.title = "t/" + params.threadName;
     return () => {
-      document.title = "Mebe";
+      document.title = "Donghanhcungcon";
     };
   }, [params.threadName]);
   const threadData = data?.threadData;

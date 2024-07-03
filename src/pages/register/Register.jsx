@@ -40,9 +40,9 @@ export function Register() {
   });
 
   useEffect(() => {
-    document.title = "Mebe | Signup";
+    document.title = "Donghanhcungcon | Signup";
     return () => {
-      document.title = "Mebe";
+      document.title = "Donghanhcungcon";
     };
   }, []);
 
@@ -62,7 +62,7 @@ export function Register() {
         <div className="flex justify-center md:hidden">
           <AppLogo>
             <h1 className="font-mono text-3xl font-bold tracking-tight md:block">
-              Mebe
+              Donghanhcungcon
             </h1>
           </AppLogo>
         </div>

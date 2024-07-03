@@ -40,7 +40,7 @@ export function Profile() {
 
   useEffect(() => {
     document.title = "u/" + username;
-    return () => (document.title = "Mebe");
+    return () => (document.title = "Donghanhcungcon");
   }, [username]);
   return (
     <div className="flex flex-col flex-1 items-center w-full bg-theme-cultured">

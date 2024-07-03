@@ -4,9 +4,9 @@ import InfinitePostsLayout from "../../components/InfinitePosts";
 
 export default function SavedPosts() {
   useEffect(() => {
-    document.title = "Mebe | saved";
+    document.title = "Donghanhcungcon | saved";
     return () => {
-      document.title = "Mebe";
+      document.title = "Donghanhcungcon";
     };
   })
   return (

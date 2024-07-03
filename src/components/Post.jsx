@@ -31,7 +31,7 @@ export function Post({ post, isExpanded = false, postIndex, setCommentMode }) {
     }
     return () => {
       if (isExpanded) {
-        document.title = "Mebe";
+        document.title = "Donghanhcungcon";
       }
     }
   }, [isExpanded])

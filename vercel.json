@@ -1,4 +1,4 @@
-co{
+{
   "routes": [
     {
       "src": "/",
@@ -12,13 +12,12 @@ co{
       "src": "/login",
       "dest": "/"
     },
-    { 
+    {
       "src": "/u/profile/thong-tin",
       "dest": "/"
-
     },
     {
-      "src": "/u/profile/bai-dang",  
+      "src": "/u/profile/bai-dang",
       "dest": "/"
     },
     {
@@ -31,12 +30,12 @@ co{
     },
     {
       "src": "/u/profile/ung-ho",
-      "dest": "/" 
-    }
-    {
-      "src":"/u/profile/khong-ung-ho",
       "dest": "/"
-    }
+    },
+    {
+      "src": "/u/profile/khong-ung-ho",
+      "dest": "/"
+    },
     {
       "src": "/notification",
       "dest": "/"

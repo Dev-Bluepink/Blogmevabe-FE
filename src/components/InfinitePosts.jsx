@@ -248,7 +248,16 @@ export default function InfinitePostsLayout({
                           alt=""
                           className="w-full object-cover rounded-lg"
                         />
-                        <p className="text-gray-600">{post.content}</p>
+                        <p
+                          className="
+                       
+                        text-gray-600"
+                          style={{
+                            fontSize: "18px",
+                          }}
+                        >
+                          {post.content}
+                        </p>
                       </div>
                       <div className="flex justify-between">
                         <div className="flex space-x-4">

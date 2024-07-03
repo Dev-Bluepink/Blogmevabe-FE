@@ -26,27 +26,6 @@ const MultiCarousel = () => {
       name: "Hồ Lê",
       content: "Hết kinh bao nhiêu ngày thì rụng trứng...",
     },
-    {
-      id: 4,
-      image: "https://via.placeholder.com/250",
-      avatar: "https://via.placeholder.com/150",
-      name: "Hồ Lê",
-      content: "Một nội dung khác...",
-    },
-    {
-      id: 5,
-      image: "https://via.placeholder.com/250",
-      avatar: "https://via.placeholder.com/150",
-      name: "Hồ Lê",
-      content: "Một nội dung khác...",
-    },
-    {
-      id: 6,
-      image: "https://via.placeholder.com/250",
-      avatar: "https://via.placeholder.com/150",
-      name: "Hồ Lê",
-      content: "Một nội dung khác...",
-    },
   ];
 
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -82,14 +61,19 @@ const MultiCarousel = () => {
           {items.map((item) => (
             <div
               key={item.id}
-              className="flex-shrink-0 w-1/3 h-64 bg-cover bg-center rounded-lg relative mr-4"
+              className="flex-shrink-0 w-1/3 h-60 bg-cover bg-center rounded-lg relative mr-2"
               style={{
                 backgroundImage: `url(${item.image})`,
               }}
             >
-              <div className="absolute bottom-10 ml-4">
+              <img
+                src="https://firebasestorage.googleapis.com/v0/b/weloveschool-212d8.appspot.com/o/Rectangle%2025.png?alt=media&token=41b291d2-fd83-48c4-83f1-3bda042295a1"
+                alt=""
+                className="w-full h-full object-cover"
+              />
+              <div className="absolute bottom-5 ml-4">
                 <p className="text-sm font-bold text-white">{item.content}</p>
-                <div className="flex items-center mt-4">
+                <div className="flex items-center mt-1">
                   <img
                     src={item.avatar}
                     alt=""

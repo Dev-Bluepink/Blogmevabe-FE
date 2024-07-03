@@ -81,7 +81,7 @@ export function Navbar() {
             </button>
           </>
         )}
-        <select
+        {/* <select
           name="page"
           id="page"
           className="px-1 py-3 mr-1 text-center rounded-3xl md:hidden bg-theme-cultured"
@@ -115,7 +115,18 @@ export function Navbar() {
               </>
             )}
           </optgroup>
-        </select>
+        </select> */}
+        {/* logo */}
+        <Link
+          to="/"
+          className="flex relative items-center space-x-3 cursor-pointer group"
+        >
+          <img
+            src={donghanhmevabe}
+            className="object-cover w-32 h-8"
+            alt="threadit-logo"
+          />
+        </Link>
       </div>
       {!isAuthenticated && (
         <div className="flex items-center md:space-x-6">

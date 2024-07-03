@@ -145,7 +145,7 @@ export function FullPost() {
                         </div>
                       </div>
                       <div className="flex items-center space-x-2">
-                        <Link to={"/bai-dang"}>
+                        {/* <Link to={"/bai-dang"}>
                           <button
                             className="flex flex-end space-x-2 bg-[#A9D4F8] px-6 py-1 rounded-3xl text-white
                         hover:bg-[#F8BBD9] hover:text-white
@@ -153,8 +153,8 @@ export function FullPost() {
                           >
                             Tham gia
                           </button>
-                        </Link>
-                        <button>
+                        </Link> */}
+                        {/* <button>
                           <svg
                             width="18"
                             height="4"
@@ -166,7 +166,7 @@ export function FullPost() {
                             <circle cx="9" cy="2" r="2" fill="#D9D9D9" />
                             <circle cx="16" cy="2" r="2" fill="#D9D9D9" />
                           </svg>
-                        </button>
+                        </button> */}
                       </div>
                     </div>
                     <div className="flex flex-col space-y-2">

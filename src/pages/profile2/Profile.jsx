@@ -333,7 +333,7 @@ const getContent = (id) => {
               <div className="w-full p-2 border rounded-lg bg-[#F8F8F8]">
                 {/* grid 4 */}
                 <form className="grid grid-cols-4 gap-2 px-3 py-2">
-                  <div className="col-span-2">
+                  <div className="col-span-2 ">
                     <label className="text-sm font-semibold">Tỉnh</label>
                     <input
                       type="text"

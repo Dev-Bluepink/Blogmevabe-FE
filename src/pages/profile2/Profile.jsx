@@ -297,85 +297,147 @@ const getContent = (id) => {
       return (
         <>
           <div className="mb-4 border p-4 rounded-lg ">
-            <div className="flex flex-row items-center space-x-4 mb-6">
-              <label className="text-sm font-semibold min-w-[5rem]">
-                Username:
-              </label>
-              <input
-                type="text"
-                className="w-full p-2 border rounded-lg bg-[#F8F8F8]"
-                value={mockData.thongTin.name}
-              />
+            <div
+              className="text-white  border-b-[1px] border-[#A7A7A7] pb-2 mb-2"
+              style={{
+                color: "#A7A7A7",
+                fontSize: "0.725rem",
+              }}
+            >
+              Thông tin cá nhân
             </div>
-            <div className="flex flex-row items-center space-x-4 mb-6">
-              <label className="text-sm font-semibold min-w-[5rem]">
-                Email:
-              </label>
-              <input
-                type="text"
-                className="w-full p-2 border rounded-lg bg-[#F8F8F8]"
-                value={mockData.thongTin.email}
-              />
-            </div>
-            <div className="flex flex-row items-center space-x-4 mb-6">
-              <label className="text-sm font-semibold min-w-[5rem]">
-                Ngày sinh:
-              </label>
-              <input
-                type="date"
-                className="w-full p-2 border rounded-lg bg-[#F8F8F8]"
-              />
-            </div>
-            <div className="flex flex-row items-center space-x-4 mb-6">
-              <label className="text-sm font-semibold min-w-[5rem]">
-                Địa chỉ:
-              </label>
-              <div className="w-full p-2 border rounded-lg bg-[#F8F8F8]">
-                {/* grid 4 */}
-                <form className="grid grid-cols-4 gap-2 px-3 py-2">
-                  <div className="col-span-2 ">
-                    <label className="text-sm font-semibold">Tỉnh</label>
-                    <input
-                      type="text"
-                      className="w-full p-2 border  bg-white rounded-2xl"
-                      placeholder="Tỉnh/Thành phố"
-                    />
-                  </div>
-                  <div className="col-span-2">
-                    <label className="text-sm font-semibold">Quận, huyện</label>
-                    <input
-                      type="text"
-                      className="w-full p-2 border rounded-2xl bg-white"
-                      placeholder="Quận/Huyện"
-                    />
-                  </div>
-                  <div className="col-span-2">
-                    <label className="text-sm font-semibold">Phường, xã</label>
-                    <input
-                      type="text"
-                      className="w-full p-2 border rounded-2xl bg-white"
-                      placeholder="Địa chỉ cụ thể"
-                    />
-                  </div>
-                  <div className="col-span-2">
-                    <label className="text-sm font-semibold">
-                      Số nhà, đường
-                    </label>
-                    <input
-                      type="text"
-                      className="w-full p-2 border rounded-2xl bg-white"
-                      placeholder="Địa chỉ cụ thể"
-                    />
-                  </div>
-
-                  <div className="col-span-4 flex justify-end">
-                    <button className="bg-[#7AC0F8] text-white px-5 py-1 rounded-3xl">
-                      Lưu
-                    </button>
-                  </div>
-                </form>
+            <form>
+              <div className="flex flex-row items-center space-x-4 mb-6">
+                <label className="text-sm font-semibold min-w-[5rem]">
+                  Username:
+                </label>
+                <input
+                  type="text"
+                  className="w-full p-2 border rounded-lg bg-[#F8F8F8]"
+                  value={mockData.thongTin.name}
+                />
               </div>
+              <div className="flex flex-row items-center space-x-4 mb-6">
+                <label className="text-sm font-semibold min-w-[5rem]">
+                  Email:
+                </label>
+                <input
+                  type="text"
+                  className="w-full p-2 border rounded-lg bg-[#F8F8F8]"
+                  value={mockData.thongTin.email}
+                />
+              </div>
+              <div className="flex flex-row items-center space-x-4 mb-6">
+                <label className="text-sm font-semibold min-w-[5rem]">
+                  Ngày sinh:
+                </label>
+                <input
+                  type="date"
+                  className="w-full p-2 border rounded-lg bg-[#F8F8F8]"
+                />
+              </div>
+              <div className="flex flex-row items-center space-x-4 mb-6">
+                <label className="text-sm font-semibold min-w-[5rem]">
+                  Địa chỉ:
+                </label>
+                <div className="w-full p-2 border rounded-lg bg-[#F8F8F8]">
+                  {/* grid 4 */}
+                  <div className="grid grid-cols-4 gap-2 px-3 py-2">
+                    <div className="col-span-2 ">
+                      <label className="text-sm font-semibold">Tỉnh</label>
+                      <input
+                        type="text"
+                        className="w-full p-2 border  bg-white rounded-2xl"
+                        placeholder="Tỉnh/Thành phố"
+                      />
+                    </div>
+                    <div className="col-span-2">
+                      <label className="text-sm font-semibold">
+                        Quận, huyện
+                      </label>
+                      <input
+                        type="text"
+                        className="w-full p-2 border rounded-2xl bg-white"
+                        placeholder="Quận/Huyện"
+                      />
+                    </div>
+                    <div className="col-span-2">
+                      <label className="text-sm font-semibold">
+                        Phường, xã
+                      </label>
+                      <input
+                        type="text"
+                        className="w-full p-2 border rounded-2xl bg-white"
+                        placeholder="Địa chỉ cụ thể"
+                      />
+                    </div>
+                    <div className="col-span-2">
+                      <label className="text-sm font-semibold">
+                        Số nhà, đường
+                      </label>
+                      <input
+                        type="text"
+                        className="w-full p-2 border rounded-2xl bg-white"
+                        placeholder="Địa chỉ cụ thể"
+                      />
+                    </div>
+
+                    <div className="col-span-4 flex justify-end">
+                      <button className="bg-[#7AC0F8] text-white px-5 py-1 rounded-3xl">
+                        Lưu
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </form>
+
+            <div
+              className="text-white  border-b-[1px] border-[#A7A7A7] pb-2 mb-2"
+              style={{
+                color: "#A7A7A7",
+                fontSize: "0.725rem",
+              }}
+            >
+              Thông tin cá nhân
             </div>
+            <form>
+              <div className="flex flex-row items-center space-x-4 mb-6">
+                <label className="text-sm font-semibold min-w-[9rem]">
+                  Mật khẩu cũ:
+                </label>
+                <input
+                  type="password"
+                  className="w-full p-2 border rounded-lg bg-[#F8F8F8]"
+                  value={mockData.thongTin.phone}
+                />
+              </div>
+              <div className="flex flex-row items-center space-x-4 mb-6">
+                <label className="text-sm font-semibold min-w-[9rem]">
+                  Mật khẩu mới
+                </label>
+                <input
+                  type="password"
+                  className="w-full p-2 border rounded-lg bg-[#F8F8F8]"
+                  value={mockData.thongTin.phone}
+                />
+              </div>
+              <div className="flex flex-row items-center space-x-4 mb-6">
+                <label className="text-sm font-semibold min-w-[9rem]">
+                  Xác nhận lại mật khẩu:
+                </label>
+                <input
+                  type="password"
+                  className="w-full p-2 border rounded-lg bg-[#F8F8F8]"
+                  value={mockData.thongTin.phone}
+                />
+              </div>
+              <div className="col-span-4 flex justify-end">
+                <button className="bg-[#7AC0F8] text-white px-5 py-1 rounded-3xl">
+                  Lưu
+                </button>
+              </div>
+            </form>
           </div>
         </>
       );

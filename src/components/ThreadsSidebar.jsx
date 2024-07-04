@@ -157,13 +157,31 @@ export function ThreadsSidebar() {
       <div className="flex flex-col m-5 space-y-4 font-family-mulish">
         <div className=" w-48 cursor-pointer">
           <div className="flex justify-start  items-center w-48  cursor-pointer">
-            <h2 className="font-family-nunito">Giới thiệu</h2>
+            <a
+              href="https://bluepink.gitbook.io/introduction"
+              target="_blank"
+              rel="noreferrer"
+            >
+              <h2 className="font-family-nunito">Giới thiệu</h2>
+            </a>
           </div>
           <div className="flex justify-start items-center w-48  cursor-pointer mt-2">
-            <h2 className="font-family-nunito">Chính sách</h2>
+            <a
+              href="https://bluepink.gitbook.io/chinh-sach"
+              target="_blank"
+              rel="noreferrer"
+            >
+              <h2 className="font-family-nunito">Chính sách</h2>
+            </a>
           </div>
           <div className="flex justify-start items-center w-48  cursor-pointer mt-2">
-            <h2 className="font-family-nunito">Hỗ trợ</h2>
+            <a
+              href="https://bluepink.gitbook.io/ho-tro"
+              target="_blank"
+              rel="noreferrer"
+            >
+              <h2 className="font-family-nunito">Hỗ trợ</h2>
+            </a>
           </div>
         </div>
         <SideBarComponent threadList={data?.popular} />

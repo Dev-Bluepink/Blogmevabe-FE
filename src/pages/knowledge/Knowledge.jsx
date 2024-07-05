@@ -10,7 +10,7 @@ export default function Knowledge() {
     return navigate("/login");
   }
   useEffect(() => {
-    document.title = `Donghanhcungcon | ${feedName}`;
+    document.title = `Donghanhcungcon | knowledge`;
   }, [feedName]);
 
   const postItems = [

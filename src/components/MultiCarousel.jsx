@@ -61,9 +61,11 @@ const MultiCarousel = () => {
           {items.map((item) => (
             <div
               key={item.id}
-              className="flex-shrink-0 w-1/3 h-60 bg-cover bg-center rounded-lg relative mr-2"
+              className="flex-shrink-0 w-1/3   bg-cover bg-center rounded-lg relative mr-2"
               style={{
                 backgroundImage: `url(${item.image})`,
+                height: "300px",
+                width: "310px",
               }}
             >
               <img

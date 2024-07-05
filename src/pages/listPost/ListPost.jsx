@@ -10,7 +10,7 @@ export default function ListPost() {
     return navigate("/login");
   }
   useEffect(() => {
-    document.title = `Donghanhcungcon | ${feedName}`;
+    document.title = `Donghanhcungcon | listPost`;
   }, [feedName]);
 
   const postItems = [

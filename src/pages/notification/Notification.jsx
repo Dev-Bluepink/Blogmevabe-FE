@@ -10,7 +10,7 @@ export default function Notification() {
     return navigate("/login");
   }
   useEffect(() => {
-    document.title = `Donghanhcungcon | ${feedName}`;
+    document.title = `Donghanhcungcon | notification`;
   }, [feedName]);
 
   const notificationItems = [

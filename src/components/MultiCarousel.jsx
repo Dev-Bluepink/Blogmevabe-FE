@@ -29,6 +29,16 @@ const MultiCarousel = () => {
   ];
 
   const [currentIndex, setCurrentIndex] = useState(0);
+  const [windowWidth, setWindowWidth] = useState(window.innerWidth); // New state for window width
+  useEffect(() => {
+    const handleResize = () => setWindowWidth(window.innerWidth);
+
+    window.addEventListener("resize", handleResize);
+
+    handleResize(); // Call on initial render
+
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
 
   const prevSlide = () => {
     const isFirstSlide = currentIndex === 0;
@@ -51,27 +61,37 @@ const MultiCarousel = () => {
     return () => clearInterval(interval);
   }, [currentIndex]);
 
+  const calculateItemsPerView = () => {
+    if (windowWidth >= 1024) {
+      return 3; // Show 3 images on large screens
+    } else if (windowWidth >= 768) {
+      return 2; // Show 2 images on medium screens
+    } else {
+      return 1; // Show 1 image on small screens
+    }
+  };
   return (
-    <div className="relative mx-auto  hidden md:flex">
+    <div className="relative hidden md:block">
       <div className="relative w-full overflow-hidden">
         <div
-          className="flex transition-transform duration-500"
+          className="flex transition-transform duration-500 mr-4"
           style={{ transform: `translateX(-${(currentIndex * 100) / 3}%)` }}
         >
           {items.map((item) => (
             <div
               key={item.id}
-              className="flex-shrink-0 w-1/3   bg-cover bg-center rounded-lg relative mr-2"
+              className="flex-shrink-0 w-1/3   bg-cover bg-center rounded-lg relative mr-2
+             
+             "
               style={{
                 backgroundImage: `url(${item.image})`,
-                height: "300px",
-                width: "310px",
               }}
             >
               <img
                 src="https://firebasestorage.googleapis.com/v0/b/weloveschool-212d8.appspot.com/o/Rectangle%2025.png?alt=media&token=41b291d2-fd83-48c4-83f1-3bda042295a1"
                 alt=""
-                className="w-full h-full object-cover"
+                // className="w-full h-full "
+                width={300}
               />
               <div className="absolute bottom-5 ml-4">
                 <p className="text-sm font-bold text-white">{item.content}</p>

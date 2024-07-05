@@ -8,6 +8,7 @@ import * as PropType from "prop-types";
 import MultiCarousel from "./MultiCarousel";
 import "./custom-slick.css";
 import Ads from "./Ads";
+import AdsHomeMb from "./AdsHomeMb";
 
 InfinitePostsLayout.propTypes = {
   linkUrl: PropTypes.string,
@@ -87,6 +88,33 @@ export default function InfinitePostsLayout({
     // Thêm nhiều bài viết hơn nếu cần
   ];
 
+  const items = [
+    {
+      id: 1,
+      image:
+        "https://firebasestorage.googleapis.com/v0/b/weloveschool-212d8.appspot.com/o/z5578863238987_b222508a6437215998fd3e60bd42e4ad.jpg?alt=media&token=7d54b91b-a786-49b6-ad05-8232e18b0b41",
+      avatar: "https://via.placeholder.com/150",
+      name: "Hồ Lê",
+      content: "Chồng 1997 vợ 1997 sinh con năm nào...",
+    },
+    {
+      id: 2,
+      image:
+        "https://firebasestorage.googleapis.com/v0/b/weloveschool-212d8.appspot.com/o/z5578863239018_63801e3c4d29e3bd1faaf4db71114030.jpg?alt=media&token=91b310b3-fdf1-4a0b-b9bc-1716e5e8adba",
+      avatar: "https://via.placeholder.com/150",
+      name: "Hồ Lê",
+      content: "Trẻ sơ sinh thở nhanh và mạnh khi ngủ là...",
+    },
+    {
+      id: 3,
+      image:
+        "https://firebasestorage.googleapis.com/v0/b/weloveschool-212d8.appspot.com/o/z5578863258511_373c25e106e4688a3fbc4c5ea2184767.jpg?alt=media&token=be4db9fc-5712-4ea1-b311-ff3d016a7fee",
+      avatar: "https://via.placeholder.com/150",
+      name: "Hồ Lê",
+      content: "Hết kinh bao nhiêu ngày thì rụng trứng...",
+    },
+  ];
+
   const [categories, setCategories] = useState([
     {
       categoryid: 1,
@@ -150,14 +178,17 @@ export default function InfinitePostsLayout({
       id="main-content"
       className="
        md:ml-56
-      flex w-full flex-row flex-1 p-2 rounded-lg  bg-theme-cultured md:bg-white md:p-3"
+      flex w-full flex-row flex-1 p-2 rounded-lg bg-white md:p-3"
     >
       <div className="flex flex-col mx-0 space-y-2 md:space-y-3 flex-1 mt-2 md:mt-0 ">
         <div className="">
           <div className="flex flex-col md:flex-row">
             {/* Phần bên trái */}
             <div className="w-full  px-2 md:px-8">
-              <MultiCarousel />
+              <AdsHomeMb />
+              <div className="flex flex-row space-x-4">
+                <MultiCarousel data={items} />
+              </div>
               <div
                 className="text-white mt-4 border-b-[1px] border-[#A7A7A7] pb-2 mb-2"
                 style={{

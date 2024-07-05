@@ -38,7 +38,7 @@ export function ThreadsSidebar() {
     },
   ]);
 
-  console.log("categories[0].subcategories", categories[0].subcategories);
+
   return (
     <aside className="fixed hidden flex-col w-56 m-3 border border-theme-silver-chalice bg-white h-screen rounded-2xl md:flex overflow-y-auto">
       <div className="flex flex-col m-5 space-y-4">
@@ -199,7 +199,8 @@ function SideBarComponent({ threadList }) {
     <div className="flex flex-col space-y-4 w-48 list-none font-family-mulish">
       {threadList?.slice(0, 10).map((thread) => (
         <Link
-          to={`/${thread.name}`}
+          // to={`/${thread.name}`}
+          to="/community"
           className="flex justify-between w-48 cursor-pointer font-family-mulish text-[#7AC0F8]"
           key={thread.name}
         >

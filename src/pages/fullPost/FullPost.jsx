@@ -48,10 +48,11 @@ export function FullPost() {
     name: "Nguyễn Văn A",
     avatar: "https://i.pravatar.cc/150?img=1",
     time: "2 giờ trước",
-    title: "Bán nhà ở Quận 1",
+    title: "Tác hại của việc cho trẻ học tiếng Hàn sớm",
     banner:
       "https://firebasestorage.googleapis.com/v0/b/weloveschool-212d8.appspot.com/o/post2.png?alt=media&token=a12f6549-4e78-4ef3-8a5d-a884c4a76653",
-    content: "Nhà ở Quận 1, 2 tầng, 3 phòng ngủ, 2 toilet, 1 phòng khách",
+    content:
+      "Ngày nay, việc biết đa dạng ngôn ngữ khác nhau, đặc biệt là tiếng Anh sẽ giúp ích nhiều trong việc học tập, đi làm hay đơn giản hơn là giao tiếp, kết bạn, đi du lịch,...",
     comment: 10,
   };
   const [comments, setComments] = useState([
@@ -102,50 +103,41 @@ export function FullPost() {
     >
       <div className="flex flex-col mx-0 space-y-2 md:space-y-3 flex-1 mt-2 md:mt-0 ">
         <div className="flex flex-col md:flex-row">
-          <div className="w-full md:w-2/3 p-2 md:p-2">
-            <div
-              className="text-white mt-4 border-b-[1px] border-[#A7A7A7] pb-2 mb-2"
-              style={{
-                color: "#A7A7A7",
-                fontSize: "0.725rem",
-              }}
-            >
-              {" "}
-              Post mới nhất
-            </div>
+          <div className="w-full md:px-2">
+            <div className="flex flex-col space-y-4 font-family-mulish">
+              <div className="flex flex-col space-y-2 w-full">
+                <div
+                  key={post.id}
+                  className="flex flex-col bg-white space-y-2 border-b-[1px] border-[#A7A7A7] pb-2 mb-2"
+                >
+                  <div className="flex justify-between">
+                    <div className="flex items-center space-x-2">
+                      <img
+                        src={post.avatar}
+                        alt=""
+                        className="w-8 h-8 rounded-full"
+                      />
 
-            <div className="flex flex-col md:flex-row">
-              <div className="flex flex-col space-y-4 font-family-mulish">
-                <div className="flex flex-col p-2 space-y-2 w-full">
-                  <div
-                    key={post.id}
-                    className="flex flex-col bg-white p-4 space-y-2 border-b-[1px] border-[#A7A7A7] pb-2 mb-2"
-                  >
-                    <div className="flex justify-between">
-                      <div className="flex items-center space-x-2">
-                        <img
-                          src={post.avatar}
-                          alt=""
-                          className="w-8 h-8 rounded-full"
-                        />
-
+                      <div>
                         <div>
-                          <div>
-                            {" "}
-                            <p className="font-semibold text-[#7AC0F8]">
-                              {post.name}{" "}
-                              <span className="text-xs text-gray-400">
-                                {post.time}
-                              </span>
-                            </p>
+                          {" "}
+                          <p className="font-semibold text-[#7AC0F8]">
+                            {post.name}{" "}
                             <span className="text-xs text-gray-400">
-                              TP. Hồ Chí Minh
+                              Hà Nội/ Mang thai / Ăn uống khi mang thai
                             </span>
-                          </div>
+                          </p>
+                          <span className="text-xs font-semibold text-[#555555] mr-2">
+                            TP. Hồ Chí Minh
+                          </span>
+                          <span className="text-xs font-semibold text-[#555555]">
+                            {post.time}
+                          </span>
                         </div>
                       </div>
-                      <div className="flex items-center space-x-2">
-                        {/* <Link to={"/bai-dang"}>
+                    </div>
+                    <div className="flex items-center space-x-2">
+                      {/* <Link to={"/bai-dang"}>
                           <button
                             className="flex flex-end space-x-2 bg-[#A9D4F8] px-6 py-1 rounded-3xl text-white
                         hover:bg-[#F8BBD9] hover:text-white
@@ -154,7 +146,7 @@ export function FullPost() {
                             Tham gia
                           </button>
                         </Link> */}
-                        {/* <button>
+                      {/* <button>
                           <svg
                             width="18"
                             height="4"
@@ -167,38 +159,43 @@ export function FullPost() {
                             <circle cx="16" cy="2" r="2" fill="#D9D9D9" />
                           </svg>
                         </button> */}
-                      </div>
                     </div>
-                    <div className="flex flex-col space-y-2">
-                      <h1 className="text-xl font-semibold">{post.title}</h1>
-                      <img
-                        src={post.banner}
-                        alt=""
-                        className="w-full  object-cover rounded-lg"
-                      />
-                      <p className="text-gray-600">{post.content}</p>
+                  </div>
+                  <div className="flex flex-col space-y-2">
+                    <h1 className="text-xl font-semibold">{post.title}</h1>
+                    <img
+                      src={post.banner}
+                      alt=""
+                      className="w-full  object-cover rounded-lg"
+                    />
+                    <p
+                      className="text-gray-600 
+                      text-xl
+                    "
+                    >
+                      {post.content}
+                    </p>
+                  </div>
+                  <div className="flex justify-between">
+                    <div className="flex space-x-4">
+                      <Counter />
+                      <Comments comment={post.comment} />
                     </div>
-                    <div className="flex justify-between">
-                      <div className="flex space-x-4">
-                        <Counter />
-                        <Comments comment={post.comment} />
-                      </div>
-                      <div className="flex space-x-4">
-                        <SaveNew saved={false} />
-                      </div>
+                    <div className="flex space-x-4">
+                      <SaveNew saved={false} />
                     </div>
                   </div>
                 </div>
               </div>
             </div>
+
             <div className="w-full  p-2 md:p-2">
               <InputComment />
               <CommentTree comments={comments} />
             </div>
           </div>
-          <div className="w-full md:w-1/3 px-4 hidden md:block">
-            {/* <SideBarComponentOne threadList={categories[1].subcategories} />
-              <SideBarComponentTwo threadList={categories[1].subcategories} /> */}
+          {/* <div className="w-full md:w-1/3 px-4 hidden md:block">
+           
             <div className="flex flex-col space-y-2 list-none  p-4 rounded-lg ">
               <img
                 src="https://firebasestorage.googleapis.com/v0/b/weloveschool-212d8.appspot.com/o/image%2012.png?alt=media&token=13f610b2-28c8-451e-95bf-e5a08ea3a00f"
@@ -213,7 +210,7 @@ export function FullPost() {
                 alt=""
               />
             </div>
-          </div>
+          </div> */}
         </div>
       </div>
     </div>

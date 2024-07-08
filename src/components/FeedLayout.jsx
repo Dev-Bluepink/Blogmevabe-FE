@@ -1,5 +1,7 @@
 import { Outlet } from "react-router-dom";
 import ThreadsSidebar from "./ThreadsSidebar";
+import { A } from "../../dist/assets/index-C4tUjYxT";
+import Ads from "./Ads";
 
 export default function FeedLayout() {
   return (
@@ -7,6 +9,7 @@ export default function FeedLayout() {
       <div className="flex max-w-screen-2xl w-full">
         <ThreadsSidebar />
         <Outlet />
+        <Ads />
       </div>
     </div>
   );

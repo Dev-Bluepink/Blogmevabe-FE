@@ -72,18 +72,8 @@ export function Navbar() {
   ];
 
   return (
-    <nav
-      className="sticky top-0 z-50 flex 
-        justify-between
-      md:justify-center
-       items-center
-     
-     h-16 p-0 md:p-5 border-b border-neutral-200 bg-white shadow-md"
-    >
-      <div
-        className="
-        flex justify-center min-h-max bg-[#FFFFFF]"
-      >
+    <nav className="sticky  bg-white top-0 z-50  border-b-2">
+      <div className="flex items-center justify-between max-w-screen-2xl mx-auto  h-16">
         <div
           className={`fixed top-0 left-0 w-full h-full bg-black transition-opacity duration-300 ${
             menuOpen ? "opacity-50 z-40" : "opacity-0 z-0"
@@ -91,7 +81,7 @@ export function Navbar() {
           style={{ pointerEvents: menuOpen ? "auto" : "none" }}
           onClick={toggleMenu}
         ></div>
-        <div className="flex items-center md:space-x-6">
+        <div className="flex items-center ">
           <button
             onClick={toggleMenu}
             className="md:hidden flex items-center mx-4 p-2 rounded-full bg-theme-cultured"
@@ -108,18 +98,16 @@ export function Navbar() {
               <rect y="12" width="15" height="2" rx="1" fill="#494949" />
             </svg>
           </button>
-          <Link
-            to="/"
-            className="flex relative items-center space-x-3 cursor-pointer group"
-          >
+          <Link to="/">
             <img
               src={donghanhmevabe}
-              className="object-cover w-32 h-8"
+              className="flex relative items-center space-x-3 cursor-pointer group"
+              className="object-cover w-30 h-10"
               alt="threadit-logo"
             />
           </Link>
         </div>
-        <div className="relative flex items-center">
+        <div className="relative flex ml-10 items-center hidden md:flex">
           <input
             type="search"
             name="search"
@@ -217,82 +205,84 @@ export function Navbar() {
           )}
         </div>
         {!isAuthenticated && (
-          <div className="flex items-center md:space-x-6">
-            <Link to="/notification">
-              <div className="hidden flex justify-end items-center w-48 cursor-pointer md:flex">
-                <span
-                  className="mr-2"
-                  style={{
-                    backgroundColor: "#F6F6F6",
-                    padding: "0.5rem",
-                    borderRadius: "50%",
-                  }}
-                >
-                  <svg
-                    width="17"
-                    height="20"
-                    viewBox="0 0 17 20"
-                    fill="none"
-                    xmlns="http://www.w3.org/2000/svg"
+          <div className="flex items-center md:space-x-6  ">
+            <div className="flex items-center pl-4 space-x-4">
+              <Link to="/notification">
+                <div className="hidden flex justify-end items-center cursor-pointer md:flex">
+                  <span
+                    className="mr-2"
+                    style={{
+                      backgroundColor: "#F6F6F6",
+                      padding: "0.5rem",
+                      borderRadius: "50%",
+                    }}
                   >
                     <svg
-                      width="18"
-                      height="22"
-                      viewBox="0 0 18 22"
+                      width="17"
+                      height="20"
+                      viewBox="0 0 17 20"
                       fill="none"
                       xmlns="http://www.w3.org/2000/svg"
                     >
-                      <g clipPath="url(#clip0_168_1319)">
+                      <svg
+                        width="18"
+                        height="22"
+                        viewBox="0 0 18 22"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <g clipPath="url(#clip0_168_1319)">
+                          <path
+                            d="M8.65665 22C8.23598 21.8535 7.78211 21.7746 7.39465 21.5605C6.47584 21.0758 5.9334 20.2869 5.70093 19.25C7.90388 19.25 10.0958 19.25 12.2987 19.25C12.2323 19.667 12.0773 20.0277 11.867 20.377C11.3024 21.2674 10.5054 21.7971 9.47584 21.9662C9.44263 21.9662 9.40942 21.9887 9.3762 22C9.13266 22 8.88912 22 8.65665 22Z"
+                            fill="#7AC0F8"
+                          />
+                          <path
+                            d="M8.10322 1.89343C8.10322 1.57786 8.10322 1.26229 8.10322 0.957983C8.10322 0.417 8.47961 0.0112618 8.97776 -8.67012e-06C9.48699 -0.0112792 9.88551 0.383188 9.90765 0.935442C9.91872 1.19466 9.91872 1.46516 9.90765 1.73565C9.90765 1.85962 9.94086 1.91598 10.0737 1.94979C12.6862 2.50204 14.38 4.09118 15.0995 6.70593C15.2434 7.23565 15.2767 7.81044 15.2988 8.3627C15.332 9.24179 15.2877 10.1209 15.3209 11C15.3763 12.7356 16.0405 14.1895 17.2914 15.3617C17.6235 15.666 17.9113 15.9928 17.9778 16.4549C18.1217 17.4016 17.5239 18.2131 16.5829 18.3258C16.4833 18.3371 16.3837 18.3371 16.284 18.3371C11.4243 18.3371 6.56448 18.3371 1.7047 18.3371C0.940861 18.3371 0.376285 17.9877 0.121673 17.3453C-0.14401 16.6916 0.0109718 15.9928 0.564477 15.4969C1.28403 14.8545 1.84861 14.0994 2.22499 13.1977C2.52389 12.4764 2.68994 11.7326 2.70101 10.9436C2.71208 10.0645 2.70101 9.18544 2.70101 8.30634C2.71208 5.09425 4.89289 2.46823 7.99252 1.92725C8.02573 1.91598 8.04787 1.9047 8.10322 1.89343Z"
+                            fill="#7AC0F8"
+                          />
+                        </g>
+                        <defs>
+                          <clipPath id="clip0_168_1319">
+                            <rect width="18" height="22" fill="white" />
+                          </clipPath>
+                        </defs>
+                      </svg>
+                    </svg>
+                  </span>
+                </div>
+              </Link>
+              <div className="flex items-center ">
+                <div className="flex items-center cursor-pointer rounded-full p-2 bg-[#F6F6F6]  md:hidden">
+                  <button onClick={toggleSearch}>
+                    <svg
+                      width="18"
+                      height="19"
+                      viewBox="0 0 18 19"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <g clipPath="url(#clip0_390_3707)">
                         <path
-                          d="M8.65665 22C8.23598 21.8535 7.78211 21.7746 7.39465 21.5605C6.47584 21.0758 5.9334 20.2869 5.70093 19.25C7.90388 19.25 10.0958 19.25 12.2987 19.25C12.2323 19.667 12.0773 20.0277 11.867 20.377C11.3024 21.2674 10.5054 21.7971 9.47584 21.9662C9.44263 21.9662 9.40942 21.9887 9.3762 22C9.13266 22 8.88912 22 8.65665 22Z"
-                          fill="#7AC0F8"
-                        />
-                        <path
-                          d="M8.10322 1.89343C8.10322 1.57786 8.10322 1.26229 8.10322 0.957983C8.10322 0.417 8.47961 0.0112618 8.97776 -8.67012e-06C9.48699 -0.0112792 9.88551 0.383188 9.90765 0.935442C9.91872 1.19466 9.91872 1.46516 9.90765 1.73565C9.90765 1.85962 9.94086 1.91598 10.0737 1.94979C12.6862 2.50204 14.38 4.09118 15.0995 6.70593C15.2434 7.23565 15.2767 7.81044 15.2988 8.3627C15.332 9.24179 15.2877 10.1209 15.3209 11C15.3763 12.7356 16.0405 14.1895 17.2914 15.3617C17.6235 15.666 17.9113 15.9928 17.9778 16.4549C18.1217 17.4016 17.5239 18.2131 16.5829 18.3258C16.4833 18.3371 16.3837 18.3371 16.284 18.3371C11.4243 18.3371 6.56448 18.3371 1.7047 18.3371C0.940861 18.3371 0.376285 17.9877 0.121673 17.3453C-0.14401 16.6916 0.0109718 15.9928 0.564477 15.4969C1.28403 14.8545 1.84861 14.0994 2.22499 13.1977C2.52389 12.4764 2.68994 11.7326 2.70101 10.9436C2.71208 10.0645 2.70101 9.18544 2.70101 8.30634C2.71208 5.09425 4.89289 2.46823 7.99252 1.92725C8.02573 1.91598 8.04787 1.9047 8.10322 1.89343Z"
-                          fill="#7AC0F8"
+                          d="M8.01636 0C8.3936 0.0549133 8.77085 0.0960983 9.14809 0.178468C12.1122 0.823699 14.443 3.30853 14.9415 6.34248C15.3053 8.60766 14.7798 10.6532 13.3921 12.4653C13.3517 12.5202 13.3247 12.5614 13.2978 12.6026C13.8232 13.1517 14.3352 13.7146 14.8607 14.2637C15.8038 15.2659 16.7469 16.2543 17.69 17.2565C18.1077 17.6958 18.1077 18.3273 17.7035 18.7117C17.2993 19.1098 16.693 19.0824 16.2753 18.6431C14.8472 17.1329 13.4191 15.6091 11.9909 14.099C11.9505 14.0578 11.9101 14.0029 11.8696 13.948C11.7214 14.0441 11.6002 14.1264 11.4655 14.2088C7.11366 16.9408 1.34719 14.4697 0.215457 9.39017C-0.619872 5.7659 1.21246 2.08671 4.56725 0.617775C5.30827 0.288295 6.07624 0.0960983 6.88462 0.0274566C6.93851 0.0274566 6.97893 0.0137283 7.01935 0C7.35618 0 7.693 0 8.01636 0ZM7.53133 13.3439C10.6167 13.3302 13.0957 10.7905 13.0822 7.6604C13.0688 4.51662 10.5762 1.99061 7.50438 2.00434C4.43252 2.01806 1.95348 4.5578 1.96695 7.68786C1.98043 10.8042 4.47294 13.3439 7.53133 13.3439Z"
+                          fill="#494949"
                         />
                       </g>
                       <defs>
-                        <clipPath id="clip0_168_1319">
-                          <rect width="18" height="22" fill="white" />
+                        <clipPath id="clip0_390_3707">
+                          <rect width="18" height="19" fill="white" />
                         </clipPath>
                       </defs>
                     </svg>
-                  </svg>
-                </span>
+                  </button>
+                </div>
+                <Link to="/u/profile/thong-tin">
+                  <img
+                    src={avatar}
+                    alt="avatar"
+                    className="w-8 h-8 rounded-full"
+                  />
+                </Link>
               </div>
-            </Link>
-            <div className="flex items-center space-x-4 mr-2 md:mr-0">
-              <div className="flex items-center space-x-2 cursor-pointer rounded-full p-2 bg-[#F6F6F6]  md:hidden">
-                <button onClick={toggleSearch}>
-                  <svg
-                    width="18"
-                    height="19"
-                    viewBox="0 0 18 19"
-                    fill="none"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <g clipPath="url(#clip0_390_3707)">
-                      <path
-                        d="M8.01636 0C8.3936 0.0549133 8.77085 0.0960983 9.14809 0.178468C12.1122 0.823699 14.443 3.30853 14.9415 6.34248C15.3053 8.60766 14.7798 10.6532 13.3921 12.4653C13.3517 12.5202 13.3247 12.5614 13.2978 12.6026C13.8232 13.1517 14.3352 13.7146 14.8607 14.2637C15.8038 15.2659 16.7469 16.2543 17.69 17.2565C18.1077 17.6958 18.1077 18.3273 17.7035 18.7117C17.2993 19.1098 16.693 19.0824 16.2753 18.6431C14.8472 17.1329 13.4191 15.6091 11.9909 14.099C11.9505 14.0578 11.9101 14.0029 11.8696 13.948C11.7214 14.0441 11.6002 14.1264 11.4655 14.2088C7.11366 16.9408 1.34719 14.4697 0.215457 9.39017C-0.619872 5.7659 1.21246 2.08671 4.56725 0.617775C5.30827 0.288295 6.07624 0.0960983 6.88462 0.0274566C6.93851 0.0274566 6.97893 0.0137283 7.01935 0C7.35618 0 7.693 0 8.01636 0ZM7.53133 13.3439C10.6167 13.3302 13.0957 10.7905 13.0822 7.6604C13.0688 4.51662 10.5762 1.99061 7.50438 2.00434C4.43252 2.01806 1.95348 4.5578 1.96695 7.68786C1.98043 10.8042 4.47294 13.3439 7.53133 13.3439Z"
-                        fill="#494949"
-                      />
-                    </g>
-                    <defs>
-                      <clipPath id="clip0_390_3707">
-                        <rect width="18" height="19" fill="white" />
-                      </clipPath>
-                    </defs>
-                  </svg>
-                </button>
-              </div>
-              <Link to="/u/profile/thong-tin">
-                <img
-                  src={avatar}
-                  alt="avatar"
-                  className="w-8 h-8 rounded-full"
-                />
-              </Link>
             </div>
             {/* <Link
             to="/login"
@@ -505,7 +495,7 @@ export function Navbar() {
                   type="search"
                   name="search"
                   id="search"
-                  className="py-2 pl-10 w-72 bg-neutral-100 focus:outline-none rounded-3xl"
+                  className="py-2 pl-10 w-96 bg-neutral-100 focus:outline-none rounded-3xl"
                   placeholder="Tìm kiếm"
                 />
               </div>

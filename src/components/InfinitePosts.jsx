@@ -178,13 +178,13 @@ export default function InfinitePostsLayout({
       id="main-content"
       className="
        md:ml-56
-      flex w-full flex-row flex-1 p-2 rounded-lg bg-white md:p-3"
+      flex w-full flex-row flex-1 rounded-lg bg-white py-3"
     >
       <div className="flex flex-col mx-0 space-y-2 md:space-y-3 flex-1 mt-2 md:mt-0 ">
         <div className="">
           <div className="flex flex-col md:flex-row">
             {/* Phần bên trái */}
-            <div className="w-full  px-2 md:px-8">
+            <div className="w-full pl-2  px-3 md:px-8">
               <AdsHomeMb />
 
               <MultiCarousel data={items} />
@@ -329,7 +329,7 @@ export default function InfinitePostsLayout({
           </div>
         </div>
       </div>
-      <Ads />
+      {/* <Ads /> */}
     </div>
   );
 }

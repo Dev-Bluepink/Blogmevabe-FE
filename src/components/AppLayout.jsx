@@ -12,7 +12,7 @@ export function AppLayout() {
   const { isAuthenticated } = AuthConsumer();
   const location = useLocation();
   return (
-    <div className="flex flex-col min-h-screen min-w-screen">
+    <div className="flex flex-col min-h-screen min-w-screen bg-white">
       <Navbar />
       <main className="flex flex-col flex-1 bg-theme-cultured">
         <Outlet />
@@ -20,7 +20,8 @@ export function AppLayout() {
       {isAuthenticated && location.pathname != "/inbox" && (
         <div
           className="fixed right-5 bottom-5 w-14 h-14 rounded-xl bg-theme-orange active:scale-90"
-          onClick={() => setShowModal(true)}>
+          onClick={() => setShowModal(true)}
+        >
           <Svg
             type="add"
             className="text-white cursor-pointer fill-current hover:text-white"

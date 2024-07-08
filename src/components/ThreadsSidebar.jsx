@@ -55,7 +55,7 @@ export function ThreadsSidebar() {
 
   return (
     <aside
-      className="fixed hidden flex-col w-56 m-3 border border-theme-silver-chalice bg-white h-screen rounded-2xl md:flex"
+      className="fixed hidden flex-col w-56 my-3 border border-theme-silver-chalice bg-white h-screen rounded-2xl md:flex"
       style={{ ...hiddenScrollbar }}
       onMouseEnter={(e) => {
         e.currentTarget.style.overflowY = "scroll";

@@ -239,7 +239,7 @@ export default function Location() {
     >
       <div className="flex flex-col mx-0 space-y-2 md:space-y-3 flex-1 mt-2 md:mt-0 ">
         <div className="flex flex-col md:flex-row">
-          <div className="w-full md:w-2/3 p-2 md:px-4">
+          <div className="w-full -2 md:px-4">
             <div className="flex items-center justify-between md:justify-center mb-4  md:items-center">
               <input
                 type="text"
@@ -364,13 +364,6 @@ export default function Location() {
                 </div>
               </div>
             ))}
-          </div>
-          <div className="w-full md:w-1/3 hidden md:block">
-            <img
-              src="https://firebasestorage.googleapis.com/v0/b/weloveschool-212d8.appspot.com/o/asd1.png?alt=media&token=5229bcab-5620-4393-aabb-b52eb3ba7369"
-              alt=""
-              className="w-full h-auto rounded-lg"
-            />
           </div>
         </div>
       </div>

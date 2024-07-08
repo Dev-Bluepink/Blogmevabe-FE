@@ -254,12 +254,12 @@ export function Navbar() {
               <img src={avatar} alt="avatar" className="w-8 h-8 rounded-full" />
             </Link>
           </div>
-          <Link
+          {/* <Link
             to="/login"
             className="hidden font-semibold cursor-pointer md:flex group bg-[#7AC0F8] px-4 p-2 rounded-2xl hover:bg-[#F8BBD9] hover:text-white"
           >
             <span className="font-family-mulish text-white"> Đăng Nhập</span>
-          </Link>
+          </Link> */}
         </div>
       )}
 

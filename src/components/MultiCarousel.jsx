@@ -91,7 +91,14 @@ const MultiCarousel = () => {
                 src="https://firebasestorage.googleapis.com/v0/b/weloveschool-212d8.appspot.com/o/Rectangle%2025.png?alt=media&token=41b291d2-fd83-48c4-83f1-3bda042295a1"
                 alt=""
                 // className="w-full h-full "
-                width={300}
+                width={
+                  calculateItemsPerView() === 1
+                    ? "100%"
+                    : calculateItemsPerView() === 2
+                    ? "50%"
+                    : "33.33%"
+                }
+                className="w-full h-full"
               />
               <div className="absolute bottom-5 ml-4">
                 <p className="text-sm font-bold text-white">{item.content}</p>

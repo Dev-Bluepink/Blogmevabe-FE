@@ -13,6 +13,11 @@ export default {
       fontFamily: {
         mulish: ["Mulish", "sans-serif"],
       },
+      // Thêm các lớp tùy chỉnh cho thanh cuộn
+      scrollbar: {
+        hide: "scrollbar-hidden",
+        show: "scrollbar-visible",
+      },
     },
   },
   future: {

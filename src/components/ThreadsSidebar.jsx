@@ -3,6 +3,8 @@ import axios from "axios";
 import * as PropType from "prop-types";
 import { useState } from "react";
 import { Link } from "react-router-dom";
+// css
+import "./threadsSidebar.css";
 
 export function ThreadsSidebar() {
   const { data } = useQuery({
@@ -37,10 +39,31 @@ export function ThreadsSidebar() {
       ],
     },
   ]);
+  const hiddenScrollbar = {
+    msOverflowStyle: "none", // IE and Edge
+    scrollbarWidth: "none", // Firefox
+  };
 
+  const visibleScrollbar = {
+    scrollbarWidth: "thin",
+    scrollbarColor: "#c4c4c4 transparent",
+  };
+
+  const visibleScrollbarWebkit = {
+    overflowY: "scroll",
+  };
 
   return (
-    <aside className="fixed hidden flex-col w-56 m-3 border border-theme-silver-chalice bg-white h-screen rounded-2xl md:flex overflow-y-auto">
+    <aside
+      className="fixed hidden flex-col w-56 m-3 border border-theme-silver-chalice bg-white h-screen rounded-2xl md:flex"
+      style={{ ...hiddenScrollbar }}
+      onMouseEnter={(e) => {
+        e.currentTarget.style.overflowY = "scroll";
+      }}
+      onMouseLeave={(e) => {
+        e.currentTarget.style.overflowY = "hidden";
+      }}
+    >
       <div className="flex flex-col m-5 space-y-4">
         <div className=" w-48 cursor-pointer">
           <Link to="/">

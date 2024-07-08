@@ -186,9 +186,9 @@ export default function InfinitePostsLayout({
             {/* Phần bên trái */}
             <div className="w-full  px-2 md:px-8">
               <AdsHomeMb />
-              <div className="flex flex-row space-x-4">
-                <MultiCarousel data={items} />
-              </div>
+
+              <MultiCarousel data={items} />
+
               <div
                 className="text-white mt-4 border-b-[1px] border-[#A7A7A7] pb-2 mb-2"
                 style={{

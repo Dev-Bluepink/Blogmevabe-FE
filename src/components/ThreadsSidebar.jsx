@@ -171,7 +171,7 @@ export function ThreadsSidebar() {
             <h2 className="font-family-nunito">Kiến thức</h2>
           </div>
 
-          <Link to="/location">
+          <Link to="/u/knowledge">
             <button className="text-xs text-[#7AC0F8]">All</button>
           </Link>
         </div>

@@ -10,21 +10,21 @@ export default function Ads() {
             alt=""
             width={250}
             height={250}
-            className="mb-4"
+            className="mb-4 rounded-2xl"
           />
           <img
             src="https://firebasestorage.googleapis.com/v0/b/weloveschool-212d8.appspot.com/o/image%2013.png?alt=media&token=f383abb6-22da-4a37-81f5-c34f9e7600e3"
             alt=""
             width={250}
             height={250}
-            className="mb-4"
+            className="mb-4 rounded-2xl"
           />
           <img
             src="https://firebasestorage.googleapis.com/v0/b/weloveschool-212d8.appspot.com/o/image%2014.png?alt=media&token=134f3ce3-ab6e-4429-8395-bb9397b75fc4"
             alt=""
             width={250}
             height={250}
-            className="mb-4"
+            className="mb-4 rounded-2xl"
           />
         </div>
       </div>

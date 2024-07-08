@@ -213,7 +213,7 @@ export default function InfinitePostsLayout({
                           className="w-8 h-8 rounded-full"
                         />
                         <div>
-                          <p className="font-semibold text-[#7AC0F8]">
+                          <p className="font-semibold text-[#7AC0F8]  text-lg">
                             {post.name}{" "}
                             <span className="text-xs text-gray-400">
                               {post.time}

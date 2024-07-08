@@ -68,21 +68,22 @@ export function ThreadsSidebar() {
         <div className=" w-48 cursor-pointer">
           <Link to="/">
             <button
-              className="border border-theme-silver-chalice flex items-center justify-center py-1 px-2 rounded-2xl min-w-[10rem] border-[#A9D4F8] text-[#A9D4F8] font-family-mulish-2 hover:bg-[#d6e0e9] hover:text-white
+              className="border border-theme-silver-chalice flex items-center justify-center py-1 px-2 rounded-2xl min-w-[10rem] border-[#A9D4F8] text-[#A9D4F8] font-family-mulish-2 text-[#F8BBD9] font-family-mulish-2 hover:bg-[#F8BBD9] hover:text-white hover:border-[#F8BBD9]
           "
             >
-              <span className="mr-2">
+              <span className="mr-2 group">
                 <svg
                   width="22"
                   height="22"
                   viewBox="0 0 22 22"
                   fill="none"
                   xmlns="http://www.w3.org/2000/svg"
+                  className="group-hover:fill-current group-hover:text-blue-500" // Adjust the color as needed
                 >
                   <g clipPath="url(#clip0_1_28)">
                     <path
                       d="M10.25 0C10.44 0 10.63 0 10.83 0C11.45 0.12 11.88 0.52 12.3 0.95C14.91 3.57 17.52 6.18 20.14 8.79C20.57 9.22 20.97 9.66 21.08 10.29C21.08 10.45 21.08 10.62 21.08 10.78C21.07 10.8 21.05 10.83 21.05 10.85C20.84 11.85 20.1 12.46 19.09 12.47C19 12.47 18.92 12.47 18.82 12.47C18.82 12.59 18.82 12.67 18.82 12.75C18.82 14.73 18.82 16.71 18.82 18.7C18.82 20.1 17.85 21.07 16.45 21.07C15.41 21.07 14.36 21.07 13.32 21.07C12.79 21.07 12.56 20.84 12.56 20.3C12.56 18.72 12.56 17.14 12.56 15.57C12.56 14.88 12.13 14.46 11.44 14.45C10.85 14.45 10.26 14.45 9.66997 14.45C8.91997 14.45 8.50997 14.86 8.50997 15.61C8.50997 17.19 8.50997 18.77 8.50997 20.34C8.50997 20.82 8.26997 21.06 7.78997 21.06C6.72997 21.06 5.65997 21.06 4.59997 21.06C4.39997 21.06 4.19997 21.04 4.00997 21C2.94997 20.75 2.25997 19.86 2.25997 18.75C2.25997 16.74 2.25997 14.73 2.25997 12.72C2.25997 12.64 2.25997 12.56 2.25997 12.49C2.21997 12.48 2.20997 12.47 2.19997 12.47C2.09997 12.47 1.98997 12.47 1.88997 12.46C1.17997 12.43 0.629972 12.11 0.269972 11.5C-0.200028 10.73 -0.0500279 9.79 0.639972 9.1C3.34997 6.39 6.05997 3.68 8.76997 0.96C9.19997 0.53 9.62997 0.12 10.25 0Z"
-                      fill="#A9D4F8"
+                      className="fill-[#A9D4F8] group-hover:fill-white" // Adjust the hover color as needed
                     />
                   </g>
                   <defs>
@@ -96,7 +97,7 @@ export function ThreadsSidebar() {
             </button>
           </Link>
           <button
-            className="border border-theme-silver-chalice flex items-center justify-center py-1 px-2 rounded-2xl min-w-[10rem] border-[#A9D4F8] mt-2 text-[#F8BBD9] font-family-mulish-2 hover:bg-[#d6e0e9] hover:text-white
+            className="border border-theme-silver-chalice flex items-center justify-center py-1 px-2 rounded-2xl min-w-[10rem] border-[#A9D4F8] mt-2 text-[#F8BBD9] font-family-mulish-2 hover:bg-[#F8BBD9] hover:text-white hover:border-[#F8BBD9]
           "
           >
             Chủ đề quan tâm

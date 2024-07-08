@@ -93,22 +93,13 @@ export default function Notification() {
          md:ml-56
         flex w-full flex-col flex-1 p-2 space-y-3 rounded-lg p-0.5 bg-white md:p-3"
     >
-      <div className="flex flex-col mx-0 space-y-2 md:space-y-3 flex-1 mt-2 md:mt-0 ">
+      <div className="flex flex-col mx-0 space-y-2 md:space-y-3 flex-1 md:mt-0 ">
         <div className="flex flex-col md:flex-row">
-          <div className="w-full md:w-2/3  p-2 md:p-2">
-            <div
-              className="text-white mt-4 border-b-[1px] border-[#A7A7A7] pb-2 mb-2"
-              style={{
-                color: "#A7A7A7",
-                fontSize: "0.725rem",
-              }}
-            >
-              Thông báo
-            </div>
+          <div className="w-full   px-2 md:px-2">
             {notificationItems.map((item) => (
               <div
                 key={item.id}
-                className="bg-[#F8F8F8] p-2 md:p-4 rounded-lg w-full m-2 border-[1px] border-[#A7A7A7]"
+                className="bg-[#F8F8F8] p-2 md:p-4 rounded-lg w-full mx-2 mb-2 border-[1px] border-[#A7A7A7]"
               >
                 <div className="flex justify-between items-center text-[#7AC0F8]">
                   <div className="flex items-center">
@@ -136,54 +127,6 @@ export default function Notification() {
                 </div>
               </div>
             ))}
-          </div>
-          <div className="w-full md:w-1/3 px-4 hidden md:block">
-            <div className="flex flex-col space-y-2 list-none  p-4 rounded-lg bg-[#F8F8F8] mt-10">
-              <h2 className="font-family-nunito text-[#7AC0F8]">
-                Đề xuất chủ đề
-              </h2>
-              <form action="" className="flex flex-col space-y-2">
-                <div className="flex flex-row items-center space-x-2">
-                  <label
-                    htmlFor="category"
-                    className="text-sm font-bold w-[60px]
-                                "
-                  >
-                    Thể loại
-                  </label>
-                  <input
-                    type="text"
-                    name="category"
-                    id="category"
-                    className="p-2 rounded-lg border border-gray-300 w-full"
-                    placeholder="Tìm chủ đề"
-                  />
-                </div>
-                <div className="flex flex-row items-center space-x-2">
-                  <label
-                    htmlFor="category"
-                    className="text-sm font-bold w-[60px]"
-                  >
-                    Chủ đề
-                  </label>
-                  <input
-                    type="text"
-                    className="p-2 rounded-lg border border-gray-300 w-full"
-                    placeholder="Tìm chủ đề"
-                  />
-                </div>
-                <div className="flex flex-row items-center space-x-2 justify-end w-full">
-                  <button className="bg-[#F8BBD9] text-white px-2 rounded-2xl">
-                    Đề xuất
-                  </button>
-                </div>
-              </form>
-            </div>
-            <img
-              src="https://firebasestorage.googleapis.com/v0/b/weloveschool-212d8.appspot.com/o/asd1.png?alt=media&token=5229bcab-5620-4393-aabb-b52eb3ba7369"
-              alt=""
-              className="w-full h-auto rounded-lg"
-            />
           </div>
         </div>
       </div>

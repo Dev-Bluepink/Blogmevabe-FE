@@ -248,13 +248,13 @@ export default function Profile2() {
               </Section>
             ))}
           </div>
-          <div className="w-full md:w-1/3 p-2 md:p-2">
+          {/* <div className="w-full md:w-1/3 p-2 md:p-2">
             <img
               src="https://firebasestorage.googleapis.com/v0/b/weloveschool-212d8.appspot.com/o/image%2021.png?alt=media&token=8c8eb1c4-b971-4ae9-b45f-5595612de613"
               alt=""
               className="w-full h-auto rounded-lg"
             />
-          </div>
+          </div> */}
         </div>
       </div>
     </div>

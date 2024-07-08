@@ -215,16 +215,6 @@ export default function Profile2() {
       <div className="flex flex-col mx-0 space-y-2 md:space-y-3 flex-1 mt-2 md:mt-0 md:mx-2">
         <div className="flex flex-col md:flex-row">
           <div className="w-full md:w-2/3 p-2 md:p-2">
-            <div
-              className="text-white mt-4 border-b-[1px] border-[#A7A7A7] pb-2 mb-2"
-              style={{
-                color: "#A7A7A7",
-                fontSize: "0.725rem",
-              }}
-            >
-              {" "}
-              Trang cá nhân
-            </div>
             <div className="flex flex-row items-center space-x-4 mb-6">
               <img
                 src="https://firebasestorage.googleapis.com/v0/b/weloveschool-212d8.appspot.com/o/asd1.png?alt=media&token=5229bcab-5620-4393-aabb-b52eb3ba7369"

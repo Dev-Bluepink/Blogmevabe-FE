@@ -206,9 +206,9 @@ export function Navbar() {
         </div>
         {!isAuthenticated && (
           <div className="flex items-center md:space-x-6  ">
-            <div className="flex items-center pl-4 space-x-4">
+            <div className="flex items-center pl-4 space-x-4 mr-4 md:mr-0">
               <Link to="/notification">
-                <div className="hidden flex justify-end items-center cursor-pointer md:flex">
+                <div className="hidden flex justify-end items-center cursor-pointer md:flex  mr-4 md:mr-0">
                   <span
                     className="mr-2"
                     style={{
@@ -251,8 +251,8 @@ export function Navbar() {
                   </span>
                 </div>
               </Link>
-              <div className="flex items-center ">
-                <div className="flex items-center cursor-pointer rounded-full p-2 bg-[#F6F6F6]  md:hidden">
+              <div className="flex items-center">
+                <div className="flex items-center cursor-pointer rounded-full p-2 bg-[#F6F6F6]  md:hidden mr-4 md:mr-0">
                   <button onClick={toggleSearch}>
                     <svg
                       width="18"
@@ -399,7 +399,7 @@ export function Navbar() {
                   Kiến thức
                 </div>
               </div>
-              <Link to="/knowledge" className="text-[12px] text-[#7A7A7A]">
+              <Link to="/u/knowledge" className="text-[12px] text-[#7A7A7A]">
                 Tất cả
               </Link>
             </div>

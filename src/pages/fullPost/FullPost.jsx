@@ -13,10 +13,18 @@ export function FullPost() {
   const { user } = AuthConsumer();
   const { postId } = useParams();
   const [commentMode, setCommentMode] = useState(false);
+  const [showPopup, setShowPopup] = useState(false);
   // const { data, isFetching } = useQuery({
   //   queryKey: ["post/comment", postId],
   //   queryFn: async () => await axios.get(`/api/comments/post/${postId}`).then((res) => res.data),
   // });
+  const [showBanner, setShowBanner] = useState(true);
+
+  // Hàm để xử lý việc ẩn banner
+  const hideBanner = () => {
+    setShowBanner(false);
+  };
+
   const { mutate } = useMutation({
     mutationFn: async (data) => {
       await axios
@@ -92,49 +100,50 @@ export function FullPost() {
     },
   ]);
   return (
-    <div
-      id="main-content"
-      className="
+    <>
+      <div
+        id="main-content"
+        className="
        md:ml-56
-      flex w-full flex-col flex-1 p-2 space-y-3 rounded-lg p-0.5 bg-theme-cultured md:bg-white md:p-3"
-    >
-      <div className="flex flex-col mx-0 space-y-2 md:space-y-3 flex-1 mt-2 md:mt-0 ">
-        <div className="flex flex-col md:flex-row">
-          <div className="w-full md:px-2">
-            <div className="flex flex-col space-y-4 font-family-mulish">
-              <div className="flex flex-col space-y-2 w-full">
-                <div
-                  key={post.id}
-                  className="flex flex-col bg-white space-y-2 border-b-[1px] border-[#A7A7A7] pb-2 mb-2"
-                >
-                  <div className="flex justify-between">
-                    <div className="flex items-center space-x-2">
-                      <img
-                        src={post.avatar}
-                        alt=""
-                        className="w-8 h-8 rounded-full"
-                      />
+      flex w-full flex-col flex-1 p-2 space-y-3 rounded-lg p-0.5 bg-white md:bg-white md:p-3"
+      >
+        <div className="flex flex-col mx-0 space-y-2 md:space-y-3 flex-1 mt-2 md:mt-0 ">
+          <div className="flex flex-col md:flex-row">
+            <div className="w-full md:px-2">
+              <div className="flex flex-col space-y-4 font-family-mulish">
+                <div className="flex flex-col space-y-2 w-full">
+                  <div
+                    key={post.id}
+                    className="flex flex-col bg-white space-y-2 border-b-[1px] border-[#A7A7A7] pb-2 mb-2"
+                  >
+                    <div className="flex justify-between">
+                      <div className="flex items-center space-x-2">
+                        <img
+                          src={post.avatar}
+                          alt=""
+                          className="w-8 h-8 rounded-full"
+                        />
 
-                      <div>
                         <div>
-                          {" "}
-                          <p className="text-xl font-semibold text-[#7AC0F8]">
-                            {post.name}{" "}
-                            <span className="text-xs text-gray-400">
-                              Hà Nội/ Mang thai / Ăn uống khi mang thai
+                          <div>
+                            {" "}
+                            <p className="text-xl font-semibold text-[#7AC0F8]">
+                              {post.name}{" "}
+                              <span className="text-xs text-gray-400 hidden md:block">
+                                Hà Nội/ Mang thai / Ăn uống khi mang thai
+                              </span>
+                            </p>
+                            <span className="text-xs font-semibold text-[#555555] mr-2">
+                              TP. Hồ Chí Minh
                             </span>
-                          </p>
-                          <span className="text-xs font-semibold text-[#555555] mr-2">
-                            TP. Hồ Chí Minh
-                          </span>
-                          <span className="text-xs font-semibold text-[#555555]">
-                            {post.time}
-                          </span>
+                            <span className="text-xs font-semibold text-[#555555]">
+                              {post.time}
+                            </span>
+                          </div>
                         </div>
                       </div>
-                    </div>
-                    <div className="flex items-center space-x-2">
-                      {/* <Link to={"/bai-dang"}>
+                      <div className="flex items-center space-x-2">
+                        {/* <Link to={"/bai-dang"}>
                           <button
                             className="flex flex-end space-x-2 bg-[#A9D4F8] px-6 py-1 rounded-3xl text-white
                         hover:bg-[#F8BBD9] hover:text-white
@@ -143,7 +152,7 @@ export function FullPost() {
                             Tham gia
                           </button>
                         </Link> */}
-                      {/* <button>
+                        {/* <button>
                           <svg
                             width="18"
                             height="4"
@@ -156,42 +165,41 @@ export function FullPost() {
                             <circle cx="16" cy="2" r="2" fill="#D9D9D9" />
                           </svg>
                         </button> */}
+                      </div>
                     </div>
-                  </div>
-                  <div className="flex flex-col space-y-2">
-                    <h1 className="text-xl font-semibold">{post.title}</h1>
-                    <img
-                      src={post.banner}
-                      alt=""
-                      className="w-full  object-cover rounded-lg"
-                    />
-                    <p
-                      className="text-gray-600 
-                      text-xl
-                    "
-                    >
-                      {post.content}
-                    </p>
-                  </div>
-                  <div className="flex justify-between">
-                    <div className="flex space-x-4">
-                      <Counter />
-                      <Comments comment={post.comment} />
+                    <div className="flex flex-col space-y-2">
+                      <h1 className="text-xl font-semibold">{post.title}</h1>
+                      <img
+                        src={post.banner}
+                        alt=""
+                        className="w-full  object-cover rounded-lg"
+                      />
+                      <p
+                        className="text-gray-600 
+                      text-xl "
+                      >
+                        {post.content}
+                      </p>
                     </div>
-                    <div className="flex space-x-4">
-                      <SaveNew saved={false} />
+                    <div className="flex justify-between">
+                      <div className="flex space-x-4">
+                        <Counter />
+                        <Comments comment={post.comment} />
+                      </div>
+                      <div className="flex space-x-4">
+                        <SaveNew saved={false} />
+                      </div>
                     </div>
                   </div>
                 </div>
               </div>
-            </div>
 
-            <div className="w-full  p-2 md:p-2">
-              <InputComment />
-              <CommentTree comments={comments} />
+              <div className="w-full  p-2 md:p-2">
+                <InputComment />
+                <CommentTree comments={comments} />
+              </div>
             </div>
-          </div>
-          {/* <div className="w-full md:w-1/3 px-4 hidden md:block">
+            {/* <div className="w-full md:w-1/3 px-4 hidden md:block">
            
             <div className="flex flex-col space-y-2 list-none  p-4 rounded-lg ">
               <img
@@ -208,9 +216,43 @@ export function FullPost() {
               />
             </div>
           </div> */}
+          </div>
         </div>
       </div>
-    </div>
+      {/* banner poster */}
+      <div>
+        {showBanner && (
+          <div className="fixed bottom-16 right-4 z-50">
+            <div className="relative">
+              <img
+                src="https://firebasestorage.googleapis.com/v0/b/weloveschool-212d8.appspot.com/o/Group%2049.png?alt=media&token=3ea39c03-d218-426f-a735-0f4acf13a6dd"
+                alt=""
+              />
+              {/* Nút để tắt banner, sử dụng Tailwind CSS để định vị */}
+              <button
+                onClick={hideBanner}
+                className="absolute top-0 right-0 p-1 bg-transparent border-none cursor-pointer"
+              >
+                <svg
+                  width="14"
+                  height="14"
+                  viewBox="0 0 14 14"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    fillRule="evenodd"
+                    clipRule="evenodd"
+                    d="M7 1.3125C3.85875 1.3125 1.3125 3.85875 1.3125 7C1.3125 10.1412 3.85875 12.6875 7 12.6875C10.1412 12.6875 12.6875 10.1412 12.6875 7C12.6875 3.85875 10.1412 1.3125 7 1.3125ZM5.99667 5.37833C5.95661 5.33535 5.90831 5.30087 5.85465 5.27696C5.80098 5.25305 5.74305 5.24019 5.6843 5.23915C5.62556 5.23812 5.56721 5.24892 5.51273 5.27093C5.45826 5.29293 5.40877 5.32568 5.36723 5.36723C5.32568 5.40877 5.29293 5.45826 5.27093 5.51273C5.24892 5.56721 5.23812 5.62556 5.23915 5.6843C5.24019 5.74305 5.25305 5.80098 5.27696 5.85465C5.30087 5.90831 5.33535 5.95661 5.37833 5.99667L6.38167 7L5.37833 8.00333C5.33535 8.04339 5.30087 8.09169 5.27696 8.14535C5.25305 8.19902 5.24019 8.25695 5.23915 8.3157C5.23812 8.37444 5.24892 8.43279 5.27093 8.48727C5.29293 8.54174 5.32568 8.59123 5.36723 8.63277C5.40877 8.67432 5.45826 8.70707 5.51273 8.72907C5.56721 8.75108 5.62556 8.76188 5.6843 8.76085C5.74305 8.75981 5.80098 8.74695 5.85465 8.72304C5.90831 8.69913 5.95661 8.66465 5.99667 8.62167L7 7.61833L8.00333 8.62167C8.04339 8.66465 8.09169 8.69913 8.14535 8.72304C8.19902 8.74695 8.25695 8.75981 8.3157 8.76085C8.37444 8.76188 8.43279 8.75108 8.48727 8.72907C8.54174 8.70707 8.59123 8.67432 8.63277 8.63277C8.67432 8.59123 8.70707 8.54174 8.72907 8.48727C8.75108 8.43279 8.76188 8.37444 8.76085 8.3157C8.75981 8.25695 8.74695 8.19902 8.72304 8.14535C8.69913 8.09169 8.66465 8.04339 8.62167 8.00333L7.61833 7L8.62167 5.99667C8.66465 5.95661 8.69913 5.90831 8.72304 5.85465C8.74695 5.80098 8.75981 5.74305 8.76085 5.6843C8.76188 5.62556 8.75108 5.56721 8.72907 5.51273C8.70707 5.45826 8.67432 5.40877 8.63277 5.36723C8.59123 5.32568 8.54174 5.29293 8.48727 5.27093C8.43279 5.24892 8.37444 5.23812 8.3157 5.23915C8.25695 5.24019 8.19902 5.25305 8.14535 5.27696C8.09169 5.30087 8.04339 5.33535 8.00333 5.37833L7 6.38167L5.99667 5.37833Z"
+                    fill="#A8A8A8"
+                  />
+                </svg>
+              </button>
+            </div>
+          </div>
+        )}
+      </div>
+    </>
   );
 }
 

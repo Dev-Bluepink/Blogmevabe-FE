@@ -59,18 +59,18 @@ export default function Knowledge() {
             {postItems.map((item) => (
               <div
                 key={item.id}
-                className="bg-[#F8F8F8] p-4 rounded-lg w-full mx-2"
+                className="bg-[#F8F8F8] p-1 md:p-4 rounded-lg w-full border border-[#E0E0E0] mb-4"
               >
-                <div className="flex flex-col md:flex-row justify-start items-start text-[#7AC0F8]">
-                  <div className="flex items-center mb-4 md:mb-0">
+                <div className="flex  md:flex-row justify-start items-start text-[#7AC0F8]">
+                  <div className="flex items-center  justify-center   md:mb-4">
                     <img
                       src={item.image}
                       alt=""
                       className="w-32 h-32 rounded-lg"
                     />
                   </div>
-                  <div className="flex flex-col w-full mx-0 md:mx-6">
-                    <div className="flex items-center mb-4">
+                  <div className="flex flex-col w-full mx-2 md:mx-6">
+                    <div className="flex items-center mb-2 md:mb-4">
                       <img
                         src={item.avatar}
                         alt=""
@@ -79,11 +79,13 @@ export default function Knowledge() {
                       <p className="ml-2 text-sm font-bold">{item.name}</p>
                     </div>
                     <div>
-                      <h5 className="text-lg font-bold text-[#474747]">
+                      <h5 className="text-sm font-bold text-[#474747] md:text-lg">
                         Tiểu đường thai kỳ nên ăn gì vào bữa sáng? Thực đơn 1
                         tuần cho mẹ bầu
                       </h5>
-                      <p className="text-sm text-gray-500">{item.content}</p>
+                      <p className="text-sm text-gray-500 hidden md:block">
+                        {item.content}
+                      </p>
                     </div>
                     <span className="mt-3">
                       <svg

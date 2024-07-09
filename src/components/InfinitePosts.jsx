@@ -9,6 +9,7 @@ import MultiCarousel from "./MultiCarousel";
 import "./custom-slick.css";
 import Ads from "./Ads";
 import AdsHomeMb from "./AdsHomeMb";
+import MultiCarouselMB from "./MultiCarouselMB";
 
 InfinitePostsLayout.propTypes = {
   linkUrl: PropTypes.string,
@@ -187,7 +188,7 @@ export default function InfinitePostsLayout({
             {/* Phần bên trái */}
             <div className="w-full pl-2  px-3 md:px-8">
               <AdsHomeMb />
-
+              <MultiCarouselMB data={items} />
               <MultiCarousel data={items} />
 
               <div
@@ -218,11 +219,11 @@ export default function InfinitePostsLayout({
                             {" "}
                             <p className="text-xl font-semibold text-[#7AC0F8]">
                               {post.name}{" "}
-                              <span className="text-xs text-gray-400">
+                              <span className="text-xs text-gray-400 hidden md:block">
                                 Hà Nội/ Mang thai / Ăn uống khi mang thai
                               </span>
                             </p>
-                            <span className="text-xs font-semibold text-[#555555] mr-2">
+                            <span className="text-xs font-semibold text-[#555555] mr-2  ">
                               TP. Hồ Chí Minh
                             </span>
                             <span className="text-xs font-semibold text-[#555555]">
@@ -362,9 +363,11 @@ function Counter() {
     isLiked === null ? "#A8A8A8" : !isLiked ? "#F8ADD2" : "#A8A8A8";
 
   return (
-    <div className="flex justify-between bg-[#F5F5F5] rounded-2xl px-2">
+    <div className="flex justify-between bg-[#F5F5F5] rounded-2xl ">
       <button
-        className="flex items-center bg-[#E3E3E3] rounded-2xl px-2 active:bg-[#CCEDFF] active:text-white"
+        className={`flex justify-center items-center bg-[#E3E3E3] rounded-2xl p-2 ${
+          isLiked === true ? "bg-[#bad9eb]" : ""
+        }`}
         onClick={increaseNumber}
       >
         <svg
@@ -382,7 +385,9 @@ function Counter() {
       </button>
       <span className="flex justify-center items-center mx-2">{number}</span>
       <button
-        className="flex justify-center items-center bg-[#E3E3E3] rounded-2xl px-2"
+        className={`flex justify-center items-center bg-[#E3E3E3] rounded-2xl p-2 ${
+          isLiked === false ? "bg-[#FFDAEC]" : ""
+        }`}
         onClick={decreaseNumber}
       >
         <svg

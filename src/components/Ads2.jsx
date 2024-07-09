@@ -3,7 +3,7 @@ import React from "react";
 export default function Ads2() {
   return (
     <div>
-      <div className="w-full  px-4 hidden md:block">
+      <div className="w-full hidden md:block">
         <div className="flex flex-col space-y-2 list-none mb-4 px-4 rounded-lg bg-[#F8F8F8] mt-3">
           <h2 className="font-family-nunito text-[#7AC0F8]">Đề xuất chủ đề</h2>
           <form action="" className="flex flex-col space-y-2">

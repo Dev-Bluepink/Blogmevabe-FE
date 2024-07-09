@@ -222,7 +222,7 @@ export function FullPost() {
       {/* banner poster */}
       <div>
         {showBanner && (
-          <div className="fixed bottom-16 right-4 z-50">
+          <div className="fixed bottom-16 right-4 z-50 block md:hidden">
             <div className="relative">
               <img
                 src="https://firebasestorage.googleapis.com/v0/b/weloveschool-212d8.appspot.com/o/Group%2049.png?alt=media&token=3ea39c03-d218-426f-a735-0f4acf13a6dd"

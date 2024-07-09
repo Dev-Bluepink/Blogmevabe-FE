@@ -107,12 +107,12 @@ export function Navbar() {
             />
           </Link>
         </div>
-        <div className="relative flex ml-10 items-center hidden md:flex">
+        <div className="relative flex ml-44 items-center hidden md:flex">
           <input
             type="search"
             name="search"
             id="search"
-            className="py-2 pr-10 pl-4 w-[30rem] bg-neutral-100 focus:outline-none rounded-3xl"
+            className="py-2 pr-10 pl-4 w-[34rem] bg-neutral-100 focus:outline-none rounded-3xl"
             placeholder="Tìm kiếm"
           />
           <span className="absolute right-3 text-gray-500">

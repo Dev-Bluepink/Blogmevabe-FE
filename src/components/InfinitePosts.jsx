@@ -152,6 +152,7 @@ export default function InfinitePostsLayout({
         "https://firebasestorage.googleapis.com/v0/b/weloveschool-212d8.appspot.com/o/post1.png?alt=media&token=5b330a42-e221-4f2b-9868-9e491ff59a08",
       content:
         "Việc lên kế hoạch tiêm chủng trước khi mang thai là rất cần thiết và quan trọng đối với mẹ bầu và thai nhi. Tuy nhiên, không tránh được trường hợp một số mẹ đã mang bầu trước khi tiêm chủng...",
+      danhmuc: "Hà Nội/ Mang thai / Ăn uống khi mang thai",
       like: 100,
       dislike: 10,
       comment: 20,
@@ -213,15 +214,21 @@ export default function InfinitePostsLayout({
                           className="w-8 h-8 rounded-full"
                         />
                         <div>
-                          <p className="font-semibold text-[#7AC0F8]  text-lg">
-                            {post.name}{" "}
-                            <span className="text-xs text-gray-400">
+                          <div>
+                            {" "}
+                            <p className="text-xl font-semibold text-[#7AC0F8]">
+                              {post.name}{" "}
+                              <span className="text-xs text-gray-400">
+                                Hà Nội/ Mang thai / Ăn uống khi mang thai
+                              </span>
+                            </p>
+                            <span className="text-xs font-semibold text-[#555555] mr-2">
+                              TP. Hồ Chí Minh
+                            </span>
+                            <span className="text-xs font-semibold text-[#555555]">
                               {post.time}
                             </span>
-                          </p>
-                          <span className="text-xs text-gray-400">
-                            TP. Hồ Chí Minh
-                          </span>
+                          </div>
                         </div>
                       </div>
                       <div className="flex items-center space-x-2">
@@ -285,6 +292,7 @@ export default function InfinitePostsLayout({
                         text-gray-600"
                         style={{
                           fontSize: "18px",
+                          lineHeight: "1.5",
                         }}
                       >
                         {post.content}

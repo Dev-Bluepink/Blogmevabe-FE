@@ -59,8 +59,7 @@ export function FullPost() {
     {
       id: 1,
       name: "Hà Phan",
-      avatar:
-        "https://scontent-hkg1-1.xx.fbcdn.net/v/t39.30808-1/433124344_122107206314247463_1345011116744623977_n.jpg?stp=dst-jpg_p200x200&_nc_cat=109&ccb=1-7&_nc_sid=f4b9fd&_nc_ohc=nPUivUj5zK0Q7kNvgE14u1H&_nc_ht=scontent-hkg1-1.xx&oh=00_AYBZ6I8tvkqpzE4d35vW2D1IAO1FP1FETjIdBkevF5YXfw&oe=66817689",
+      avatar: "https://i.pravatar.cc/150?img=3",
       time: "2 giờ trước",
       content:
         "Cho con đi học tiếng Hàn sớm để sau này con có thể xem phim Hàn mà không cần phụ đề, cứu bố mẹ khỏi việc phải đọc nhanh như siêu nhân!",
@@ -68,8 +67,7 @@ export function FullPost() {
         {
           id: 2,
           name: "Hòa Hồ",
-          avatar:
-            "https://scontent-hkg1-1.xx.fbcdn.net/v/t39.30808-1/433124344_122107206314247463_1345011116744623977_n.jpg?stp=dst-jpg_p200x200&_nc_cat=109&ccb=1-7&_nc_sid=f4b9fd&_nc_ohc=nPUivUj5zK0Q7kNvgE14u1H&_nc_ht=scontent-hkg1-1.xx&oh=00_AYBZ6I8tvkqpzE4d35vW2D1IAO1FP1FETjIdBkevF5YXfw&oe=66817689",
+          avatar: "https://i.pravatar.cc/150?img=3",
           time: "1 giờ trước",
           content:
             "Học tiếng Hàn từ bé để sau này con có thể tự đi du lịch Hàn Quốc mà không sợ bị lạc, chỉ sợ bố mẹ lạc thôi!",
@@ -77,8 +75,7 @@ export function FullPost() {
         {
           id: 3,
           name: "Lê Thị C",
-          avatar:
-            "https://scontent-hkg1-1.xx.fbcdn.net/v/t39.30808-1/433124344_122107206314247463_1345011116744623977_n.jpg?stp=dst-jpg_p200x200&_nc_cat=109&ccb=1-7&_nc_sid=f4b9fd&_nc_ohc=nPUivUj5zK0Q7kNvgE14u1H&_nc_ht=scontent-hkg1-1.xx&oh=00_AYBZ6I8tvkqpzE4d35vW2D1IAO1FP1FETjIdBkevF5YXfw&oe=66817689",
+          avatar: "https://i.pravatar.cc/150?img=3",
           time: "30 phút trước",
           content:
             "Học tiếng Hàn từ bé để sau này con có thể tự đi du lịch Hàn Quốc mà không sợ bị lạc, chỉ sợ bố mẹ lạc thôi!",
@@ -121,7 +118,7 @@ export function FullPost() {
                       <div>
                         <div>
                           {" "}
-                          <p className="font-semibold text-[#7AC0F8]">
+                          <p className="text-xl font-semibold text-[#7AC0F8]">
                             {post.name}{" "}
                             <span className="text-xs text-gray-400">
                               Hà Nội/ Mang thai / Ăn uống khi mang thai
@@ -382,12 +379,12 @@ function InputComment() {
   };
 
   return (
-    <div className="flex items-center space-x-2 bg-[#F5F5F5]  rounded-sm mb-3">
+    <div className="flex items-center space-x-2 bg-[#F5F5F5]  rounded-2xl mb-3">
       <input
         type="text"
         value={comment}
         onChange={handleChange}
-        className="w-full   rounded-sm bg-[#F5F5F5] p-2 "
+        className="w-full    bg-[#F5F5F5] p-2 rounded-2xl  "
         placeholder="Viết bình luận..."
       />
       <button

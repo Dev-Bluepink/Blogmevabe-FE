@@ -101,7 +101,7 @@ const MultiCarousel = () => {
                 className="w-full h-full rounded-2xl"
               />
               <div className="absolute bottom-5 ml-4">
-                <p className="text-sm font-bold text-white">{item.content}</p>
+                <p className="text-xl font-bold text-white">{item.content}</p>
                 <div className="flex items-center mt-1">
                   <img
                     src={item.avatar}

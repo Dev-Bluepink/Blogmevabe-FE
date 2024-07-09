@@ -210,7 +210,7 @@ export default function Profile2() {
   return (
     <div
       id="main-content"
-      className="md:ml-56 flex w-full flex-col flex-1 p-2 space-y-3 rounded-lg p-0.5 bg-theme-cultured md:bg-white md:p-3"
+      className="md:ml-56 flex w-full flex-col flex-1 p-2 space-y-3 rounded-lg p-0.5 bg-white md:bg-white md:p-3"
     >
       <div className="flex flex-col mx-0 space-y-2 md:space-y-3 flex-1 mt-2 md:mt-0 md:mx-2">
         <div className="flex flex-col md:flex-row">
@@ -253,7 +253,7 @@ export default function Profile2() {
 
 const Navbar = ({ currentSection }) => {
   return (
-    <nav className="grid grid-cols-1 md:grid-cols-6 md:gap-2 mb-6">
+    <nav className="grid grid-cols-4 md:grid-cols-6 md:gap-2 mb-6">
       {sections.map((sec) => (
         <Link
           key={sec.id}
@@ -303,7 +303,7 @@ const getContent = (id) => {
                 </label>
                 <input
                   type="text"
-                  className="w-full p-2 border rounded-lg bg-[#F8F8F8]"
+                  className="w-full p-2  rounded-full bg-[#F8F8F8] font-semibold text-[#535353]"
                   value={mockData.thongTin.name}
                 />
               </div>
@@ -313,7 +313,7 @@ const getContent = (id) => {
                 </label>
                 <input
                   type="text"
-                  className="w-full p-2 border rounded-lg bg-[#F8F8F8]"
+                  className="w-full p-2 rounded-full bg-[#F8F8F8]  font-semibold text-[#535353]"
                   value={mockData.thongTin.email}
                 />
               </div>
@@ -323,42 +323,44 @@ const getContent = (id) => {
                 </label>
                 <input
                   type="date"
-                  className="w-full p-2 border rounded-lg bg-[#F8F8F8]"
+                  className="w-full p-2 rounded-full bg-[#F8F8F8]  font-semibold text-[#535353]"
                 />
               </div>
               <div className="flex flex-row items-center space-x-4 mb-6">
                 <label className="text-sm font-semibold min-w-[5rem]">
                   Địa chỉ:
                 </label>
-                <div className="w-full p-2 border rounded-lg bg-[#F8F8F8]">
-                  {/* grid 4 */}
-                  <div className="grid grid-cols-4 gap-2 px-3 py-2">
-                    <div className="col-span-2 ">
+                <div className="w-full p-2 rounded-lg bg-[#F8F8F8]">
+                  <div className="md:grid md:grid-cols-4 gap-2 px-3 py-2">
+                    <div className="col-span-2  md:col-span-0">
                       <label className="text-sm font-semibold">Tỉnh</label>
                       <input
                         type="text"
-                        className="w-full p-2 border  bg-white rounded-2xl"
+                        className="w-full p-2 bg-white rounded-full  font-semibold text-[#535353]"
                         placeholder="Tỉnh/Thành phố"
+                        value="TP. Hồ Chí Minh"
                       />
                     </div>
-                    <div className="col-span-2">
+                    <div className="col-span-2 md:col-span-0">
                       <label className="text-sm font-semibold">
                         Quận, huyện
                       </label>
                       <input
                         type="text"
-                        className="w-full p-2 border rounded-2xl bg-white"
+                        className="w-full p-2 rounded-full bg-white  font-semibold text-[#535353]"
                         placeholder="Quận/Huyện"
+                        value="Bình Thạnh"
                       />
                     </div>
-                    <div className="col-span-2">
+                    <div className="col-span-2 md:col-span-0">
                       <label className="text-sm font-semibold">
                         Phường, xã
                       </label>
                       <input
                         type="text"
-                        className="w-full p-2 border rounded-2xl bg-white"
+                        className="w-full p-2 rounded-full bg-white  font-semibold text-[#535353]"
                         placeholder="Địa chỉ cụ thể"
+                        value="Phường 4"
                       />
                     </div>
                     <div className="col-span-2">
@@ -367,18 +369,18 @@ const getContent = (id) => {
                       </label>
                       <input
                         type="text"
-                        className="w-full p-2 border rounded-2xl bg-white"
+                        className="w-full p-2  bg-white rounded-full font-semibold text-[#535353]"
                         placeholder="Địa chỉ cụ thể"
+                        value=""
                       />
-                    </div>
-
-                    <div className="col-span-4 flex justify-end">
-                      <button className="bg-[#7AC0F8] text-white px-5 py-1 rounded-3xl">
-                        Lưu
-                      </button>
                     </div>
                   </div>
                 </div>
+              </div>
+              <div className="col-span-4 flex justify-end">
+                <button className="bg-[#7AC0F8] text-white px-5 py-1 rounded-3xl">
+                  Lưu
+                </button>
               </div>
             </form>
 
@@ -398,7 +400,7 @@ const getContent = (id) => {
                 </label>
                 <input
                   type="password"
-                  className="w-full p-2 border rounded-lg bg-[#F8F8F8]"
+                  className="w-full p-2 rounded-full bg-[#F8F8F8]"
                   value={mockData.thongTin.phone}
                 />
               </div>
@@ -408,7 +410,7 @@ const getContent = (id) => {
                 </label>
                 <input
                   type="password"
-                  className="w-full p-2 border rounded-lg bg-[#F8F8F8]"
+                  className="w-full p-2 rounded-full bg-[#F8F8F8]"
                   value={mockData.thongTin.phone}
                 />
               </div>
@@ -418,7 +420,7 @@ const getContent = (id) => {
                 </label>
                 <input
                   type="password"
-                  className="w-full p-2 border rounded-lg bg-[#F8F8F8]"
+                  className="w-full p-2 rounded-full bg-[#F8F8F8]"
                   value={mockData.thongTin.phone}
                 />
               </div>

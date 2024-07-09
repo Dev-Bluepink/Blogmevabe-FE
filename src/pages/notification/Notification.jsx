@@ -95,11 +95,11 @@ export default function Notification() {
     >
       <div className="flex flex-col mx-0 space-y-2 md:space-y-3 flex-1 md:mt-0 ">
         <div className="flex flex-col md:flex-row">
-          <div className="w-full   px-2 md:px-2">
+          <div className="w-full   px-0 md:px-2">
             {notificationItems.map((item) => (
               <div
                 key={item.id}
-                className="bg-[#F8F8F8] p-2 md:p-4 rounded-lg w-full mx-2 mb-2 border-[1px] border-[#A7A7A7]"
+                className="bg-[#F8F8F8] p-2 md:p-4 rounded-lg w-full  mb-2 border-[1px] border-[#A7A7A7]"
               >
                 <div className="flex justify-between items-center text-[#7AC0F8]">
                   <div className="flex items-center">

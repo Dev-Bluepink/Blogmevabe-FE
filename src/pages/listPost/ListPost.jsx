@@ -51,12 +51,12 @@ export default function ListPost() {
       id="main-content"
       className="
          md:ml-56
-        flex w-full flex-col flex-1 p-2 space-y-3 rounded-lg p-0.5 bg-theme-cultured md:bg-white md:p-3"
+        flex w-full flex-col flex-1 p-2 space-y-3 rounded-lg p-0.5 bg-white md:bg-white md:p-3"
     >
       <div className="flex flex-col mx-0 space-y-2 md:space-y-3 flex-1 mt-2 md:mt-0 ">
         <div className="flex flex-col md:flex-row">
           <div className="w-full px-2 md:px-2">
-            <div className="flex flex-col space-y-2 list-none p-4 rounded-lg w-full mx-2 bg-[#F8F8F8]">
+            <div className="flex flex-col space-y-2 list-none p-4 rounded-lg w-full bg-[#F8F8F8]">
               <div className="flex flex-row items-center space-x-2 list-none px-4 rounded-lg border-gray-300 ">
                 <img
                   src="https://via.placeholder.com/400"
@@ -127,18 +127,18 @@ export default function ListPost() {
             {postItems.map((item) => (
               <div
                 key={item.id}
-                className="border p-4 rounded-lg w-full m-2 hover:bg-[#F8F8F8] "
+                className="border p-1 rounded-lg w-full hover:bg-[#F8F8F8] "
               >
-                <div className="flex flex-col md:flex-row justify-start items-start text-[#7AC0F8]">
-                  <div className="flex items-center mb-4 md:mb-0">
+                <div className="flex flex-row justify-start items-start text-[#7AC0F8]">
+                  <div className="flex items-center  md:mb-0">
                     <img
                       src={item.image}
                       alt=""
                       className="w-32 h-32 rounded-lg"
                     />
                   </div>
-                  <div className="flex flex-col w-full mx-0 md:mx-6">
-                    <div className="flex items-center mb-4">
+                  <div className="flex flex-col  w-full mx-2 md:mx-6">
+                    <div className="flex items-center ">
                       <img
                         src={item.avatar}
                         alt=""
@@ -147,13 +147,13 @@ export default function ListPost() {
                       <p className="ml-2 text-sm font-bold">{item.name}</p>
                     </div>
                     <div>
-                      <h5 className="text-lg font-bold text-[#474747]">
+                      <h5 className="text-base font-bold text-[#474747]">
                         Tiểu đường thai kỳ nên ăn gì vào bữa sáng? Thực đơn 1
                         tuần cho mẹ bầu
                       </h5>
-                      <p className="text-sm text-gray-500">{item.content}</p>
+                      {/* <p className="text-sm text-gray-500">{item.content}</p> */}
                     </div>
-                    <div className="flex flex-row justify-between items-center w-full mt-4">
+                    <div className="flex flex-row justify-between items-center w-full">
                       <div className="flex flex-row items-center space-x-2">
                         <Counter />
                         <Comments comment={3} />

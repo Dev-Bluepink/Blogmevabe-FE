@@ -84,7 +84,6 @@ export default function PostHot() {
           </form>
         </div>
       </div>
-      ;
     </div>
   );
 }

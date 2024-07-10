@@ -228,7 +228,7 @@ function SideBarComponent({ threadList }) {
       {threadList?.slice(0, 10).map((thread) => (
         <Link
           // to={`/${thread.name}`}
-          to="/community"
+          to="/u/knowledge/detailknowledge"
           className="flex justify-between w-48 cursor-pointer font-family-mulish text-[#7AC0F8]"
           key={thread.name}
         >

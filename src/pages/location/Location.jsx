@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import { ThreadSearch } from "../../components/Navbar";
 
 const ITEMS_PER_PAGE = 10;
 
@@ -26,90 +25,7 @@ export default function Location() {
         { id: 10, name: "Khánh Hòa" },
         { id: 11, name: "Phú Yên" },
         { id: 12, name: "Đà Nẵng" },
-        { id: 1, name: "Gia Lai" },
-        { id: 2, name: "Kon Tum" },
-        { id: 3, name: "Đắk Lắk" },
-        { id: 4, name: "Đắk Nông" },
-        { id: 5, name: "Lâm Đồng" },
-        { id: 6, name: "Bình Phước" },
-        { id: 7, name: "Bình Dương" },
-        { id: 8, name: "Bình Thuận" },
-        { id: 9, name: "Ninh Thuận" },
-        { id: 10, name: "Khánh Hòa" },
-        { id: 11, name: "Phú Yên" },
-        { id: 12, name: "Đà Nẵng" },
-        { id: 1, name: "Gia Lai" },
-        { id: 2, name: "Kon Tum" },
-        { id: 3, name: "Đắk Lắk" },
-        { id: 4, name: "Đắk Nông" },
-        { id: 5, name: "Lâm Đồng" },
-        { id: 6, name: "Bình Phước" },
-        { id: 7, name: "Bình Dương" },
-        { id: 8, name: "Bình Thuận" },
-        { id: 9, name: "Ninh Thuận" },
-        { id: 10, name: "Khánh Hòa" },
-        { id: 11, name: "Phú Yên" },
-        { id: 12, name: "Đà Nẵng" },
-        { id: 1, name: "Gia Lai" },
-        { id: 2, name: "Kon Tum" },
-        { id: 3, name: "Đắk Lắk" },
-        { id: 4, name: "Đắk Nông" },
-        { id: 5, name: "Lâm Đồng" },
-        { id: 6, name: "Bình Phước" },
-        { id: 7, name: "Bình Dương" },
-        { id: 8, name: "Bình Thuận" },
-        { id: 9, name: "Ninh Thuận" },
-        { id: 10, name: "Khánh Hòa" },
-        { id: 11, name: "Phú Yên" },
-        { id: 12, name: "Đà Nẵng" },
-        { id: 1, name: "Gia Lai" },
-        { id: 2, name: "Kon Tum" },
-        { id: 3, name: "Đắk Lắk" },
-        { id: 4, name: "Đắk Nông" },
-        { id: 5, name: "Lâm Đồng" },
-        { id: 6, name: "Bình Phước" },
-        { id: 7, name: "Bình Dương" },
-        { id: 8, name: "Bình Thuận" },
-        { id: 9, name: "Ninh Thuận" },
-        { id: 10, name: "Khánh Hòa" },
-        { id: 11, name: "Phú Yên" },
-        { id: 12, name: "Đà Nẵng" },
-        { id: 1, name: "Gia Lai" },
-        { id: 2, name: "Kon Tum" },
-        { id: 3, name: "Đắk Lắk" },
-        { id: 4, name: "Đắk Nông" },
-        { id: 5, name: "Lâm Đồng" },
-        { id: 6, name: "Bình Phước" },
-        { id: 7, name: "Bình Dương" },
-        { id: 8, name: "Bình Thuận" },
-        { id: 9, name: "Ninh Thuận" },
-        { id: 10, name: "Khánh Hòa" },
-        { id: 11, name: "Phú Yên" },
-        { id: 12, name: "Đà Nẵng" },
-        { id: 1, name: "Gia Lai" },
-        { id: 2, name: "Kon Tum" },
-        { id: 3, name: "Đắk Lắk" },
-        { id: 4, name: "Đắk Nông" },
-        { id: 5, name: "Lâm Đồng" },
-        { id: 6, name: "Bình Phước" },
-        { id: 7, name: "Bình Dương" },
-        { id: 8, name: "Bình Thuận" },
-        { id: 9, name: "Ninh Thuận" },
-        { id: 10, name: "Khánh Hòa" },
-        { id: 11, name: "Phú Yên" },
-        { id: 12, name: "Đà Nẵng" },
-        { id: 1, name: "Gia Lai" },
-        { id: 2, name: "Kon Tum" },
-        { id: 3, name: "Đắk Lắk" },
-        { id: 4, name: "Đắk Nông" },
-        { id: 5, name: "Lâm Đồng" },
-        { id: 6, name: "Bình Phước" },
-        { id: 7, name: "Bình Dương" },
-        { id: 8, name: "Bình Thuận" },
-        { id: 9, name: "Ninh Thuận" },
-        { id: 10, name: "Khánh Hòa" },
-        { id: 11, name: "Phú Yên" },
-        { id: 12, name: "Đà Nẵng" },
+        // Add more items here
       ],
     },
   ];
@@ -330,34 +246,36 @@ export default function Location() {
                     <svg
                       width="6"
                       height="8"
-                      viewBox="0 0 8 12"
+                      viewBox="0 0 6 8"
                       fill="none"
                       xmlns="http://www.w3.org/2000/svg"
                     >
                       <path
-                        d="M7 1L2 6L7 11"
+                        d="M5 1L1 4L5 7"
                         stroke="#878787"
-                        strokeWidth="2"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
                       />
                     </svg>
                   </button>
-                  <div>{renderPageNumbers()}</div>
+                  {renderPageNumbers()}
                   <button
                     onClick={() => handleChangePage(currentPage + 1)}
                     disabled={currentPage === totalPages}
                     className="p-2 bg-[#F6F6F6] rounded-3xl disabled:opacity-50"
                   >
                     <svg
-                      width="8"
-                      height="12"
-                      viewBox="0 0 8 12"
+                      width="6"
+                      height="8"
+                      viewBox="0 0 6 8"
                       fill="none"
                       xmlns="http://www.w3.org/2000/svg"
                     >
                       <path
-                        d="M1 11L6 6L1 0.999999"
+                        d="M1 1L5 4L1 7"
                         stroke="#878787"
-                        strokeWidth="2"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
                       />
                     </svg>
                   </button>

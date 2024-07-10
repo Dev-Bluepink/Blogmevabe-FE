@@ -4,7 +4,7 @@ export default function Ads() {
   return (
     <div>
       {/* lassName="fixed hidden flex-col w-56 m-3 border border-theme-silver-chalice bg-white h-screen rounded-2xl md:flex" */}
-      <div className="flex  flex-col w-56 my-3 md:flex-row justify-between items-center hidden md:flex">
+      <div className="flex flex-col w-56 my-3 md:flex-row justify-between items-center hidden md:flex">
         <div className="flex flex-col ">
           <img
             src="https://firebasestorage.googleapis.com/v0/b/weloveschool-212d8.appspot.com/o/image%2012.png?alt=media&token=13f610b2-28c8-451e-95bf-e5a08ea3a00f"

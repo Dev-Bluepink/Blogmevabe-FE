@@ -56,7 +56,7 @@ export default function ListPost() {
       <div className="flex flex-col mx-0 space-y-2 md:space-y-3 flex-1 mt-2 md:mt-0 ">
         <div className="flex flex-col md:flex-row">
           <div className="w-full px-2 md:px-2">
-            <div className="flex flex-col space-y-2 list-none p-4 rounded-lg w-full mx-2 bg-[#F8F8F8]">
+            <div className="flex flex-col space-y-2 list-none px-4 rounded-lg w-full bg-[#F8F8F8]">
               <div className="flex flex-row items-center space-x-2 list-none px-4 rounded-lg border-gray-300 ">
                 <img
                   src="https://via.placeholder.com/400"
@@ -69,7 +69,7 @@ export default function ListPost() {
                   placeholder="Tiêu đề"
                 />
               </div>
-              <div className="flex flex-col justify-between items-center space-y-2 list-none p-4 rounded-lg border-gray-300 mb-4 ">
+              <div className="flex flex-col justify-between items-center space-y-2 list-none p-4 rounded-lg border-gray-300 ">
                 <textarea
                   type="text"
                   className="p-2 rounded-lg border-gray-300 w-full h-40 bg-[#EBEBEB]"
@@ -127,7 +127,7 @@ export default function ListPost() {
             {postItems.map((item) => (
               <div
                 key={item.id}
-                className="border p-4 rounded-lg w-full m-2 hover:bg-[#F8F8F8] "
+                className="border p-4 rounded-lg w-full hover:bg-[#F8F8F8] "
               >
                 <div className="flex flex-col md:flex-row justify-start items-start text-[#7AC0F8]">
                   <div className="flex items-center mb-4 md:mb-0">

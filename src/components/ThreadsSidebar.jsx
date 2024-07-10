@@ -140,7 +140,7 @@ export function ThreadsSidebar() {
                 <button className="text-xs text-[#7AC0F8]">All</button>
               </Link>
             </div>
-            <SideBarComponent threadList={categories[0].subcategories} />
+            <SideBarComponentKV threadList={categories[0].subcategories} />
           </div>
           <span className="mx-5 border border-theme-silver-chalice"></span>
         </>
@@ -172,7 +172,7 @@ export function ThreadsSidebar() {
             <h2 className="font-family-nunito">Kiến thức</h2>
           </div>
 
-          <Link to="/u/knowledge">
+          <Link to="/communityknow">
             <button className="text-xs text-[#7AC0F8]">All</button>
           </Link>
         </div>
@@ -228,7 +228,55 @@ function SideBarComponent({ threadList }) {
       {threadList?.slice(0, 10).map((thread) => (
         <Link
           // to={`/${thread.name}`}
-          to="/u/knowledge/detailknowledge"
+          to="/u/knowledge"
+          className="flex justify-between w-48 cursor-pointer font-family-mulish text-[#7AC0F8]"
+          key={thread.name}
+        >
+          <div
+            className={`flex items-center space-x-3 ${!thread.logo && "pl-9"}`}
+          >
+            {thread.logo && (
+              <img
+                loading="lazy"
+                width="auto"
+                height="100%"
+                src={thread.logo}
+                alt=""
+                className="object-cover w-6 h-6 rounded-full"
+              />
+            )}
+            {!thread.logo && (
+              <svg
+                width="12"
+                height="12"
+                viewBox="0 0 12 12"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <circle cx="6" cy="6" r="6" fill="#F8BBD9" />
+              </svg>
+            )}
+            {thread && <span className="text-xs font-semibold ">{thread}</span>}
+          </div>
+          {/* <span className="p-1 px-2 text-sm font-semibold rounded-md bg-theme-gray-blue">
+            {thread.subscriberCount > 9
+              ? thread.subscriberCount
+              : `0${thread.subscriberCount}`}
+          </span> */}
+        </Link>
+      ))}
+    </div>
+  );
+}
+
+function SideBarComponentKV({ threadList }) {
+  console.log("threadList", threadList);
+  return (
+    <div className="flex flex-col space-y-4 w-48 list-none font-family-mulish">
+      {threadList?.slice(0, 10).map((thread) => (
+        <Link
+          // to={`/${thread.name}`}
+          to="/community"
           className="flex justify-between w-48 cursor-pointer font-family-mulish text-[#7AC0F8]"
           key={thread.name}
         >

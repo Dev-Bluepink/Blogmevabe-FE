@@ -19,6 +19,7 @@ import Area from "./pages/area/Area.jsx";
 import Community from "./pages/community/Community.jsx";
 import BottomMenu from "./components/BottomMenu.jsx";
 import DetailKnowledge from "./pages/detailknowledge/detailknowledge.jsx";
+import CommunityKnow from "./pages/communityKnow/CommunityKnow.jsx";
 // import ListPost from "./pages/listPost/ListPost.jsx";
 
 const Feed = lazy(() => import("./pages/feed/Feed.jsx"));
@@ -82,6 +83,10 @@ const router = createBrowserRouter([
           {
             path: "/community",
             element: <Community />,
+          },
+          {
+            path: "/communityknow",
+            element: <CommunityKnow />,
           },
           {
             path: "/list-post",

@@ -18,6 +18,7 @@ import Knowledge from "./pages/knowledge/Knowledge.jsx";
 import Area from "./pages/area/Area.jsx";
 import Community from "./pages/community/Community.jsx";
 import BottomMenu from "./components/BottomMenu.jsx";
+import DetailKnowledge from "./pages/detailknowledge/detailknowledge.jsx";
 // import ListPost from "./pages/listPost/ListPost.jsx";
 
 const Feed = lazy(() => import("./pages/feed/Feed.jsx"));
@@ -65,6 +66,10 @@ const router = createBrowserRouter([
           {
             path: "/u/knowledge",
             element: <Knowledge />,
+          },
+          {
+            path: "/u/knowledge/detailknowledge",
+            element: <DetailKnowledge />,
           },
           {
             path: "/u/area",

@@ -81,7 +81,7 @@ export function Register() {
           )}
         </h1>
         <form
-          className="flex flex-col items-center space-y-5 bg-white w-80"
+          className="flex flex-col items-center space-y-5 bg-white"
           onSubmit={(e) => {
             e.preventDefault();
             mutate();

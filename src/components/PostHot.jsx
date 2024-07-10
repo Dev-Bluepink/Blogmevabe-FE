@@ -77,7 +77,7 @@ export default function PostHot() {
               />
             </div>
             <div className="flex flex-row items-center space-x-2 justify-end w-full">
-              <button className="bg-[#F8BBD9] text-white px-2 rounded-2xl">
+              <button className="bg-[#F8BBD9] text-white text-sm px-3 rounded-2xl">
                 Đề xuất
               </button>
             </div>

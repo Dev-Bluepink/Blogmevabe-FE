@@ -391,7 +391,7 @@ const getContent = (id) => {
                 fontSize: "0.725rem",
               }}
             >
-              Thông tin cá nhân
+              Thông tin mật khẩu
             </div>
             <form>
               <div className="flex flex-row items-center space-x-4 mb-6">

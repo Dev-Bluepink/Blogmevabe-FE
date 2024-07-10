@@ -22,7 +22,7 @@ export default function Knowledge() {
       title:
         "Tiểu đường thai kỳ nên ăn gì vào bữa sáng? Thực đơn 1 tuần cho mẹ bầu",
       content:
-        "Đái tháo đường trong thai kỳ (tiểu đường thai kỳ) là tình trạng rối loạn chuyển hóa đường trong cơ thể khi mang thai. Tình trạng này thường được phát phát hiện từ...",
+        "Đái tháo đường trong thai kỳ (tiểu đường thai kỳ) là tình trạng rối loạn chuyển hóa đường trong cơ thể khi mang thai. Tình trạng này thường được phát ...",
     },
     {
       id: 2,
@@ -32,7 +32,7 @@ export default function Knowledge() {
       title:
         "Tiểu đường thai kỳ nên ăn gì vào bữa sáng? Thực đơn 1 tuần cho mẹ bầu",
       content:
-        "Đái tháo đường trong thai kỳ (tiểu đường thai kỳ) là tình trạng rối loạn chuyển hóa đường trong cơ thể khi mang thai. Tình trạng này thường được phát phát hiện từ...",
+        "Đái tháo đường trong thai kỳ (tiểu đường thai kỳ) là tình trạng rối loạn chuyển hóa đường trong cơ thể khi mang thai. Tình trạng này thường được ...",
     },
     {
       id: 3,
@@ -42,7 +42,7 @@ export default function Knowledge() {
       title:
         "Tiểu đường thai kỳ nên ăn gì vào bữa sáng? Thực đơn 1 tuần cho mẹ bầu",
       content:
-        "Đái tháo đường trong thai kỳ (tiểu đường thai kỳ) là tình trạng rối loạn chuyển hóa đường trong cơ thể khi mang thai. Tình trạng này thường được phát phát hiện từ...",
+        "Đái tháo đường trong thai kỳ (tiểu đường thai kỳ) là tình trạng rối loạn chuyển hóa đường trong cơ thể khi mang thai. Tình trạng này thường được phát ...",
     },
   ];
 
@@ -59,10 +59,10 @@ export default function Knowledge() {
             {postItems.map((item) => (
               <div
                 key={item.id}
-                className="bg-[#F8F8F8] p-1 md:p-4 rounded-lg w-full border border-[#E0E0E0] mb-4"
+                className="bg-[#F8F8F8] p-1 md:p-2 rounded-lg w-full border border-[#E0E0E0] mb-4"
               >
                 <div className="flex  md:flex-row justify-start items-start text-[#7AC0F8]">
-                  <div className="flex items-center  justify-center   md:mb-4">
+                  <div className="flex items-center  justify-center ">
                     <img
                       src={item.image}
                       alt=""
@@ -70,7 +70,7 @@ export default function Knowledge() {
                     />
                   </div>
                   <div className="flex flex-col w-full mx-2 md:mx-6">
-                    <div className="flex items-center mb-2 md:mb-4">
+                    <div className="flex items-center mb-2 md:mb-1">
                       <img
                         src={item.avatar}
                         alt=""
@@ -79,7 +79,7 @@ export default function Knowledge() {
                       <p className="ml-2 text-sm font-bold">{item.name}</p>
                     </div>
                     <div>
-                      <h5 className="text-sm font-bold text-[#474747] md:text-lg">
+                      <h5 className="text-sm font-bold text-[#474747] md:text-sm">
                         Tiểu đường thai kỳ nên ăn gì vào bữa sáng? Thực đơn 1
                         tuần cho mẹ bầu
                       </h5>
@@ -87,7 +87,7 @@ export default function Knowledge() {
                         {item.content}
                       </p>
                     </div>
-                    <span className="mt-3">
+                    <span className="mt-1 flex float-right justify-end text-sm text-[#7AC0F8]">
                       <svg
                         width="10"
                         height="13"

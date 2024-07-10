@@ -57,15 +57,14 @@ export function Register() {
   } = error ? error.response.data.errors : {};
 
   return (
-    <div className="flex justify-center items-center w-screen h-screen md:space-x-10 bg-theme-cultured">
-      <div className="flex flex-col p-5 py-10 space-y-10 bg-white rounded-md shadow-2vxl md:p-20 min-w-[430px]">
-        <div className="flex justify-center md:hidden">
-          <AppLogo>
-            <h1 className="font-mono text-3xl font-bold tracking-tight md:block">
-              Donghanhcungcon
-            </h1>
-          </AppLogo>
-        </div>
+    <div className="flex justify-center items-center min-h-screen md:space-x-10 bg-theme-cultured">
+      <div
+        className="flex flex-col px-6 p-5 py-5 space-y-10 
+       bg-white rounded-md shadow-2xl md:px-20"
+        style={{
+          paddingBottom: "3rem",
+        }}
+      >
         <h1
           className={`${
             status !== "loading" && "text-2xl"
@@ -82,7 +81,7 @@ export function Register() {
           )}
         </h1>
         <form
-          className="flex flex-col items-center space-y-5 bg-white"
+          className="flex flex-col items-center space-y-5 bg-white w-80"
           onSubmit={(e) => {
             e.preventDefault();
             mutate();
@@ -95,20 +94,20 @@ export function Register() {
             placeholder="Tên tài khoản"
             className="w-full px-4 py-3 rounded-md bg-[#F4F4F4]"
           />
-          <div className="flex w-full space-x-3">
+          <div className="flex  space-x-3">
             <input
               type="text"
               value={firstName}
               onChange={(e) => setFirstName(e.target.value)}
               placeholder="Họ"
-              className="w-1/2 px-4 py-3 rounded-md bg-[#F4F4F4]"
+              className="px-4 py-3 rounded-md bg-[#F4F4F4]"
             />
             <input
               type="text"
               value={lastName}
               onChange={(e) => setLastName(e.target.value)}
               placeholder="Tên"
-              className="w-1/2 px-4 py-3 rounded-md bg-[#F4F4F4]"
+              className=" px-4 py-3 rounded-md bg-[#F4F4F4]"
             />
           </div>
           <div className="flex w-full ">

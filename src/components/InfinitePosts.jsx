@@ -217,9 +217,9 @@ export default function InfinitePostsLayout({
                         <div>
                           <div>
                             {" "}
-                            <p className="text-xl font-semibold text-[#7AC0F8]">
+                            <p className="text-xl font-semibold text-[#7AC0F8] flex flex-row items-center">
                               {post.name}{" "}
-                              <span className="text-xs text-gray-400 hidden md:block">
+                              <span className=" mx-2 text-xs text-gray-400 hidden md:block">
                                 Hà Nội/ Mang thai / Ăn uống khi mang thai
                               </span>
                             </p>

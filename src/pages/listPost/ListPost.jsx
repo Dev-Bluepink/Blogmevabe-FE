@@ -130,7 +130,7 @@ export default function ListPost() {
                 {postItems.map((item) => (
                   <div
                     key={item.id}
-                    className="border p-4 mb-2 rounded-lg w-full hover:bg-[#F8F8F8] "
+                    className="border p-2 mb-2 rounded-lg w-full hover:bg-[#F8F8F8] "
                   >
                     <div className="flex flex-col md:flex-row justify-start items-start text-[#7AC0F8]">
                       <div className="flex items-center mb-4 md:mb-0">
@@ -141,7 +141,7 @@ export default function ListPost() {
                         />
                       </div>
                       <div className="flex flex-col w-full mx-0 md:mx-6">
-                        <div className="flex items-center mb-4">
+                        <div className="flex items-center ">
                           <img
                             src={item.avatar}
                             alt=""
@@ -150,7 +150,7 @@ export default function ListPost() {
                           <p className="ml-2 text-sm font-bold">{item.name}</p>
                         </div>
                         <div>
-                          <h5 className="text-lg font-bold text-[#474747]">
+                          <h5 className="text-sm font-bold text-[#474747]">
                             Tiểu đường thai kỳ nên ăn gì vào bữa sáng? Thực đơn
                             1 tuần cho mẹ bầu
                           </h5>
@@ -158,7 +158,7 @@ export default function ListPost() {
                             {item.content}
                           </p>
                         </div>
-                        <div className="flex flex-row justify-between items-center w-full mt-4">
+                        <div className="flex flex-row justify-between items-center w-full mt-2">
                           <div className="flex flex-row items-center space-x-2">
                             <Counter />
                             <Comments comment={3} />

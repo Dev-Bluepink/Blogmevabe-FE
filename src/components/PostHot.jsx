@@ -46,7 +46,7 @@ export default function PostHot() {
             <p className=" text-[#A8A8A8]">5020 thành viên</p>
           </div>
         </div>
-        <div className="flex flex-col space-y-2 list-none  p-4 rounded-lg bg-[#F8F8F8] mt-10">
+        <div className="flex flex-col space-y-2 list-none  p-4 rounded-lg bg-[#F8F8F8] mt-3">
           <h2 className="font-family-nunito text-[#7AC0F8]">Đề xuất chủ đề</h2>
 
           <form action="" className="flex flex-col space-y-2">

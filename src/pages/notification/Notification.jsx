@@ -95,7 +95,7 @@ export default function Notification() {
     >
       <div className="flex flex-col mx-0 space-y-2 md:space-y-3 flex-1 md:mt-0 ">
         <div className="flex flex-col md:flex-row">
-          <div className="w-full   px-0 md:px-2">
+          <div className="w-full mx-0 md:mx-2  px-0 md:px-2">
             {notificationItems.map((item) => (
               <div
                 key={item.id}

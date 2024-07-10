@@ -109,7 +109,7 @@ export function FullPost() {
       >
         <div className="flex flex-col mx-0 space-y-2 md:space-y-3 flex-1 mt-2 md:mt-0 ">
           <div className="flex flex-col md:flex-row">
-            <div className="w-full md:px-2">
+            <div className="w-full mx-3 md:px-2">
               <div className="flex flex-col space-y-4 font-family-mulish">
                 <div className="flex flex-col space-y-2 w-full">
                   <div

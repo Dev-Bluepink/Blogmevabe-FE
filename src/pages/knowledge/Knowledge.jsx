@@ -55,7 +55,7 @@ export default function Knowledge() {
     >
       <div className="flex flex-col mx-0 space-y-2 md:space-y-3 flex-1 md:mt-0">
         <div className="flex flex-col md:flex-row">
-          <div className="w-full px-2 md:px-2">
+          <div className="w-full mx-2 md:px-2">
             {postItems.map((item) => (
               <div
                 key={item.id}

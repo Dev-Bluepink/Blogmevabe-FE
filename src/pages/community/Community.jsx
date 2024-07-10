@@ -9,7 +9,7 @@ export default function Community() {
     >
       <div className="flex flex-col mx-0 space-y-2 md:space-y-3 flex-1 mt-2 md:mt-0 ">
         <div className="flex flex-col md:flex-row">
-          <div className="w-full  px-2 md:px-2">
+          <div className="w-full  md:mx-2 md:px-2">
             <Link to="/list-post">
               <div className="flex flex-row justify-between items-center space-y-2 list-none p-4 rounded-lg  border border-gray-300 mb-4 ">
                 <div className="flex flex-row items-center space-x-2">

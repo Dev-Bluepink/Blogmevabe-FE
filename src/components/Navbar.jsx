@@ -73,7 +73,7 @@ export function Navbar() {
 
   return (
     <nav className="sticky  bg-white top-0 z-50  border-b-2">
-      <div className="flex items-center justify-between max-w-screen-2xl mx-auto  h-16">
+      <div className="flex items-center justify-between max-w-screen-xl mx-auto  h-16">
         <div
           className={`fixed top-0 left-0 w-full h-full bg-black transition-opacity duration-300 ${
             menuOpen ? "opacity-50 z-40" : "opacity-0 z-0"
@@ -107,7 +107,7 @@ export function Navbar() {
             />
           </Link>
         </div>
-        <div className="relative flex ml-44 items-center hidden md:flex">
+        <div className="relative flex ml-[8rem] items-center hidden md:flex">
           <input
             type="search"
             name="search"

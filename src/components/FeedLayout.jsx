@@ -13,7 +13,7 @@ export default function FeedLayout() {
 
   return (
     <div className="flex justify-center min-h-screen bg-[#FFFFFF]">
-      <div className="flex max-w-screen-2xl w-full">
+      <div className="flex max-w-screen-xl w-full">
         <ThreadsSidebar />
         <Outlet />
         {!hideAds &&

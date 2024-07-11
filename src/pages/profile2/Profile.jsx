@@ -210,7 +210,7 @@ export default function Profile2() {
   return (
     <div
       id="main-content"
-      className="md:ml-56 flex w-full flex-col flex-1 p-2 space-y-3 rounded-lg p-0.5 bg-white md:bg-white md:p-3"
+      className="md:ml-56 flex w-full flex-col flex-1 p-2 space-y-3 rounded-lg p-0.5 bg-white md:bg-white md:p-3 mb-20"
     >
       <div className="flex flex-col mx-0 space-y-2 md:space-y-3 flex-1 mt-2 md:mt-0 md:mx-2">
         <div className="flex flex-col md:flex-row">
@@ -260,8 +260,8 @@ const Navbar = ({ currentSection }) => {
           to={`/u/profile/${sec.id}`}
           className={
             sec.id === currentSection
-              ? " text-[0.875rem] text-white hover:text-white bg-[#7AC0F8] py-1 min-w-[5rem] text-center rounded-2xl mb-2 md:mb-0"
-              : "text-[0.875rem] text-black hover:text-blue-700 bg-[#F8F8F8] py-1 min-w-[5rem] text-center rounded-2xl mb-2 md:mb-0"
+              ? " text-[0.875rem] text-white hover:text-white bg-[#7AC0F8] py-1 min-w-[5rem] text-center rounded-2xl mb-2 md:mb-0 mr-2 md:mr-0"
+              : "text-[0.875rem] text-black hover:text-blue-700 bg-[#F8F8F8] py-1 min-w-[5rem] text-center rounded-2xl mb-2 md:mb-0 mr-2 md:mr-0"
           }
         >
           {sec.title}
@@ -394,7 +394,7 @@ const getContent = (id) => {
               Thông tin mật khẩu
             </div>
             <form>
-              <div className="flex flex-row items-center space-x-4 mb-6">
+              <div className="flex flex-col items-start  space-x-4 mb-6 md:flex-row md:space-y-2 md:items-center">
                 <label className="text-sm font-semibold min-w-[9rem]">
                   Mật khẩu cũ:
                 </label>
@@ -404,7 +404,7 @@ const getContent = (id) => {
                   value={mockData.thongTin.phone}
                 />
               </div>
-              <div className="flex flex-row items-center space-x-4 mb-6">
+              <div className="flex flex-col items-start  space-x-4 mb-6 md:flex-row md:space-y-2 md:items-center">
                 <label className="text-sm font-semibold min-w-[9rem]">
                   Mật khẩu mới
                 </label>
@@ -414,7 +414,7 @@ const getContent = (id) => {
                   value={mockData.thongTin.phone}
                 />
               </div>
-              <div className="flex flex-row items-center space-x-4 mb-6">
+              <div className="flex flex-col items-start  space-x-4 mb-6 md:flex-row md:space-y-2 md:items-center">
                 <label className="text-sm font-semibold min-w-[9rem]">
                   Xác nhận lại mật khẩu:
                 </label>

@@ -52,7 +52,7 @@ export default function DetailKnowledge() {
       id="main-content"
       className="
              md:ml-56
-            flex w-full flex-col flex-1 p-2 space-y-3 rounded-lg p-0.5 bg-theme-cultured md:bg-white md:p-3"
+            flex w-full flex-col flex-1 p-2 space-y-3 rounded-lg p-0.5 bg-white md:bg-white md:p-3 mb-20"
     >
       <div className="flex flex-col mx-5 space-y-2 md:space-y-3 flex-1 md:mt-0">
         <div className="flex flex-col md:flex-row">

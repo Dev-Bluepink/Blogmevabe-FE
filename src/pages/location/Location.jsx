@@ -151,11 +151,11 @@ export default function Location() {
   return (
     <div
       id="main-content"
-      className="md:ml-56 flex w-full flex-col flex-1 p-2 space-y-3 rounded-lg p-0.5 bg-theme-cultured md:bg-white md:p-3"
+      className="md:ml-56 flex w-full flex-col flex-1 p-2 space-y-3 rounded-lg p-0.5 bg-white md:bg-white md:p-3"
     >
       <div className="flex flex-col mx-0 space-y-2 md:space-y-3 flex-1 mt-2 md:mt-0 ">
         <div className="flex flex-col md:flex-row">
-          <div className="w-full m-2 md:px-4">
+          <div className="w-full md:m-2 md:px-4">
             <div className="flex items-center justify-between md:justify-center mb-4  md:items-center">
               <input
                 type="text"

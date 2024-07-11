@@ -57,7 +57,7 @@ export function Register() {
   } = error ? error.response.data.errors : {};
 
   return (
-    <div className="flex justify-center items-center min-h-screen md:space-x-10 bg-theme-cultured">
+    <div className="flex justify-center items-center min-h-screen  max-w-screen md:space-x-10 bg-theme-cultured">
       <div
         className="flex flex-col px-6 p-5 py-5 space-y-10 
        bg-white rounded-md shadow-2xl md:px-20"
@@ -81,7 +81,7 @@ export function Register() {
           )}
         </h1>
         <form
-          className="flex flex-col items-center space-y-5 bg-white"
+          className="flex flex-col items-center space-y-5 bg-white  w-full"
           onSubmit={(e) => {
             e.preventDefault();
             mutate();
@@ -94,13 +94,13 @@ export function Register() {
             placeholder="Tên tài khoản"
             className="w-full px-4 py-3 rounded-md bg-[#F4F4F4]"
           />
-          <div className="flex  space-x-3">
+          <div className="flex  md:space-x-3 flex-col md:flex-row">
             <input
               type="text"
               value={firstName}
               onChange={(e) => setFirstName(e.target.value)}
               placeholder="Họ"
-              className="px-4 py-3 rounded-md bg-[#F4F4F4]"
+              className="px-4 py-3 rounded-md bg-[#F4F4F4] mb-2 md:mb-0"
             />
             <input
               type="text"

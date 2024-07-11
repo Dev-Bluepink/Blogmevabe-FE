@@ -180,7 +180,7 @@ export default function InfinitePostsLayout({
       id="main-content"
       className="
        md:ml-56
-      flex w-full flex-row flex-1 rounded-lg bg-white py-3"
+      flex w-full flex-row flex-1 rounded-lg bg-white py-3 mb-20"
     >
       <div className="flex flex-col mx-0 space-y-2 md:space-y-3 flex-1 mt-2 md:mt-0 ">
         <div className="">

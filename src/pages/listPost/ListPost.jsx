@@ -149,8 +149,8 @@ export default function ListPost() {
                     key={item.id}
                     className="border p-2 mb-2 rounded-lg w-full hover:bg-[#F8F8F8] "
                   >
-                    <div className="flex flex-col md:flex-row justify-start items-start text-[#7AC0F8]">
-                      <div className="flex items-center mb-4 md:mb-0">
+                    <div className="flex flex-row justify-start items-start text-[#7AC0F8]">
+                      <div className="flex items-center mr-3 md:mr-0">
                         <img
                           src={item.image}
                           alt=""
@@ -171,7 +171,7 @@ export default function ListPost() {
                             Tiểu đường thai kỳ nên ăn gì vào bữa sáng? Thực đơn
                             1 tuần cho mẹ bầu
                           </h5>
-                          <p className="text-sm text-gray-500">
+                          <p className="text-sm text-gray-500 hidden md:block">
                             {item.content}
                           </p>
                         </div>

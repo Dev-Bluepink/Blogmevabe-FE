@@ -361,11 +361,11 @@ export default function Knowledge() {
   return (
     <div
       id="main-content"
-      className="md:ml-56 flex w-full flex-col flex-1 p-2 space-y-3 rounded-lg p-0.5 bg-theme-cultured md:bg-white md:p-3"
+      className="md:ml-56 flex w-full flex-col flex-1 p-2 space-y-3 rounded-lg p-0.5 bg-white md:bg-white md:p-3 mb-20"
     >
       <div className="flex flex-col mx-0 space-y-2 md:space-y-3 flex-1 md:mt-0">
         <div className="flex flex-col md:flex-row">
-          <div className="w-full mx-2 md:px-2">
+          <div className="w-full  mx-0 md:mx-2 md:px-2">
             {currentPosts.map((item) => (
               <Link to="/u/knowledge/detailknowledge" key={item.id}>
                 <div
@@ -381,7 +381,7 @@ export default function Knowledge() {
                       />
                     </div>
                     <div className="flex flex-col w-full mx-2 md:mx-6">
-                      <div className="flex items-center mb-2 md:mb-1">
+                      <div className="flex items-center  md:mb-1">
                         <img
                           src={item.avatar}
                           alt=""
@@ -390,7 +390,7 @@ export default function Knowledge() {
                         <p className="ml-2 text-sm font-bold">{item.name}</p>
                       </div>
                       <div>
-                        <h5 className="text-sm font-bold text-[#474747] md:text-sm">
+                        <h5 className="text-xl font-bold text-[#474747] md:text-sm">
                           {item.title}
                         </h5>
                         <p className="text-sm text-gray-500 hidden md:block">

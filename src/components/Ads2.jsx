@@ -2,16 +2,16 @@ import React from "react";
 
 export default function Ads2() {
   return (
-    <div>
+    <div className="w-full flex justify-center items-center">
       <div className="w-full hidden md:block">
         <div className="flex flex-col w-56 md:flex-col justify-between items-center hidden md:flex">
-          <div className="flex flex-col w-full space-y-2 list-none mb-4 rounded-lg bg-[#F8F8F8] mt-3">
+          <div className="flex flex-col w-full space-y-2 list-none mb-4 rounded-lg bg-[#F8F8F8] mt-3 justify-center items-center">
             <h2 className="font-family-nunito text-[#7AC0F8] mx-3 mt-3">
               Đề xuất chủ đề
             </h2>
             <form action="" className="flex flex-col space-y-2 mx-3">
               <div className="flex flex-row items-center space-x-2">
-                <label htmlFor="category" className="text-xs font-bold ">
+                <label htmlFor="category" className="text-xs font-bold">
                   Thể loại
                 </label>
                 <input
@@ -23,7 +23,7 @@ export default function Ads2() {
                 />
               </div>
               <div className="flex flex-row items-center space-x-2">
-                <label htmlFor="category" className="text-xs font-bold ">
+                <label htmlFor="category" className="text-xs font-bold">
                   Chủ đề
                 </label>
                 <input
@@ -34,7 +34,7 @@ export default function Ads2() {
                   placeholder="Thread"
                 />
               </div>
-              <div className="flex flex-row items-center space-x-2 justify-end w-full">
+              <div className="flex flex-row items-center space-x-2 justify-center">
                 <button className="bg-[#F8BBD9] text-white px-2 rounded-2xl">
                   Đề xuất
                 </button>

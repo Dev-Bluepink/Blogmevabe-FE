@@ -46,8 +46,8 @@ export default function PostHot() {
             <p className=" text-[#A8A8A8]">5020 thành viên</p>
           </div>
         </div>
-        <div className="flex flex-col space-y-2 list-none  p-4 rounded-lg bg-[#F8F8F8] mt-3">
-          <h2 className="font-family-nunito text-[#7AC0F8]">Đề xuất chủ đề</h2>
+        <div className="flex flex-col space-y-2 list-none  p-4 rounded-lg bg-[#F8F8F8] mt-3 justify-center items-center">
+          <h2 className="font-family-nunito text-[#7AC0F8] ">Đề xuất chủ đề</h2>
 
           <form action="" className="flex flex-col space-y-2">
             {/* <div className="flex flex-row items-center space-x-2">
@@ -67,17 +67,17 @@ export default function PostHot() {
                   />
                 </div> */}
             <div className="flex flex-row items-center space-x-2 justify-center">
-              <label htmlFor="category" className="text-sm font-bold w-[60px]">
+              <label htmlFor="category" className="text-xs font-bold w-[60px]">
                 Chủ đề
               </label>
               <input
                 type="text"
-                className="p-2 rounded-3xl bg-[#EBEBEB] w-full"
+                className="p-1 px-2 rounded-3xl bg-[#EBEBEB] w-full"
                 placeholder="Tìm chủ đề"
               />
             </div>
-            <div className="flex flex-row items-center space-x-2 justify-end w-full">
-              <button className="bg-[#F8BBD9] text-white text-sm px-3 rounded-2xl">
+            <div className="flex flex-row items-center space-x-2 justify-center w-full">
+              <button className="bg-[#F8BBD9] text-white text-sm px-4 py-1 rounded-2xl">
                 Đề xuất
               </button>
             </div>

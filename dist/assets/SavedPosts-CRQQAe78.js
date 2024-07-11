@@ -1,0 +1,1 @@
+import{r as t,j as e}from"./index-C3c2CGKK.js";import{I as s}from"./InfinitePosts-DloQW-mf.js";function r(){return t.useEffect(()=>(document.title="Donghanhcungcon | saved",()=>{document.title="Donghanhcungcon"})),e.jsx("div",{className:"flex items-center p-2 w-full",children:e.jsx(s,{apiQueryKey:"saved",linkUrl:"posts/saved",forSaved:!0})})}export{r as default};

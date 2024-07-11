@@ -1,1 +1,0 @@
-import{A as a,u as n,a as o,r,j as u}from"./index-C4tUjYxT.js";import{I as i}from"./InfinitePosts-zIZqd6Oi.js";function f(){const{isAuthenticated:e}=a(),s=n(),{feedName:t}=o();return t=="home"&&!e?s("/login"):(r.useEffect(()=>{document.title=`Donghanhcungcon | ${t}`},[t]),u.jsx(i,{linkUrl:`posts/${t||"all"}`,apiQueryKey:t}))}export{f as Feed,f as default};

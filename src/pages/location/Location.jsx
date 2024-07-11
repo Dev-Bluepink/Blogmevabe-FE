@@ -223,13 +223,13 @@ export default function Location() {
                             </div>
                           </td>
                           <td className="px-6 py-4 whitespace-nowrap">
-                            <div className="flex items-center">
-                              <div className="ml-8 text-[#878787]">42</div>
+                            <div className="flex items-center justify-center">
+                              <div className="mr-24 text-[#878787]">42</div>
                             </div>
                           </td>
                           <td className="px-6 py-4 whitespace-nowrap">
-                            <div className="flex items-center">
-                              <div className="ml-8 text-[#878787]">42</div>
+                            <div className="flex items-center justify-center">
+                              <div className="mr-24 text-[#878787]">42</div>
                             </div>
                           </td>
                         </tr>

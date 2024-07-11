@@ -221,9 +221,12 @@ export default function Profile2() {
                 alt=""
                 className="w-14 h-14 rounded-full "
               />
-              <h3 className="text-lg font-semibold text-center text-[#7AC0F8]">
-                Hà Phạm
-              </h3>
+              <div className="flex flex-col items-start">
+                <h3 className="text-lg font-semibold text-center text-[#7AC0F8]">
+                  Hà Phạm
+                </h3>
+                <button className=" text-[#7AC0F8] text-xs">Đăng xuất</button>
+              </div>
             </div>
 
             <Navbar currentSection={section} />
@@ -515,17 +518,17 @@ const getContent = (id) => {
           <div className="flex flex-col">
             <div
               key={comment.id}
-              className=" mb-2 border p-2 rounded-lg px-8 py-4"
+              className=" mb-2 border p-2 rounded-lg md:px-8 md:py-4"
             >
               <div className="flex flex-row justify-between">
-                <span className="text-[#A7A7A7] cursor-pointer">
+                <span className="text-[#A7A7A7] cursor-pointer text-xs md:text-sm ">
                   TP. Hồ Chí Minh / Mang thai
                 </span>
-                <div className="flex items-center space-x-4 hidden md:flex">
-                  <div className="flex items-center space-x-2 text-[#A7A7A7] ">
+                <div className="flex items-center space-x-4  md:flex">
+                  <div className="flex items-center space-x-2 text-[#A7A7A7] text-xs md:text-sm ">
                     Tham gia: <span>56</span>
                   </div>
-                  <div className="flex items-center space-x-2 text-[#A7A7A7]">
+                  <div className="flex items-center space-x-2 text-[#A7A7A7] text-xs md:text-sm">
                     Số bài đăng: <span> 10</span>
                   </div>
                 </div>
@@ -537,7 +540,7 @@ const getContent = (id) => {
                 </div>
                 <div className="flex items-center space-x-4">
                   <button className="flex items-center space-x-2 text-[#000000] border border-[#A7A7A7] px-4 py-1 rounded-2xl">
-                    <span className=" hidden md:flex">Xóa chủ đề</span>
+                    <span className=" text-xs md:text-sm ">Xóa chủ đề</span>
                     <span className="ml-2">
                       <svg
                         width="20"

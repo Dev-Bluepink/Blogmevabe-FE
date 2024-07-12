@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { Link, useParams } from "react-router-dom";
+import { clearToken } from "../../utils/auth";
 
 const mockData = {
   thongTin: {
@@ -204,6 +205,10 @@ const sections = [
   { id: "khong-ung-ho", title: "Không ủng hộ" },
 ];
 
+const handleLogout = () => {
+  clearToken(); // Xóa token từ localStorage bằng hàm clearToken từ auth.js
+  window.location.reload(); // Tải lại trang sau khi đăng xuất
+};
 export default function Profile2() {
   const { section } = useParams();
 
@@ -225,7 +230,12 @@ export default function Profile2() {
                 <h3 className="text-lg font-semibold text-center text-[#7AC0F8]">
                   Hà Phạm
                 </h3>
-                <button className=" text-[#7AC0F8] text-xs">Đăng xuất</button>
+                <button
+                  className="text-[#7AC0F8] text-xs"
+                  onClick={handleLogout}
+                >
+                  Đăng xuất
+                </button>
               </div>
             </div>
 

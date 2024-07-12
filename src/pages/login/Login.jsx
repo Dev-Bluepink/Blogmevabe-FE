@@ -2,77 +2,54 @@ import React, { useEffect, useState } from "react";
 import { useMutation } from "@tanstack/react-query";
 import axios from "axios";
 import { Link, useNavigate } from "react-router-dom";
-import AuthConsumer from "../../components/AuthContext.jsx";
 import Loader from "../../components/Loader.jsx";
+import { saveToken, saveUser, setupAxiosInterceptors } from "../../utils/auth";
 
 export function Login() {
   const [showPass, setShowPass] = useState(false);
-  const [email, setEmail] = useState("");
+  const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [rememberMe, setRememberMe] = useState(false);
-  const { isAuthenticated, login } = AuthConsumer();
   const navigate = useNavigate();
-  const { mutate, status, error, reset } = useMutation({
+
+  const { mutate, status, error } = useMutation({
     mutationFn: async () => {
-      return await axios
-        .post("/api/user/login", { email, password, rememberMe })
-        .then((res) => login(res.data));
+      const response = await axios.post(
+        "https://forum-hngc.onrender.com/auth/login",
+        {
+          username,
+          password,
+        }
+      );
+      return response.data;
     },
-    onSuccess: () => navigate("/home"),
+    onSuccess: (data) => {
+      // tôi muốn  bất đồng bộ lưu token vào localStorage
+      // tôi muốn khi   saveToken(data.token); xong thì thực hiện các còn lại
+      saveUser(data.user);
+      saveToken(data.token);
+      setupAxiosInterceptors();
+      navigate("/");
+    },
   });
 
   useEffect(() => {
-    document.title = "Donghanhcungcon | Login";
+    document.title = "Đăng nhập";
     return () => {
       document.title = "Donghanhcungcon";
     };
   }, []);
 
-  if (isAuthenticated) {
-    navigate("/home");
-    return null;
-  }
-
   const handleGoogleLogin = () => {
-    // Replace with your Google OAuth URL
     window.location.href = "https://your-backend-url.com/auth/google";
   };
 
-  // Listen for the OAuth response from Google
-  useEffect(() => {
-    const handleGoogleAuth = async () => {
-      const urlParams = new URLSearchParams(window.location.search);
-      const token = urlParams.get("token");
-      if (token) {
-        try {
-          const response = await axios.post("/api/user/login/google", {
-            token,
-          });
-          const userData = response.data;
-          localStorage.setItem("user", JSON.stringify(userData));
-          login(userData);
-          navigate("/home");
-        } catch (error) {
-          console.error("Google login error: ", error);
-        }
-      }
-    };
-    handleGoogleAuth();
-  }, [login, navigate]);
-
   return (
-    <div className="flex justify-center items-center min-h-screen md:space-x-10 bg-theme-cultured">
-      <div
-        className="flex flex-col px-6 p-5 py-5 space-y-10 
-       bg-white rounded-md shadow-2xl md:px-20"
-        style={{
-          paddingBottom: "3rem",
-        }}
-      >
-        <div className="flex justify-center md:hidden"></div>
+    <div className="flex justify-center items-center min-h-screen bg-theme-cultured">
+      <div className="flex flex-col px-6 p-5 py-5 space-y-10 bg-white rounded-md shadow-2xl md:px-20">
         <h1
           className={`font-semibold ${
-            status !== "loading" && "text-2xl "
+            status !== "loading" && "text-2xl"
           } tracking-wide ${error && "font-bold uppercase text-theme-orange"}`}
         >
           {error ? (
@@ -80,16 +57,12 @@ export function Login() {
           ) : status === "loading" ? (
             <Loader forPosts={true} />
           ) : (
-            <>
-              <div className="flex flex-col items-center">
-                <div className="text-[#F8ADD2]">
-                  Đăng nhập tài khoản của bạn
-                </div>
-                <p className="text-sm text-center text-gray-500 py-2">
-                  Chào mừng bạn trở lại! Chọn cách đăng nhập
-                </p>
-              </div>
-            </>
+            <div className="flex flex-col items-center">
+              <div className="text-[#F8ADD2]">Đăng nhập tài khoản của bạn</div>
+              <p className="text-sm text-center text-gray-500 py-2">
+                Chào mừng bạn trở lại! Chọn cách đăng nhập
+              </p>
+            </div>
           )}
         </h1>
         <div className="flex justify-center space-x-5 items-center w-full">
@@ -129,8 +102,8 @@ export function Login() {
         >
           <input
             type="username"
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
+            value={username}
+            onChange={(e) => setUsername(e.target.value)}
             placeholder="Tên tài khoản"
             className="w-full px-4 py-3 rounded-md bg-[#F4F4F4]"
           />
@@ -174,7 +147,7 @@ export function Login() {
             </div>
             <Link
               to="/forgot-password"
-              className="flex  cursor-pointer group text-[#7AC0F8] "
+              className="flex cursor-pointer group text-[#7AC0F8] "
             >
               Quên mật khẩu ?
             </Link>
@@ -189,7 +162,7 @@ export function Login() {
         </form>
         <div className="flex justify-between w-full mt-4 mb-10">
           <span> Bạn chưa có tài khoản?</span>
-          <Link to="/register" className="flex  cursor-pointer text-[#7AC0F8]">
+          <Link to="/register" className="flex cursor-pointer text-[#7AC0F8]">
             Đăng ký
           </Link>
         </div>

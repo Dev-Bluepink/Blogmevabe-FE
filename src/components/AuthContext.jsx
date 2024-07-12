@@ -11,47 +11,74 @@ AuthProvider.propTypes = {
 
 export function AuthProvider({ children }) {
   const queryClient = useQueryClient();
-  const localData = JSON.parse(localStorage.getItem("user"));
-  const [isAuthenticated, setIsAuthenticated] = useState(!!localData);
-  const [user, setUser] = useState(localData || {});
+  const localUserData = JSON.parse(localStorage.getItem("user"));
+  const localToken = localStorage.getItem("token");
+  const [isAuthenticated, setIsAuthenticated] = useState(
+    !!localUserData && !!localToken
+  );
+  const [user, setUser] = useState(localUserData || {});
+
   const { refetch } = useQuery({
     queryKey: ["user"],
     queryFn: async () => {
-      return await axios
-        .get("/api/user")
-        .then((res) => {
-          localStorage.setItem("user", JSON.stringify(res.data));
-          setUser(res.data);
-          setIsAuthenticated(true);
-          return res.data;
-        })
-        .catch(() => {
-          setIsAuthenticated(false);
-          setUser({});
-          return {};
-        });
+      if (localToken) {
+        return await axios
+          .get("https://forum-hngc.onrender.com/", {
+            headers: {
+              Authorization: `Bearer ${localToken}`,
+            },
+          })
+          .then((res) => {
+            localStorage.setItem("user", JSON.stringify(res.data));
+            setUser(res.data);
+            setIsAuthenticated(true);
+            return res.data;
+          })
+          .catch(() => {
+            setIsAuthenticated(false);
+            setUser({});
+            localStorage.removeItem("user");
+            localStorage.removeItem("token");
+            return {};
+          });
+      } else {
+        setIsAuthenticated(false);
+        setUser({});
+        return {};
+      }
     },
     retry: 1,
     enabled: isAuthenticated,
   });
+
   useEffect(() => {
     refetch();
-    return;
   }, [refetch]);
-  function login(userInfo) {
+
+  function login(userInfo, token) {
     localStorage.setItem("user", JSON.stringify(userInfo));
+    localStorage.setItem("token", token);
     setUser(userInfo);
     setIsAuthenticated(true);
     queryClient.invalidateQueries();
   }
+
   function logout() {
-    axios.get("api/user/logout").then(() => {
+    axios.get("https://forum-hngc.onrender.com/api/user/logout").then(() => {
       localStorage.removeItem("user");
+      localStorage.removeItem("token");
+      setIsAuthenticated(false);
+      setUser({});
       queryClient.invalidateQueries();
       window.location.href = "/all";
     });
   }
-  return <AuthContext.Provider value={{ isAuthenticated, login, logout, user }}>{children}</AuthContext.Provider>;
+
+  return (
+    <AuthContext.Provider value={{ isAuthenticated, login, logout, user }}>
+      {children}
+    </AuthContext.Provider>
+  );
 }
 
 export default function AuthConsumer() {

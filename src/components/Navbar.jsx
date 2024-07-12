@@ -1,26 +1,32 @@
 import { useQuery } from "@tanstack/react-query";
 import PropTypes from "prop-types";
-import { useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { Link, NavLink, useLocation, useNavigate } from "react-router-dom";
 import avatar from "../assets/avatar.png";
 import axios from "axios";
 import donghanhmevabe from "../assets/logodonghanhmevabe.png";
 import threads from "../assets/threads.png";
-import AuthConsumer from "../components/AuthContext.jsx";
+
 import Svg from "../components/Svg.jsx";
 import useClickOutside from "../hooks/useClickOutside";
 import Modal from "./Modal";
 import { NewThread } from "./NewThread";
 
-
 import SideBarComponent from "./ThreadsSidebar";
 export function Navbar() {
-  const { isAuthenticated, user, logout } = AuthConsumer();
   const location = useLocation();
   const navigate = useNavigate();
   const [menuOpen, setMenuOpen] = useState(false);
   const [searchOpen, setSearchOpen] = useState(false);
 
+  const [isLoggedIn, setIsLoggedIn] = useState(false); // Trạng thái đăng nhập, có thể thay đổi tùy vào cách bạn quản lý đăng nhập
+
+  console.log("isLoggedIn", isLoggedIn);
+  useEffect(() => {
+    // Kiểm tra đăng nhập từ local storage hoặc context API nếu có
+    const loggedIn = localStorage.getItem("token") ? true : false;
+    setIsLoggedIn(loggedIn);
+  }, []);
   const toggleMenu = () => {
     setMenuOpen(!menuOpen);
   };
@@ -131,81 +137,8 @@ export function Navbar() {
           </span>
         </div>
 
-        <div className="flex items-center md:space-x-6">
-          {isAuthenticated && (
-            <>
-              <NavLink
-                to="/saved"
-                className={({ isActive }) =>
-                  `${isActive && "text-theme-orange"}`
-                }
-                title="saved"
-              >
-                <svg
-                  className="hidden w-6 h-6 md:block"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
-                >
-                  {/* Icon SVG content */}
-                </svg>
-              </NavLink>
-              <NavLink
-                to="/inbox"
-                className={({ isActive }) =>
-                  `${isActive && "text-theme-orange"}`
-                }
-                title="inbox"
-              >
-                <svg
-                  className="hidden w-6 h-6 md:block"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
-                >
-                  {/* Icon SVG content */}
-                </svg>
-              </NavLink>
-              <Link
-                to={`/u/${user.username}`}
-                className="hidden md:flex items-center space-x-2 bg-theme-cultured rounded-3xl pr-3 py-0.5"
-              >
-                <img
-                  loading="lazy"
-                  width="auto"
-                  height="100%"
-                  src={user.avatar || avatar}
-                  className="object-cover w-10 h-10 rounded-full duration-500 cursor-pointer hover:scale-125 md:block"
-                />
-                <div className="text-sm font-semibold md:block">
-                  <p className="text-gray-700">{user.username}</p>
-                  <p className="text-gray-500 truncate">
-                    karma: {user.karma.user_karma}
-                  </p>
-                </div>
-              </Link>
-              <button
-                onClick={logout}
-                className="hidden flex-col items-center md:flex"
-              >
-                <svg
-                  className="w-6 h-6 duration-300 rotate-180 md:block hover:scale-110"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
-                >
-                  {/* Icon SVG content */}
-                </svg>
-                <span className="text-sm font-semibold">Logout</span>
-              </button>
-            </>
-          )}
-        </div>
-        {!isAuthenticated && (
-          <div className="flex items-center md:space-x-6  ">
+        <div className="flex items-center md:space-x-6  ">
+          {isLoggedIn && (
             <div className="flex items-center pl-4 space-x-4 mr-4 md:mr-0">
               <Link to="/notification">
                 <div className="hidden flex justify-end items-center cursor-pointer md:flex  mr-4 md:mr-0">
@@ -284,14 +217,16 @@ export function Navbar() {
                 </Link>
               </div>
             </div>
-            {/* <Link
-            to="/login"
-            className="hidden font-semibold cursor-pointer md:flex group bg-[#7AC0F8] px-4 p-2 rounded-2xl hover:bg-[#F8BBD9] hover:text-white"
-          >
-            <span className="font-family-mulish text-white"> Đăng Nhập</span>
-          </Link> */}
-          </div>
-        )}
+          )}
+          {!isLoggedIn && (
+            <Link
+              to="/login"
+              className="font-semibold cursor-pointer md:flex group bg-blue-500 px-4 p-2 rounded-2xl hover:bg-pink-500 hover:text-white"
+            >
+              <span className="font-family-mulish text-white">Đăng Nhập</span>
+            </Link>
+          )}
+        </div>
 
         <div
           className={`md:hidden ${
@@ -441,7 +376,6 @@ export function Navbar() {
             </a>
           </div>
         </div>
-
         <div
           className={`md:hidden ${
             searchOpen ? "block" : "hidden"

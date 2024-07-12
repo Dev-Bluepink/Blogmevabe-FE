@@ -1,11 +1,9 @@
 import React, { useEffect, useState } from "react";
-
 import { useMutation } from "@tanstack/react-query";
 import axios from "axios";
 import { Link, useNavigate } from "react-router-dom";
 import AuthConsumer from "../../components/AuthContext.jsx";
 import Loader from "../../components/Loader.jsx";
-import Svg from "../../components/Svg.jsx";
 
 export function Login() {
   const [showPass, setShowPass] = useState(false);
@@ -31,26 +29,36 @@ export function Login() {
   }, []);
 
   if (isAuthenticated) {
-    return navigate("/home");
+    navigate("/home");
+    return null;
   }
 
-  const responseFacebook = (response) => {
-    console.log(response);
-    axios
-      .post("/api/user/login/facebook", { accessToken: response.accessToken })
-      .then((res) => login(res.data))
-      .then(() => navigate("/home"))
-      .catch((err) => console.error(err));
+  const handleGoogleLogin = () => {
+    // Replace with your Google OAuth URL
+    window.location.href = "https://your-backend-url.com/auth/google";
   };
 
-  const responseGoogle = (response) => {
-    console.log(response);
-    axios
-      .post("/api/user/login/google", { tokenId: response.credential })
-      .then((res) => login(res.data))
-      .then(() => navigate("/home"))
-      .catch((err) => console.error(err));
-  };
+  // Listen for the OAuth response from Google
+  useEffect(() => {
+    const handleGoogleAuth = async () => {
+      const urlParams = new URLSearchParams(window.location.search);
+      const token = urlParams.get("token");
+      if (token) {
+        try {
+          const response = await axios.post("/api/user/login/google", {
+            token,
+          });
+          const userData = response.data;
+          localStorage.setItem("user", JSON.stringify(userData));
+          login(userData);
+          navigate("/home");
+        } catch (error) {
+          console.error("Google login error: ", error);
+        }
+      }
+    };
+    handleGoogleAuth();
+  }, [login, navigate]);
 
   return (
     <div className="flex justify-center items-center min-h-screen md:space-x-10 bg-theme-cultured">
@@ -94,7 +102,10 @@ export function Login() {
             </span>
             Facebook
           </div>
-          <div className="flex flex-row justify-center items-center space-x-2 cursor-pointer bg-[#EEF9FF] min-w-[150px] py-2 px-2 rounded-md">
+          <div
+            className="flex flex-row justify-center items-center space-x-2 cursor-pointer bg-[#EEF9FF] min-w-[150px] py-2 px-2 rounded-md"
+            onClick={handleGoogleLogin}
+          >
             <span className="w-8 h-8">
               <img
                 src="https://img.icons8.com/color/48/000000/google-logo.png"

@@ -60,7 +60,7 @@ export function Register() {
     <div className="flex justify-center items-center min-h-screen  max-w-screen md:space-x-10 bg-theme-cultured">
       <div
         className="flex flex-col px-6 p-5 py-5 space-y-10 
-       bg-white rounded-md shadow-2xl md:px-20"
+       bg-white rounded-md shadow-2xl md:px-10"
         style={{
           paddingBottom: "3rem",
         }}

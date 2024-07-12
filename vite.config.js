@@ -16,6 +16,11 @@ export default defineConfig({
         secure: false,
         ws: true,
       },
+      "/auth": {
+        target: "https://forum-hngc.onrender.com",
+        changeOrigin: true,
+        secure: true, // Since you're accessing an HTTPS endpoint, it's recommended to set secure to true
+      },
     },
   },
 });

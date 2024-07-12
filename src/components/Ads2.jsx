@@ -2,10 +2,10 @@ import React from "react";
 
 export default function Ads2() {
   return (
-    <div className="w-full flex justify-center items-center">
+    <div className="flex justify-center ">
       <div className="w-full hidden md:block">
         <div className="flex flex-col w-56 md:flex-col justify-between items-center hidden md:flex">
-          <div className="flex flex-col w-full space-y-2 list-none mb-4 rounded-lg bg-[#F8F8F8] mt-3 justify-center items-center">
+          <div className="flex flex-col w-full mx-4 my-2 space-y-2 list-none mb-4 rounded-lg bg-[#F8F8F8] mt-3 justify-center items-center">
             <h2 className="font-family-nunito text-[#7AC0F8] mx-3 mt-3">
               Đề xuất chủ đề
             </h2>

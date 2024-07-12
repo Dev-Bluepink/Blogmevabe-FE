@@ -3,7 +3,7 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
-  "proxy": "http://localhost:5000/",
+  "proxy": "https://forum-hngc.onrender.com",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
@@ -14,6 +14,7 @@
     "@react-oauth/google": "^0.12.1",
     "@tanstack/react-query": "^5.45.0",
     "axios": "^1.7.2",
+    "cors": "^2.8.5",
     "framer-motion": "^11.2.10",
     "markdown-to-jsx": "^7.4.7",
     "prop-types": "^15.8.1",

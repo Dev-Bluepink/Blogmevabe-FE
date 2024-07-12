@@ -20,6 +20,8 @@ import Community from "./pages/community/Community.jsx";
 import BottomMenu from "./components/BottomMenu.jsx";
 import DetailKnowledge from "./pages/detailknowledge/detailknowledge.jsx";
 import CommunityKnow from "./pages/communityKnow/CommunityKnow.jsx";
+import Forgotpassword from "./pages/forgotpassword/Forgotpassword.jsx";
+import ChangePassword from "./pages/changePassword/ChangePassword.jsx";
 // import ListPost from "./pages/listPost/ListPost.jsx";
 
 const Feed = lazy(() => import("./pages/feed/Feed.jsx"));
@@ -123,6 +125,14 @@ const router = createBrowserRouter([
   {
     path: "/register",
     element: <Register />,
+  },
+  {
+    path: "/forgot-password",
+    element: <Forgotpassword />,
+  },
+  {
+    path: "/change-password",
+    element: <ChangePassword />,
   },
 ]);
 

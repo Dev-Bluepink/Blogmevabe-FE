@@ -1,10 +1,11 @@
 import { useQuery } from "@tanstack/react-query";
 import axios from "axios";
 import * as PropType from "prop-types";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 // css
 import "./threadsSidebar.css";
+
 
 export function ThreadsSidebar() {
   const { data } = useQuery({
@@ -13,46 +14,21 @@ export function ThreadsSidebar() {
       return await axios.get("/api/threads").then((res) => res.data);
     },
   });
-  const [categories, setCategories] = useState([
-    {
-      categoryid: 1,
-      category: "Khu vực",
-      subcategories: [
-        "Hà Nội",
-        "TP. Hồ Chí Minh",
-        "Hải Phòng",
-        "Huế",
-        "Đà Nẵng",
-        "Đồng Nai",
-        "Bình Dương",
-        "Lâm Đồng",
-      ],
-    },
-    {
-      categoryid: 2,
-      category: "Kiến thức",
-      subcategories: [
-        "Sức khỏe mẹ & bé",
-        "Sự phát triển của bé",
-        "Gia đình",
-        "Đàn ông chăm con",
-      ],
-    },
-  ]);
+  const [provinces, setProvinces] = useState([]);
+  
   const hiddenScrollbar = {
     msOverflowStyle: "none", // IE and Edge
     scrollbarWidth: "none", // Firefox
   };
+  useEffect(() => {
+    fetch('https://forum-hngc.onrender.com/province/get-all-province')
+      .then(response => response.json())
+      .then(data => setProvinces(data.province.slice(0, 5)))
+      .catch(error => console.error('Error fetching provinces:', error));
+  }, []);
 
-  const visibleScrollbar = {
-    scrollbarWidth: "thin",
-    scrollbarColor: "#c4c4c4 transparent",
-  };
 
-  const visibleScrollbarWebkit = {
-    overflowY: "scroll",
-  };
-
+  console.log("provinces", provinces);
   return (
     <aside
       className="fixed hidden flex-col w-56 my-3 border border-theme-silver-chalice bg-white h-screen rounded-xl md:flex"
@@ -140,7 +116,7 @@ export function ThreadsSidebar() {
                 <button className="text-xs text-[#7AC0F8]">All</button>
               </Link>
             </div>
-            <SideBarComponentKV threadList={categories[0].subcategories} />
+            <SideBarComponentKV threadList={provinces} />
           </div>
           <span className="mx-5 border border-theme-silver-chalice"></span>
         </>
@@ -177,7 +153,7 @@ export function ThreadsSidebar() {
           </Link>
         </div>
 
-        <SideBarComponent threadList={categories[1].subcategories} />
+        {/* <SideBarComponent threadList={categories[1].subcategories} /> */}
       </div>
       {/* <span className="mx-5 border border-theme-silver-chalice"></span> */}
 
@@ -222,7 +198,7 @@ SideBarComponent.propTypes = {
   threadList: PropType.array,
 };
 function SideBarComponent({ threadList }) {
-  console.log("threadList", threadList);
+
   return (
     <div className="flex flex-col space-y-4 w-48 list-none font-family-mulish">
       {threadList?.slice(0, 10).map((thread) => (
@@ -273,7 +249,7 @@ function SideBarComponentKV({ threadList }) {
   console.log("threadList", threadList);
   return (
     <div className="flex flex-col space-y-4 w-48 list-none font-family-mulish">
-      {threadList?.slice(0, 10).map((thread) => (
+      {threadList?.map((thread) => (
         <Link
           // to={`/${thread.name}`}
           to="/community"
@@ -304,7 +280,7 @@ function SideBarComponentKV({ threadList }) {
                 <circle cx="6" cy="6" r="6" fill="#F8BBD9" />
               </svg>
             )}
-            {thread && <span className="text-xs font-semibold ">{thread}</span>}
+            {thread && <span className="text-xs font-semibold ">{thread.name}</span>}
           </div>
           {/* <span className="p-1 px-2 text-sm font-semibold rounded-md bg-theme-gray-blue">
             {thread.subscriberCount > 9

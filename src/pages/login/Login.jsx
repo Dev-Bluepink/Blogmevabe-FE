@@ -21,7 +21,12 @@ export function Login() {
           password,
         }
       );
+      localStorage.setItem('userId', response.data.user._id);
+      console.log(response);
+
+      console.log("userId", localStorage.getItem('userId'));
       return response.data;
+      
     },
     onSuccess: (data) => {
       // tôi muốn  bất đồng bộ lưu token vào localStorage

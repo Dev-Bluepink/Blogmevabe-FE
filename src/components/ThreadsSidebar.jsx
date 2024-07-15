@@ -5,6 +5,7 @@ import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 // css
 import "./threadsSidebar.css";
+import { useNavigate } from 'react-router-dom';
 
 
 export function ThreadsSidebar() {
@@ -246,13 +247,17 @@ function SideBarComponent({ threadList }) {
 }
 
 function SideBarComponentKV({ threadList }) {
-  console.log("threadList", threadList);
+  const navigate = useNavigate();
+  const handleDetailsClick = (id) => {
+    console.log("id", id);
+    navigate(`/community/${id}`);
+  };
   return (
     <div className="flex flex-col space-y-4 w-48 list-none font-family-mulish">
       {threadList?.map((thread) => (
-        <Link
-          // to={`/${thread.name}`}
-          to="/community"
+        <div
+
+          onClick={() => handleDetailsClick(thread._id)}
           className="flex justify-between w-48 cursor-pointer font-family-mulish text-[#7AC0F8]"
           key={thread.name}
         >
@@ -287,7 +292,7 @@ function SideBarComponentKV({ threadList }) {
               ? thread.subscriberCount
               : `0${thread.subscriberCount}`}
           </span> */}
-        </Link>
+        </div>
       ))}
     </div>
   );
